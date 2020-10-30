@@ -1,0 +1,19 @@
+# Activate the environmet to run the code using "source activate ellipsoids"
+# or "activate ellipsoids" on Windows.
+name: radial-mag
+channels:
+    - defaults
+    - conda-forge
+dependencies:
+    - python=2.7
+    - pip
+    - future
+    - numpy
+    - scipy
+    - matplotlib
+    - jupyter
+    - pytest
+    - pytest-cov
+    - flake8
+    - fatiando=0.5
+    - mayavi
