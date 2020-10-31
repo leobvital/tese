@@ -3,18 +3,12 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: tese-leovital-2020.aux
 A level-1 auxiliary file: metodologia.aux
 The style file: on-plain.bst
-Database file #1: references.bib
-Database file #2: ref.bib
-Repeated entry---line 13 of file ref.bib
- : @article{plouff1976
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 143 of file ref.bib
- : @inproceedings{uieda-etal2013
- :                              ,
-I'm skipping whatever remains of this entry
-`address' is a missing field, not a string, for entry aster-etal2019
-while executing---line 1437 of file on-plain.bst
+Database file #1: ref.bib
+Warning--I didn't find a database entry for "oliveirajr-etal2011"
+Warning--I didn't find a database entry for "oliveirajr-barbosa2013"
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "oliveira_jr_inversao_2010"
+Warning--I didn't find a database entry for "barbosa_stable_1999"
 `address' is a missing field, not a string, for entry aster_etal2019
 while executing---line 1437 of file on-plain.bst
 `address' is a missing field, not a string, for entry golub-vanloan2013
@@ -26,45 +20,45 @@ while executing---line 1437 of file on-plain.bst
 Warning--empty month in uieda-etal2013
 Warning--empty address in vital_etal2019
 Warning--empty publisher in vital_etal2019
-You've used 20 entries,
+You've used 17 entries,
             2972 wiz_defined-function locations,
-            725 strings with 7674 characters,
-and the built_in function-call counts, 9952 in all, are:
-= -- 877
-> -- 452
-< -- 27
-+ -- 170
-- -- 147
-* -- 1023
-:= -- 1444
-add.period$ -- 63
-call.type$ -- 20
-change.case$ -- 73
+            725 strings with 7719 characters,
+and the built_in function-call counts, 8488 in all, are:
+= -- 753
+> -- 379
+< -- 24
++ -- 140
+- -- 123
+* -- 863
+:= -- 1234
+add.period$ -- 56
+call.type$ -- 17
+change.case$ -- 61
 chr.to.int$ -- 17
-cite$ -- 43
-duplicate$ -- 517
-empty$ -- 897
-format.name$ -- 189
-if$ -- 2089
-int.to.chr$ -- 4
+cite$ -- 37
+duplicate$ -- 441
+empty$ -- 766
+format.name$ -- 160
+if$ -- 1786
+int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 26
-newline$ -- 97
-num.names$ -- 82
-pop$ -- 198
+missing$ -- 22
+newline$ -- 86
+num.names$ -- 70
+pop$ -- 165
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 57
 quote$ -- 0
-skip$ -- 281
+skip$ -- 247
 stack$ -- 0
-substring$ -- 432
-swap$ -- 147
-text.length$ -- 15
+substring$ -- 370
+swap$ -- 121
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 190
+type$ -- 162
 warning$ -- 3
-while$ -- 85
+while$ -- 73
 width$ -- 0
-write$ -- 274
-(There were 7 error messages)
+write$ -- 239
+(There were 4 error messages)

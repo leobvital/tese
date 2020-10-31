@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -6,16 +6,9 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 \newcommand{\enquote}[1]{``#1''}
 
-\bibitem[\MakeUppercase{Aster}\emph{ et~al.}(2019{\natexlab{a}})Aster,
-  Borchers, e Thurber]{aster-etal2019}
-\MakeUppercase{Aster, R.~C., Borchers, B., Thurber, C.~H.}, 2019{\natexlab{a}},
-  \emph{Parameter Estimation and Inverse Problems}.
-\newblock Elsevier.
-\newblock ISBN: 978-0-12-804651-7.
-
-\bibitem[\MakeUppercase{Aster}\emph{ et~al.}(2019{\natexlab{b}})Aster,
-  Borchers, e Thurber]{aster_etal2019}
-\MakeUppercase{Aster, R.~C., Borchers, B., Thurber, C.~H.}, 2019{\natexlab{b}},
+\bibitem[\MakeUppercase{Aster}\emph{ et~al.}(2019)Aster, Borchers, e
+  Thurber]{aster_etal2019}
+\MakeUppercase{Aster, R.~C., Borchers, B., Thurber, C.~H.}, 2019,
   \emph{Parameter Estimation and Inverse Problems}.
 \newblock Elsevier.
 \newblock ISBN: 978-0-12-804651-7.
@@ -67,40 +60,20 @@
 \newblock \doi{10.5194/npg-22-215-2015}.
 
 \bibitem[\MakeUppercase{Oliveira{ }Jr.} e
-  \MakeUppercase{Barbosa}(2013{\natexlab{a}})Oliveira{ }Jr. e
-  Barbosa]{oliveirajr-barbosa2013}
-\MakeUppercase{Oliveira{ }Jr., V.~C., Barbosa, V. C.~F.}, 2013{\natexlab{a}},
-  \enquote{{3-D} radial gravity gradient inversion}, \emph{Geophysical Journal
-  International}, v.~195, n.~2, \penalty0 pp.~883--902.
-\newblock ISSN: 0956-540X.
-
-\bibitem[\MakeUppercase{Oliveira{ }Jr.} e
-  \MakeUppercase{Barbosa}(2013{\natexlab{b}})Oliveira{ }Jr. e
+  \MakeUppercase{Barbosa}(2013)Oliveira{ }Jr. e
   Barbosa]{oliveirajr_barbosa2013}
-\MakeUppercase{Oliveira{ }Jr., V.~C., Barbosa, V. C.~F.}, 2013{\natexlab{b}},
-  \enquote{{3-D} radial gravity gradient inversion}, \emph{Geophysical Journal
-  International}, v.~195, n.~2, \penalty0 pp.~883--902.
+\MakeUppercase{Oliveira{ }Jr., V.~C., Barbosa, V. C.~F.}, 2013, \enquote{{3-D}
+  radial gravity gradient inversion}, \emph{Geophysical Journal International},
+  v.~195, n.~2, \penalty0 pp.~883--902.
 \newblock ISSN: 0956-540X.
 \newblock \doi{10.1093/gji/ggt307}.
 
-\bibitem[\MakeUppercase{Oliveira{ }Jr.}\emph{
-  et~al.}(2011{\natexlab{a}})Oliveira{ }Jr., Barbosa, e
-  Silva]{oliveirajr-etal2011}
+\bibitem[\MakeUppercase{Oliveira{ }Jr.}\emph{ et~al.}(2011)Oliveira{ }Jr.,
+  Barbosa, e Silva]{oliveirajr_etal2011}
 \MakeUppercase{Oliveira{ }Jr., V.~C., Barbosa, V. C.~F., Silva, J. B.~C.},
-  2011{\natexlab{a}}, \enquote{Source geometry estimation using the mass excess
-  criterion to constrain {3‐D} radial inversion of gravity data},
-  \emph{Geophysical Journal International}, v.~187, n.~2, \penalty0
-  pp.~754--772.
-\newblock ISSN: 0956-540X.
-
-\bibitem[\MakeUppercase{Oliveira{ }Jr.}\emph{
-  et~al.}(2011{\natexlab{b}})Oliveira{ }Jr., Barbosa, e
-  Silva]{oliveirajr_etal2011}
-\MakeUppercase{Oliveira{ }Jr., V.~C., Barbosa, V. C.~F., Silva, J. B.~C.},
-  2011{\natexlab{b}}, \enquote{Source geometry estimation using the mass excess
-  criterion to constrain {3‐D} radial inversion of gravity data},
-  \emph{Geophysical Journal International}, v.~187, n.~2, \penalty0
-  pp.~754--772.
+  2011, \enquote{Source geometry estimation using the mass excess criterion to
+  constrain {3‐D} radial inversion of gravity data}, \emph{Geophysical
+  Journal International}, v.~187, n.~2, \penalty0 pp.~754--772.
 \newblock ISSN: 0956-540X.
 \newblock \doi{10.1111/j.1365-246X.2011.05172.x}.
 
@@ -109,6 +82,7 @@
   polygonal prisms and application to magnetic terrain corrections},
   \emph{Geophysics}, v.~41, n.~4, \penalty0 pp.~727--741.
 \newblock ISSN: 0016-8033.
+\newblock \doi{10.1190/1.1440645}.
 
 \bibitem[\MakeUppercase{Scales} e \MakeUppercase{Gersztenkorn}(1988)Scales e
   Gersztenkorn]{scales_gersztenkorn1988}
@@ -151,7 +125,8 @@
 \MakeUppercase{Uieda, L., Oliveira{ }Jr., V.~C., Barbosa, V. C.~F.}, 2013,
   \enquote{Modeling the Earth with Fatiando a Terra}. In: van~der Walt, S.,
   Millman, J., Huff, K. (Eds.), \emph{Proceedings of the 12th Python in Science
-  Conference}, pp. 96 -- 103.
+  Conference}, pp. 96--103.
+\newblock \doi{10.25080/Majora-8b375195-010}.
 
 \bibitem[\MakeUppercase{Vital}\emph{ et~al.}(2019)Vital, Oliveira{ }Jr., e
   Barbosa]{vital_etal2019}
