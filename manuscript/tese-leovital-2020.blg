@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: tese-leovital-2020.aux
+A level-1 auxiliary file: metodologia.aux
+The style file: on-plain.bst
+Database file #1: references.bib
+Database file #2: ref.bib
+Repeated entry---line 13 of file ref.bib
+ : @article{plouff1976
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 143 of file ref.bib
+ : @inproceedings{uieda-etal2013
+ :                              ,
+I'm skipping whatever remains of this entry
+`address' is a missing field, not a string, for entry aster-etal2019
+while executing---line 1437 of file on-plain.bst
+`address' is a missing field, not a string, for entry aster_etal2019
+while executing---line 1437 of file on-plain.bst
+`address' is a missing field, not a string, for entry golub-vanloan2013
+while executing---line 1437 of file on-plain.bst
+`address' is a missing field, not a string, for entry horn_johnson1991
+while executing---line 1437 of file on-plain.bst
+`address' is a missing field, not a string, for entry seber_wild2003
+while executing---line 1437 of file on-plain.bst
+Warning--empty month in uieda-etal2013
+Warning--empty address in vital_etal2019
+Warning--empty publisher in vital_etal2019
+You've used 20 entries,
+            2972 wiz_defined-function locations,
+            725 strings with 7674 characters,
+and the built_in function-call counts, 9952 in all, are:
+= -- 877
+> -- 452
+< -- 27
++ -- 170
+- -- 147
+* -- 1023
+:= -- 1444
+add.period$ -- 63
+call.type$ -- 20
+change.case$ -- 73
+chr.to.int$ -- 17
+cite$ -- 43
+duplicate$ -- 517
+empty$ -- 897
+format.name$ -- 189
+if$ -- 2089
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 26
+newline$ -- 97
+num.names$ -- 82
+pop$ -- 198
+preamble$ -- 1
+purify$ -- 68
+quote$ -- 0
+skip$ -- 281
+stack$ -- 0
+substring$ -- 432
+swap$ -- 147
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 190
+warning$ -- 3
+while$ -- 85
+width$ -- 0
+write$ -- 274
+(There were 7 error messages)
