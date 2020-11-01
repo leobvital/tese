@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  31 OCT 2020 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.26)  1 NOV 2020 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -743,7 +743,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 45.
 \c@keywords=\count125
 \bibindent=\dimen136
 )
-(./tese-leovital-2020.aux (./metodologia.aux))
+(./tese-leovital-2020.aux (./metodologia.aux) (./sintetico.aux))
 \openout1 = `tese-leovital-2020.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -849,12 +849,12 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./ON-logo-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<ON-logo-eps-converted-to.pdf, id=32, 719.68875pt x 214.8025pt>
+<ON-logo-eps-converted-to.pdf, id=48, 719.68875pt x 214.8025pt>
 File: ON-logo-eps-converted-to.pdf Graphic file (type pdf)
 <use ON-logo-eps-converted-to.pdf>
 Package pdftex.def Info: ON-logo-eps-converted-to.pdf  used on input line 57.
 (pdftex.def)             Requested size: 142.26378pt x 42.46153pt.
-<DIPPG-logo.png, id=33, 165.61874pt x 61.1886pt>
+<DIPPG-logo.png, id=49, 165.61874pt x 61.1886pt>
 File: DIPPG-logo.png Graphic file (type png)
 <use DIPPG-logo.png>
 Package pdftex.def Info: DIPPG-logo.png  used on input line 57.
@@ -895,11 +895,11 @@ l.73   \listoffigures
 ]
 (./tese-leovital-2020.lof [2
 
-])
+] [3] [4] [5])
 \tf@lof=\write5
 \openout5 = `tese-leovital-2020.lof'.
 
- [3]
+ [6] [7]
 \openout2 = `metodologia.aux'.
 
  (./metodologia.tex
@@ -909,43 +909,43 @@ Cap\'{\i }tulo 1.
 
 
 ]
-<Figs/schematic.png, id=141, 735.74875pt x 993.7125pt>
+<Figs/schematic.png, id=342, 735.74875pt x 993.7125pt>
 File: Figs/schematic.png Graphic file (type png)
 <use Figs/schematic.png>
 Package pdftex.def Info: Figs/schematic.png  used on input line 43.
 (pdftex.def)             Requested size: 257.51591pt x 347.80458pt.
-<Figs/pk.png, id=142, 735.74875pt x 552.0625pt>
+<Figs/pk.png, id=343, 735.74875pt x 552.0625pt>
 File: Figs/pk.png Graphic file (type png)
 <use Figs/pk.png>
 Package pdftex.def Info: Figs/pk.png  used on input line 51.
-(pdftex.def)             Requested size: 367.87347pt x 276.03056pt.
+(pdftex.def)             Requested size: 331.08388pt x 248.42583pt.
  [2 <./Figs/schematic.png>] [3 <./Figs/pk.png>] [4]
-<Figs/Constraint_phi1.png, id=221, 722.7pt x 542.025pt>
+<Figs/Constraint_phi1.png, id=421, 722.7pt x 542.025pt>
 File: Figs/Constraint_phi1.png Graphic file (type png)
 <use Figs/Constraint_phi1.png>
 Package pdftex.def Info: Figs/Constraint_phi1.png  used on input line 108.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
  [5 <./Figs/Constraint_phi1.png>]
-<Figs/Constraint_phi2.png, id=239, 722.7pt x 542.025pt>
+<Figs/Constraint_phi2.png, id=440, 722.7pt x 542.025pt>
 File: Figs/Constraint_phi2.png Graphic file (type png)
 <use Figs/Constraint_phi2.png>
 Package pdftex.def Info: Figs/Constraint_phi2.png  used on input line 142.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
  [6 <./Figs/Constraint_phi2.png>]
-<Figs/Constraint_phi5.png, id=252, 722.7pt x 542.025pt>
+<Figs/Constraint_phi5.png, id=453, 722.7pt x 542.025pt>
 File: Figs/Constraint_phi5.png Graphic file (type png)
 <use Figs/Constraint_phi5.png>
 Package pdftex.def Info: Figs/Constraint_phi5.png  used on input line 187.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
  [7 <./Figs/Constraint_phi5.png>]
-<Figs/Constraint_phi6.png, id=262, 722.7pt x 542.025pt>
+<Figs/Constraint_phi6.png, id=464, 722.7pt x 542.025pt>
 File: Figs/Constraint_phi6.png Graphic file (type png)
 <use Figs/Constraint_phi6.png>
 Package pdftex.def Info: Figs/Constraint_phi6.png  used on input line 235.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
 
 [8 <./Figs/Constraint_phi6.png>]
-<Figs/Constraint_phi7.png, id=279, 963.6pt x 722.7pt>
+<Figs/Constraint_phi7.png, id=481, 963.6pt x 722.7pt>
 File: Figs/Constraint_phi7.png Graphic file (type png)
 <use Figs/Constraint_phi7.png>
 Package pdftex.def Info: Figs/Constraint_phi7.png  used on input line 278.
@@ -957,37 +957,119 @@ to ao $\OML/cmm/m/it/12 j$\OT1/cmr/m/n/12 -^^Sesimo ele-mento $\OML/cmm/m/it/12
  p[]$ \OT1/cmr/m/n/12 do ve-tor de par^ametros
  []
 
-[10] [11] [12] [13]
-<Figs/Constraint_barrier.png, id=384, 963.6pt x 722.7pt>
+[10] [11] [12]
+<Figs/Constraint_barrier.png, id=579, 963.6pt x 722.7pt>
 File: Figs/Constraint_barrier.png Graphic file (type png)
 <use Figs/Constraint_barrier.png>
 Package pdftex.def Info: Figs/Constraint_barrier.png  used on input line 471.
 (pdftex.def)             Requested size: 426.79135pt x 320.0842pt.
-) [14 <./Figs/Constraint_barrier.png (PNG copy)>] [15]
-(./tese-leovital-2020.bbl [16
+ [13]) [14 <./Figs/Constraint_barrier.png (PNG copy)>] [15]
+\openout2 = `sintetico.aux'.
+
+
+(./sintetico.tex
+Cap\'{\i }tulo 2.
+<Figs/complex_model_data.png, id=622, 296.96948pt x 254.69153pt>
+File: Figs/complex_model_data.png Graphic file (type png)
+<use Figs/complex_model_data.png>
+Package pdftex.def Info: Figs/complex_model_data.png  used on input line 19.
+(pdftex.def)             Requested size: 426.79135pt x 366.02876pt.
+[16
+
+
+
+] [17 <./Figs/complex_model_data.png>]
+<Figs/complex_rtp.png, id=646, 240.6591pt x 240.6591pt>
+File: Figs/complex_rtp.png Graphic file (type png)
+<use Figs/complex_rtp.png>
+Package pdftex.def Info: Figs/complex_rtp.png  used on input line 46.
+(pdftex.def)             Requested size: 213.39568pt x 213.39641pt.
+ [18 <./Figs/complex_rtp.png>]
+<Figs/complex-l2-solution.png, id=656, 312.9291pt x 312.9291pt>
+File: Figs/complex-l2-solution.png Graphic file (type png)
+<use Figs/complex-l2-solution.png>
+Package pdftex.def Info: Figs/complex-l2-solution.png  used on input line 58.
+(pdftex.def)             Requested size: 426.79135pt x 426.8194pt.
+<Figs/complex-l1-solution.png, id=659, 312.9291pt x 312.9291pt>
+File: Figs/complex-l1-solution.png Graphic file (type png)
+<use Figs/complex-l1-solution.png>
+Package pdftex.def Info: Figs/complex-l1-solution.png  used on input line 74.
+(pdftex.def)             Requested size: 426.79135pt x 426.8194pt.
+
+[19 <./Figs/complex-l2-solution.png>] [20 <./Figs/complex-l1-solution.png>]
+Overfull \hbox (0.80441pt too wide) in paragraph at lines 123--123
+[]\OT1/cmr/bx/n/17.28 Resultados com uma fonte in-ter-fe-rente grande 
+ []
+
+[21]
+<Figs/small_model_data.png, id=722, 297.21037pt x 267.8808pt>
+File: Figs/small_model_data.png Graphic file (type png)
+<use Figs/small_model_data.png>
+Package pdftex.def Info: Figs/small_model_data.png  used on input line 155.
+(pdftex.def)             Requested size: 426.79135pt x 384.70164pt.
+<Figs/small_rtp.png, id=723, 240.6591pt x 240.6591pt>
+File: Figs/small_rtp.png Graphic file (type png)
+<use Figs/small_rtp.png>
+Package pdftex.def Info: Figs/small_rtp.png  used on input line 168.
+(pdftex.def)             Requested size: 213.39568pt x 213.39641pt.
+<Figs/small-l2-solution.png, id=728, 312.9291pt x 312.9291pt>
+File: Figs/small-l2-solution.png Graphic file (type png)
+<use Figs/small-l2-solution.png>
+Package pdftex.def Info: Figs/small-l2-solution.png  used on input line 178.
+(pdftex.def)             Requested size: 426.79135pt x 426.8194pt.
+<Figs/small-l1-solution.png, id=731, 312.9291pt x 312.9291pt>
+File: Figs/small-l1-solution.png Graphic file (type png)
+<use Figs/small-l1-solution.png>
+Package pdftex.def Info: Figs/small-l1-solution.png  used on input line 194.
+(pdftex.def)             Requested size: 426.79135pt x 426.8194pt.
+<Figs/thick_model_data.png, id=734, 297.21037pt x 267.8808pt>
+File: Figs/thick_model_data.png Graphic file (type png)
+<use Figs/thick_model_data.png>
+Package pdftex.def Info: Figs/thick_model_data.png  used on input line 210.
+(pdftex.def)             Requested size: 426.79135pt x 384.70164pt.
+<Figs/thick_rtp.png, id=735, 240.6591pt x 240.6591pt>
+File: Figs/thick_rtp.png Graphic file (type png)
+<use Figs/thick_rtp.png>
+Package pdftex.def Info: Figs/thick_rtp.png  used on input line 224.
+(pdftex.def)             Requested size: 213.39568pt x 213.39641pt.
+<Figs/thick-l2-solution.png, id=740, 312.9291pt x 312.9291pt>
+File: Figs/thick-l2-solution.png Graphic file (type png)
+<use Figs/thick-l2-solution.png>
+Package pdftex.def Info: Figs/thick-l2-solution.png  used on input line 234.
+(pdftex.def)             Requested size: 426.79135pt x 426.8194pt.
+<Figs/thick-l1-solution.png, id=743, 298.9569pt x 266.13428pt>
+File: Figs/thick-l1-solution.png Graphic file (type png)
+<use Figs/thick-l1-solution.png>
+Package pdftex.def Info: Figs/thick-l1-solution.png  used on input line 250.
+(pdftex.def)             Requested size: 426.79135pt x 379.95593pt.
+) [22] [23 <./Figs/small_model_data.png>] [24 <./Figs/small_rtp.png>]
+[25 <./Figs/small-l2-solution.png>] [26 <./Figs/small-l1-solution.png>]
+[27 <./Figs/thick_model_data.png>] [28 <./Figs/thick_rtp.png>] [29 <./Figs/thic
+k-l2-solution.png>] [30 <./Figs/thick-l1-solution.png>]
+(./tese-leovital-2020.bbl [31
 
 
 
 ]) 
 AED: lastpage setting LastPage
-[17]
+[32]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
- (./tese-leovital-2020.aux (./metodologia.aux))
+ (./tese-leovital-2020.aux (./metodologia.aux) (./sintetico.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `tese-leovital-2020.out' has not changed.
-(rerunfilecheck)             Checksum: 7C1A4E3E1B58A21D609581312C08EFFD;448.
+(rerunfilecheck)             Checksum: C670D9FBCCE5D6E1E7E712DC080DD197;784.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 9110 strings out of 492982
- 126895 string characters out of 6134896
- 348713 words of memory out of 5000000
- 12378 multiletter control sequences out of 15000+600000
+ 9233 strings out of 492982
+ 129359 string characters out of 6134896
+ 415930 words of memory out of 5000000
+ 12447 multiletter control sequences out of 15000+600000
  15167 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,19n,37p,795b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,19n,37p,1447b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -1001,10 +1083,10 @@ ts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on tese-leovital-2020.pdf (21 pages, 848631 bytes).
+Output written on tese-leovital-2020.pdf (40 pages, 13030384 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 427 compressed objects within 5 object streams
- 82 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 876 PDF objects out of 1000 (max. 8388607)
+ 757 compressed objects within 8 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
