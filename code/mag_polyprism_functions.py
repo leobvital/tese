@@ -1816,23 +1816,23 @@ def plot_simple_model_data(x, y, obs, initial, model, filename):
     fig: figure - plot
     '''
 
-    plt.figure(figsize=(11,5))
+    plt.figure(figsize=(4.33,2))
 
     # sinthetic data
     ax=plt.subplot(1,2,1)
     plt.tricontour(y, x, obs, 20, linewidths=0.5, colors='k')
     plt.tricontourf(y, x, obs, 20,
                     cmap='RdBu_r', vmin=np.min(obs),
-                    vmax=-np.min(obs)).ax.tick_params(labelsize=12)
-    plt.plot(y, x, 'ko', markersize=.25)
-    mpl.polygon(initial, '.-r', xy2ne=True)
+                    vmax=-np.min(obs)).ax.tick_params(labelsize=6)
+    plt.plot(y, x, 'ko', markersize=.01)
+    mpl.polygon(initial, '-r', linewidth=1., xy2ne=True)
     plt.xlabel('$y$(km)', fontsize=6)
     plt.ylabel('$x$(km)', fontsize=6)
-    clb = plt.colorbar(pad=0.01, aspect=20, shrink=1)
-    clb.ax.set_title('nT', pad=-305)
+    clb = plt.colorbar(pad=0.05, aspect=20, shrink=1)
+    clb.ax.set_title('nT', pad=-100, fontsize=6)
     mpl.m2km()
-    clb.ax.tick_params(labelsize=13)
-    plt.text(-6700, 3800, '(a)', fontsize= 15)
+    clb.ax.tick_params(labelsize=6)
+    plt.text(np.min(y)-2000., np.max(x)+1000., '(a)', fontsize= 10)
 
     verts_true = plot_prisms(model, scale=0.001)
     # true model
@@ -1843,12 +1843,14 @@ def plot_simple_model_data(x, y, obs, initial, model, filename):
     ax.set_xlim(-2.5, 2.5, 100)
     ax.set_ylim(-2.5, 2.5, 100)
     ax.set_zlim(2, -0.1, 100)
-    ax.tick_params(labelsize= 10)
-    ax.set_ylabel('y (km)', fontsize=6)
-    ax.set_xlabel('x (km)', fontsize=6)
-    ax.set_zlabel('z (km)', fontsize=6)
+    ax.tick_params(labelsize= 6, pad=-3.)
+    ax.set_ylabel('y (km)', fontsize=6, labelpad=-5)
+    ax.set_xlabel('x (km)', fontsize=6, labelpad=-5)
+    ax.set_zlabel('z (km)', fontsize=6, labelpad=-5)
     ax.view_init(10, 50)
-    ax.text2D(-0.1, 0.07, '(b)', fontsize= 15)
+    ax.text2D(-0.1, 0.11, '(b)', fontsize= 10)
+
+    plt.subplots_adjust(wspace=3.)
 
     plt.tight_layout()
 
