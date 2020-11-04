@@ -16,6 +16,8 @@
 % corrigidos futuramente
 %\makelosymbols
 %\makeloabbreviations
+\usepackage{indentfirst}
+\usepackage{lscape}
 
 \graphicspath{{Figs/}}
 
@@ -70,7 +72,7 @@
   %\include{abstract}
 
   \tableofcontents   % sumário
-  \listoffigures     % lista de figuras (opcional)
+  %\listoffigures     % lista de figuras (opcional)
   %\listoftables      % lista de tabelas (opcional)
 
   % os dois comandos estão com problema e deverão ser
@@ -84,12 +86,12 @@
   % Edite os arquivos "chapxx.tex" de acordo com as suas necessidades.
   % No presente documento, são incluídos seis capítulos, mas é possível
   % utilizar quantos capítulos forem necessários.
-  %\include{chap01}
+  \include{introducao}
+  \include{dados}
   \include{metodologia}
   \include{sintetico}
-  %\include{chap04}
-  %\include{chap05}
-  %\include{chap06}
+  \include{real}
+  %\include{conclusao}
 
   \backmatter
 
