@@ -2,7 +2,7 @@
 
 \section{Problema direto}
 
-Seja $\mathbf{d}^{o}\equiv \boldsymbol{\Delta}\mathbf{T}$ o vetor de dados observados, cujo $i$-ésimo elemento $d^{o}_{i}$, $i = 1, \dots, N$, é a anomalia de campo total observada no ponto $(x_{i}, y_{i}, z_{i})$.
+Seja $\mathbf{d}^{o}\equiv \tilde{\boldsymbol{\Delta}\mathbf{T}}$ o vetor de dados observados, cujo $i$-ésimo elemento $d^{o}_{i}$, $i = 1, \dots, N$, é a anomalia de campo total observada no ponto $(x_{i}, y_{i}, z_{i})$.
 Considere que as anomalias de campo total produzidas por pequenas fontes magnéticas interferentes distorcem localmente a anomalia causada por uma fonte alvo 3-D.
 Por simplicidade, podemos assumir que o campo geomagnético principal é constante na área de estudo, com declinação $ D_ {0} $ e inclinação $ I_ {0} $.
 Este trabalho segue a mesma abordagem apresentada por \cite{oliveirajr_etal2011}, \cite{oliveirajr_barbosa2013}, e \cite{vital_etal2019} para definir o modelo interpretativo que aproxima a geometria da fonte alvo.
@@ -29,10 +29,9 @@ Na Equação \ref{eq:predicted-data-i}, $\mathbf{p}$ é um vetor de parâmetros 
 \mathbf{p} = \begin{bmatrix} 
 {\mathbf{r}^{1}}^{\top} & x_{0}^{1} & y_{0}^{1} & \dots & 
 {\mathbf{r}^{L}}^{\top} & x_{0}^{L} & y_{0}^{L} & dz
-\end{bmatrix}^{\top} \: ,
+\end{bmatrix}^{\top} \: .
 \label{eq:p-vector}
 \end{equation}
-em que o sobre-escrito "$\top$" indica transposição.
 A anomalia de campo total $d_{i} (\mathbf{p})$ 
 (Equação \ref{eq:predicted-data-i}) é computada por meio das fórmulas de \cite{plouff1976} implementadas no pacote de Python 
 Fatiando a Terra \citep{uieda-etal2013}.
@@ -49,7 +48,7 @@ Fatiando a Terra \citep{uieda-etal2013}.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.45]{pk.png}
-	\caption{Representação esquemática do $k$-ésimo prisma $P^k$, $k=1,\dots, L$, que compõe o modelo interpretativo (Figura 1b). Este prisma tem espessura dz, profundidade do topo $z_1^k$ e seção horizontal descrita por um polígono com $V$ vértices igualmente espaçados entre $0^{\circ}$ e $360^{\circ}$. A posição dos vértices é descrita em termos das coordenadas polares $r_j^k$ e $\theta_j$, $j=1,\dots, V$, em relação a uma origem $O^k$ com coordenadas Cartesianas $(x_0^k, y_0^k)$}
+	\caption{Representação esquemática do $k$-ésimo prisma $P^k$, $k=1,\dots, L$, que compõe o modelo interpretativo (Figura 1b). Este prisma tem espessura dz, profundidade do topo $z_1^k$ e seção horizontal descrita por um polígono com $V$ vértices igualmente espaçados entre $0^{\circ}$ e $360^{\circ}$. A posição dos vértices é descrita em termos das coordenadas polares $r_j^k$ e $\theta_j$, $j=1,\dots, V$, em relação a uma origem $O^k$ com coordenadas Cartesianas $(x_0^k, y_0^k)$}.
 	\label{fig:pk}
 \end{figure}
 \pagebreak
