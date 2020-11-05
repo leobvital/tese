@@ -1816,23 +1816,23 @@ def plot_simple_model_data(x, y, obs, initial, model, filename):
     fig: figure - plot
     '''
 
-    plt.figure(figsize=(11,5))
+    plt.figure(figsize=(4.33,2))
 
     # sinthetic data
     ax=plt.subplot(1,2,1)
     plt.tricontour(y, x, obs, 20, linewidths=0.5, colors='k')
     plt.tricontourf(y, x, obs, 20,
                     cmap='RdBu_r', vmin=np.min(obs),
-                    vmax=-np.min(obs)).ax.tick_params(labelsize=12)
-    plt.plot(y, x, 'ko', markersize=.25)
-    mpl.polygon(initial, '.-r', xy2ne=True)
+                    vmax=-np.min(obs)).ax.tick_params(labelsize=6)
+    plt.plot(y, x, 'ko', markersize=.02)
+    mpl.polygon(initial, '-r', linewidth=1., xy2ne=True)
     plt.xlabel('$y$(km)', fontsize=6)
     plt.ylabel('$x$(km)', fontsize=6)
-    clb = plt.colorbar(pad=0.01, aspect=20, shrink=1)
-    clb.ax.set_title('nT', pad=-305)
+    clb = plt.colorbar(pad=0.05, aspect=20, shrink=1)
+    clb.ax.set_title('nT', pad=-100, fontsize=6)
     mpl.m2km()
-    clb.ax.tick_params(labelsize=13)
-    plt.text(-6700, 3800, '(a)', fontsize= 15)
+    clb.ax.tick_params(labelsize=6)
+    plt.text(np.min(y)-2000., np.max(x)+1000., '(a)', fontsize= 10)
 
     verts_true = plot_prisms(model, scale=0.001)
     # true model
@@ -1843,12 +1843,14 @@ def plot_simple_model_data(x, y, obs, initial, model, filename):
     ax.set_xlim(-2.5, 2.5, 100)
     ax.set_ylim(-2.5, 2.5, 100)
     ax.set_zlim(2, -0.1, 100)
-    ax.tick_params(labelsize= 10)
-    ax.set_ylabel('y (km)', fontsize=6)
-    ax.set_xlabel('x (km)', fontsize=6)
-    ax.set_zlabel('z (km)', fontsize=6)
+    ax.tick_params(labelsize= 6, pad=-3.)
+    ax.set_ylabel('y (km)', fontsize=6, labelpad=-5)
+    ax.set_xlabel('x (km)', fontsize=6, labelpad=-5)
+    ax.set_zlabel('z (km)', fontsize=6, labelpad=-5)
     ax.view_init(10, 50)
-    ax.text2D(-0.1, 0.07, '(b)', fontsize= 15)
+    ax.text2D(-0.1, 0.11, '(b)', fontsize= 10)
+
+    plt.subplots_adjust(wspace=3.)
 
     plt.tight_layout()
 
@@ -2015,6 +2017,106 @@ def plot_complex_model_data(x, y, obs, alt, initial, model,
     ax.set_xlabel('y (km)', fontsize= 6, labelpad=-6)
     ax.set_zlabel('z (km)', fontsize= 6, labelpad=-6)
     ax.view_init(20, 135)
+    ax.text2D(-0.142, 0.07, '(d)', fontsize= 10)
+
+    plt.subplots_adjust(wspace=.5, hspace=.6)
+
+    if filename == '':
+        pass
+    else:
+        plt.savefig(filename, dpi=dpi, bbox_inches='tight')
+
+    return plt.show()
+
+def plot_inclined_model_data(x, y, obs, alt, initial, model,
+        figsize, dpi=300, filename=''):
+    '''
+    Returns a plot of synthetic total-field anomaly
+    data produced by the inclined model and the true model
+    
+    input
+    x, y: 1D array - Cartesian coordinates of the upward
+                    continued total-field anomaly data
+    xa, ya: 1D array - Cartesian coordinates of the observations
+    obs: 1D array - synthetic total-field anomaly data
+    alt: 1D array - geometric heigt of the observations
+    initial: list - fatiando.mesher.PolygonalPrism
+                    of the initial approximate
+    model: list - list of fatiando.mesher.PolygonalPrism
+                    of the simple model
+    figsize: tuple - size of the figure
+    dpi: integer - resolution of the figure
+    filename: string - directory and filename of the figure
+
+    output
+    fig: figure - plot
+    '''
+
+    verts_true = plot_prisms(model, scale=0.001)
+
+    plt.figure(figsize=figsize)
+
+    #===============================================================
+    # sinthetic data
+    ax=plt.subplot(2,2,1)
+    plt.tricontour(y, x, obs, 10, linewidths=0.1, colors='k')
+    plt.tricontourf(y, x, obs, 10,
+                    cmap='RdBu_r', vmin=np.min(obs),
+                    vmax=-np.min(obs)).ax.tick_params(labelsize=6)
+    plt.plot(y, x, 'k.', markersize=.1)
+    plt.xlabel('$y$(km)', fontsize=6)
+    plt.ylabel('$x$(km)', fontsize=6)
+    clb = plt.colorbar(pad=0.01, aspect=20, shrink=1)
+    clb.ax.set_title('nT', pad=-98, fontsize=6)
+    mpl.polygon(initial, '-r', xy2ne=True)
+    mpl.m2km()
+    clb.ax.tick_params(labelsize=6)
+    plt.text(-7000, 3800, '(a)', fontsize= 10)
+
+    #==================================================================
+    # plot elevation
+    ax=plt.subplot(2,2,2)
+    plt.tricontourf(y, x, alt, 10,
+                    cmap='gray').ax.tick_params(labelsize=6)
+    plt.xlabel('$y$(km)', fontsize=6)
+    plt.ylabel('$x$(km)', fontsize=6)
+    clb = plt.colorbar(pad=0.01, aspect=20, shrink=1)
+    clb.ax.set_title('m', pad=-98, fontsize=6)
+    mpl.m2km()
+    clb.ax.tick_params(labelsize=6)
+    plt.plot(y, x, 'k.', markersize=.1)
+    plt.text(-7000, 3800, '(b)', fontsize= 10)
+
+    #=====================================================================
+    # true model
+    ax = plt.subplot(2,2,3, projection='3d')
+    ax.add_collection3d(Poly3DCollection(verts_true, alpha=0.3, 
+    facecolor='b', linewidths=0.5, edgecolors='k'))
+
+    ax.set_ylim(-1.,6., 100)
+    ax.set_xlim(-2.5,2., 100)
+    ax.set_zlim(3.5, -0.2, 100)
+    ax.tick_params(labelsize= 6, pad=-2)
+    ax.set_ylabel('x (km)', fontsize= 6, labelpad=-6)
+    ax.set_xlabel('y (km)', fontsize= 6, labelpad=-6)
+    ax.set_zlabel('z (km)', fontsize= 6, labelpad=-6)
+    ax.view_init(5, 37)
+    ax.text2D(-0.142, 0.07, '(c)', fontsize= 10)
+
+    #===================================================================
+    # true model
+    ax = plt.subplot(2,2,4, projection='3d')
+    ax.add_collection3d(Poly3DCollection(verts_true, alpha=0.3, 
+    facecolor='b', linewidths=0.5, edgecolors='k'))
+
+    ax.set_ylim(-1.,6., 100)
+    ax.set_xlim(-2.5,2., 100)
+    ax.set_zlim(3.5, -0.2, 100)
+    ax.tick_params(labelsize= 6, pad=-2)
+    ax.set_ylabel('x (km)', fontsize= 6, labelpad=-6)
+    ax.set_xlabel('y (km)', fontsize= 6, labelpad=-6)
+    ax.set_zlabel('z (km)', fontsize= 6, labelpad=-6)
+    ax.view_init(2, -150)
     ax.text2D(-0.142, 0.07, '(d)', fontsize= 10)
 
     plt.subplots_adjust(wspace=.5, hspace=.6)

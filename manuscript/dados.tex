@@ -1,0 +1,110 @@
+\chapter{Dados magnéticos}
+
+\section{Campo geomagnético}
+
+Em geomagnetismo, é muito comum dividir o campo geomagnético em duas componentes: campo interno e campo externo \citep{treatise2007}. Correntes elétricas localizadas na ionosfera e magnetosfera são responsáveis pela componente externa do campo geomagnético. Já o campo interno pode ser subdivido em outras duas componentes: campo principal e campo crustal. A componente mais intensa do campo geomagnético é o campo principal que é produzido por um dínamo auto-sustentável que age no núcleo externo da Terra. Por último, o campo crustal é produzido por rochas magnetizadas localizadas na litosfera \citep{langel-hinze1998, treatise2007}. Essas rochas magnetizadas em subsuperfície são usualmente chamadas de fontes magnéticas \citep{blakely1996, nabighian-etal2005-mag}.
+
+Em geofísica aplicada, os interesses estão voltados em interpretar o campo crustal e para isso ele precisa ser separado das outras componentes. As medidas realizadas em levantamentos magnéticos correspondem à resultante dos campos principal, crustal e externo. O campo externo é normalmente considerado ruído e é removido do dado junto aos ruídos antropogênicos. Então, o campo restante pode ser considerado a soma dos campos principal e crustal \citep{treatise2007} que é chamado também de campo total \citep{blakely1996}. Essa nomenclatura está presente na geofísica de exploração e que será utilizada aqui. Frequentemente, modelos matemáticos como o IGRF - do inglês \textit{International Geomagnetic Reference Field} - descrevem o campo principal em todos os pontos da Terra.
+
+\section{Anomalia de campo total}
+
+A diferença entre a magnitude do campo total e a magnitude do campo crustal no mesmo ponto é denominada anomalia de campo total \citep{blakely1996, nabighian-etal2005-mag}:
+
+\begin{equation}\label{eq:anomtotal}
+\Delta T(x, y, z) = \|\mathbf{T}(x, y, z)\| - \| \mathbf{F}(x, y, z)\|,
+\end{equation}
+em que ``$\| \: \|$" indica a norma Euclidiana, $\mathbf{F}_i$ é o campo principal da Terra e $\mathbf{T}_i$ é o campo total, que é representado por
+\begin{equation}\label{eq:camptotal}
+\mathbf{T}(x, y, z) = \mathbf{F}(x, y, z) + \mathbf{B}(x, y, z) ,
+\end{equation}
+em que $\mathbf{B}$ é a indução magnética produzida pelas fontes magnéticas ou também chamado de campo crustal.
+
+Para estudos locais e regionais, o campo principal pode ser considerado um vetor constante desde que a aquisição dos dados tenha sido feita em um curto período de tempo. Portanto, o campo principal ao longo da área de estudo pode ser escrito como
+
+\begin{equation}
+\mathbf{F}_{0} = \| \mathbf{F}_{0} \| \hat{\mathbf{F}} \: ,
+\label{eq:geomagnetic_field_F0}
+\end{equation}
+em que
+\begin{equation}
+\hat{\mathbf{F}} = \left[
+\begin{array}{c}
+\cos(I_{0}) \, \cos(D_{0}) \\
+\cos(I_{0}) \, \sin(D_{0}) \\
+\sin(I_{0})
+\end{array} \right]
+\label{eq:unit_vector_F}
+\end{equation}
+é um versor que contém a inclinação $I_{0}$ e declinação $D_{0}$ do campo principal, que são constantes.
+Na maioria dos casos, podemos considerar que $\|\mathbf{F}_0\| \gg \| \mathbf{B}(x, y, z) \|$ em todos os pontos sobre a área de estudo \citep{blakely1996}.
+Em outras palavras, pode-se dizer que $\mathbf{B}$ é uma pequena perturbação do campo principal $\mathbf{F}_0$ na área de estudo. Essas premissas permitem aproximar a norma Euclidiana do campo total $\mathbf{T}(x, y, z)$ em uma expansão de série de Taylor de primeira ordem obtendo:
+
+\begin{equation}\label{eq:taylorexp}
+\|\mathbf{T}(x, y, z)\| \approx \|\mathbf{F}_0\| + \hat{\mathbf{F}}_0^{\top}\mathbf{B}(x, y, z) ,
+\end{equation}
+logo
+\begin{equation}
+\tilde{\Delta T}(x, y, z) = \hat{\mathbf{F}}^{\top}_0 \mathbf{B}(x, y, z) \: ,
+\label{eq:tfanomaly}
+\end{equation}
+em que $ \tilde{\Delta T}(x, y, z) $ é a anomalia de campo total aproximada e o sobre-escrito ``$ \top $" indica transposição.
+
+Considere um corpo de e volume $v$ uniformemente magnetizado com um vetor constante de magnetização $\mathbf{m} = m \, \hat{\mathbf{m}}$, em que $ m $ é intensidade de magnetização e $ \hat{\mathbf{m}} $ é um versor que contém a direção de magnetização da fonte. 
+As unidades da intensidade de magnetização e das coordenadas são amperes por metro (A/m) e metro (m), respectivamente. 
+Assim, a indução magnética $\mathbf{B}(x, y, z)$ em nanoteslas produzida no ponto $(x, y, z)$ por uma fonte pode ser escrita como
+\begin{equation}
+\mathbf{B}(x, y, z) = c_{m} \, \frac{\mu_{0}}{4\pi}m \: \mathbf{M}(x, y, z) \: 
+\hat{\mathbf{m}} \: ,
+\label{eq:induction-general}
+\end{equation}
+em que $\mu_{0} = 4\pi \, 10^{-7}$ H/m é a permeabilidade magnética do vácuo, 
+$c_{m} = 10^{9}$ é uma constante de transformação de Tesla (T) para nanotesla (nT) e $\mathbf{M}(x, y, z)$ é uma matriz dada por
+\begin{equation}
+\mathbf{M}(x, y, z) =
+\left[
+\begin{array}{ccc}
+\partial_{xx} \Phi(x, y, z) & \partial_{xy} \Phi(x, y, z) & 
+\partial_{xz} \Phi(x, y, z) \\
+\partial_{xy} \Phi(x, y, z) & \partial_{yy} \Phi(x, y, z) & 
+\partial_{yz} \Phi(x, y, z) \\
+\partial_{xz} \Phi(x, y, z) & \partial_{yz} \Phi(x, y, z) & 
+\partial_{zz} \Phi(x, y, z)
+\end{array}
+\right] \: ,
+\label{eq:M}
+\end{equation}
+com $\partial_{\alpha\beta} \Phi(x, y, z)$, $\alpha = x, y, z$, 
+$\beta = x, y, z$ que são as segundas derivadas com respeito às coordenadas $x$, $y$ e $z$ da função $\Phi(x,y,z)$ dada por
+
+\begin{equation}
+\Phi(x,y,z) = \int\int\limits_{v}\int \frac{1}{\sqrt{(x - x^{\prime})^{2} + 
+		(y - y^{\prime})^{2} + (z - z^{\prime})^{2}}} \: dv^{\prime}
+\label{eq:phi}
+\end{equation}
+que é a integral tripla sobre as coordenadas $x^{\prime}$, $y^{\prime}$ 
+e $z^{\prime}$ ao longo do volume $v$ da fonte magnética.
+
+Portanto, substituindo a Equação \ref{eq:induction-general} na Equação \ref{eq:tfanomaly}, obtemos
+\begin{equation}
+\tilde{\Delta T}(x, y, z) = c_{m} \, \frac{\mu_{0}}{4\pi} \, m \: \hat{\mathbf{F}}^{\top} 
+\mathbf{M}(x, y, z) \: \hat{\mathbf{m}} \: .
+\label{eq:tfanomaly-general}
+\end{equation}
+
+\section{Anomalia reduzida ao polo}
+
+Podemos notar pela Equação \ref{eq:tfanomaly-general} que, uma vez que a magnetização e campo principal possuem direções arbitrárias, a anomalia de campo total pode assumir valores positivos e negativos ao longo da área de estudo. Por essa razão, o valor máximo ou mínimo de anomalia de campo total não estarão localizados sobre a fonte, diferentemente de dados gravimétricos, impedindo uma interpretação direta dos dados magnéticos. 
+Para contornar esse problema, \citet{baranov1957} propôs uma transformação chamada de redução ao polo que é feita sobre os dados de anomalia de campo total.
+Esse método reduz a expressão da anomalia de campo total $\tilde{\Delta T}(x, y, z)$ (\ref{eq:tfanomaly-general}) a uma mais simples dada por
+\begin{equation}
+\Delta T^{P}(x, y, z) = c_{m} \, \frac{\mu_{0}}{4\pi} \, m \: \partial_{zz} \Phi(x, y, z) \: ,
+\label{eq:rtp_anomaly_true}
+\end{equation}
+a qual descreve a anomalia de campo total de produzida por uma fonte que estaria localizada no polo. Nessa situação, tanto o campo principal e quanto a magnetização da fonte possuem uma direção vertical, ou seja, os vetores $\hat{\mathbf{F}}$ e 
+$\hat{\mathbf{m}}$ (Equação \ref{eq:tfanomaly-general}) 
+seriam iguais a $\mathbf{u} = \left[\:0 \quad 0 \quad 1 \: \right]^{\top}$.
+Podemos notar que  $\Delta T^{P}(x, y, z)$ (Equação \ref{eq:rtp_anomaly_true}) depende do conhecimento exato do volume e localização da fonte magnética, o qual é impossível de saber na prática. Assim, se faz necessário o uso de uma técnica de processamento de dados como a camada equivalente para se obter a anomalia de campo total reduzida ao polo ou anomalia RTP (do inglês \textit{reduced to the pole}).
+
+A camada equivalente é uma técnica de processamento para aplicação em dados magnéticos e gravimétricos. A técnica teve início há mais de 50 anos atrás com \cite{dampney_equivalent_1969} e \cite{emilia_equivalent_1973} e vem sendo utilizada como uma ferramenta versátil no processamento de dados em métodos potenciais. Os trabalhos publicados mostram uma vasta gama de aplicações para a técnica tais como interpolação, redução ao polo, separação regional-residual, continuações para cima e para baixo \citep{mendonca1992,mendonca-silva1995,mendonca2004,macLennan-li2013,silva1986,li-li2014,hansen-miyazaki1984}. Um dos obstáculos da técnica é seu alto custo computacional e, por isso, alguns estudos são direcionados a reduzir o tempo de processamento da camada equivalente \citep{leao-silva1989,mendonca-silva1994,siqueira-etal2017,oliveirajr-etal2013, takahashi-2020,mendonca-2020}.
+
+Essa técnica se aproveita da ambiguidade presente nos métodos potenciais para reproduzir um conjunto de dados preditos a partir de uma distribuição 2D fictícia de propriedade física que se aproxime dos dados observados gerados por uma fonte 3D real. Isso permite diversas aplicações e uma delas é obter uma outra quantidade derivada dos dados observados. Neste trabalho, a  anomalia reduzida ao polo será estimada a partir de dados de dados reais de anomalia de campo total, usando a técnica da camada equivalente..
