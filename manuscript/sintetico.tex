@@ -263,7 +263,7 @@ $\tilde{\alpha}_{5} = 10^{-5}$.
 \pagebreak
 
 
-\section{Modelo complexo sem fontes interferentes}
+\section{Modelo complexo}
 \label{sec:target_source_without_interference}
 
 Com o propósito de aplicar o método a problemas mais realistas, foi simulado um corpo geológico complexo imerso em meio não magnético (prismas azuis nas Figuras 
@@ -275,8 +275,8 @@ declinação $9^{\circ}$, e intensidade $12$ A/m.
 Esse modelo é composto de $ 10 $ prismas com seção horizontal irregular com $ 30 $ vértices cada.
 Recuperar a geometria desse corpo simulado é uma tarefa complicada porque ele possui um mergulho NO-SE e suas fatias horizontais mostram uma forma que varia ao longo da profundidade, assim, é possível notar que o corpo não satisfaz perfeitamente os vínculos impostos nesse método.
 A anomalia de campo total (Figura \ref{fig:target_model}a) produzida pela fonte alvo foi calculada em $1939$ pontos localizados sobre uma superfície ondulada que simula um levantamento aéreo (Figura \ref{fig:target_model}b). Esses dados sintéticos foram contaminados com um ruído Gaussiano pseudo-aleatório de média zero e desvio padrão igual a $5$ nT.
-O método foi aplicado para inverter esse dado contaminado com ruído e obter soluções L2 e L1 para três cenários: sem fontes interferentes, 
-com uma fonte interferente relativamente pequena e com uma fonte interferente relativamente grande.
+O método foi aplicado para inverter esse dado contaminado com ruído e obter soluções L2 e L1 para três cenários: sem fontes não-alvo, 
+com uma fonte não-alvo relativamente pequena e com uma fonte não-alvo relativamente grande.
 Para cada cenário, foram geradas $36$ soluções L2 e $36$ soluções L1, 
 todas elas foram obtidas com a mesma malha de varredura $6 \times 6$ de profundidades do topo $z_{0}$ e intensidade de magnetização total $m_{0}$.
 A melhor solução L2 e L1 são definidas como aquelas que produzem o menor valor da função objetivo para cada caso.
@@ -293,7 +293,7 @@ Todas as soluções L2 e L1 produzidas neste teste foram obtidas usando o seguin
 $\tilde{\alpha}_{1} = 10^{-5}$, $\tilde{\alpha}_{2} = 10^{-4}$, 
 $\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-8}$, e 
 $\tilde{\alpha}_{5} = 10^{-5}$. 
-É importante notar que, devido à ausência de fontes interferentes neste teste, não há diferenças práticas entre as soluções L2 e L1 obtidas pelo método aqui proposto.
+É importante notar que, devido à ausência de fontes não-alvo neste teste, não há diferenças práticas entre as soluções L2 e L1 obtidas pelo método aqui proposto.
 
 
 \begin{figure}[!htb]
@@ -353,14 +353,14 @@ $\tilde{\alpha}_{5} = 10^{-5}$.
 \pagebreak
 
 
-\section{Modelo complexo com uma fonte interferente pequena}
+\section{Modelo complexo com uma fonte não-alvo pequena}
 \label{sec:target_source_with_small_interference}
 
 
-O mapa da Figura \ref{fig:small_model}a representa a soma entre as anomalias de campo total produzidas pela fonte interferente pequena (Figura \ref{fig:small_model}b), cuja forma é exibida nas Figuras \ref{fig:small_model}c e \ref{fig:small_model}d, e aquela produzida pela fonte alvo simulada (Figura \ref{fig:target_model}a). 
-A fonte interferente possui profundidade do topo em $0$ m, profundidade da base em $70$ m, 
+O mapa da Figura \ref{fig:small_model}a representa a soma entre as anomalias de campo total produzidas pela fonte não-alvo pequena (Figura \ref{fig:small_model}b), cuja forma é exibida nas Figuras \ref{fig:small_model}c e \ref{fig:small_model}d, e aquela produzida pela fonte alvo simulada (Figura \ref{fig:target_model}a). 
+A fonte não-alvo possui profundidade do topo em $0$ m, profundidade da base em $70$ m, 
 centro em $(x, y) = (-250, 250)$, logo acima da parte mais rasa da fonte alvo, e o mesmo vetor magnetização total da fonte alvo.
-Embora a nova anomalia RTP produzida com a fonte interferente (Figura 
+Embora a nova anomalia RTP produzida com a fonte não-alvo (Figura 
 \ref{fig:small_model_rtp}) tenha uma amplitude maior que a produzida pela fonte alvo isolada (Figura \ref{fig:target_model_rtp}), a extensão horizontal da área positiva não muda substancialmente e conduz a uma aproximação inicial
 (Figuras \ref{fig:small_l2_result}c e \ref{fig:small_l1_result}c) igual àquela utilizada no teste anterior (Figuras \ref{fig:target_l2_result}c e 
 \ref{fig:target_l1_result}c).
@@ -372,9 +372,9 @@ $\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-8}$, e
 $\tilde{\alpha}_{5} = 10^{-5}$.
 A Figura \ref{fig:small_l2_result}a mostra que a melhor solução L2 possui profundidade do topo $z_{0}$ igual à verdadeira, porém possui uma intensidade de magnetização total $m_{0}$ superestimada. Por esse motivo, sua profundidade máxima 
 ($3046.8$ m) é muito distante da verdadeira ($6130$ m).
-Essa solução produz valores de resíduos altos logo acima da fonte interferente 
-(Figura \ref{fig:small_l2_result}b), mas esses resíduos diferem consideravelmente da anomalia de campo total produzida pela fonte interferente (Figura \ref{fig:small_model}b).
-Isso significa que, nesse caso, a inversão não foi capaz de ignorar o efeito causado pela fonte interferente.
+Essa solução produz valores de resíduos altos logo acima da fonte não-alvo 
+(Figura \ref{fig:small_l2_result}b), mas esses resíduos diferem consideravelmente da anomalia de campo total produzida pela fonte não-alvo (Figura \ref{fig:small_model}b).
+Isso significa que, nesse caso, a inversão não foi capaz de ignorar o efeito causado pela fonte não-alvo.
 Além disso, a Figura \ref{fig:small_l2_result}d mostra que a melhor solução L2 não recupera a forma da fonte alvo.
 
 A Figura \ref{fig:small_l1_result} mostra as soluções L1 obtidas pela inversão da anomalia de campo total exibida na Figura \ref{fig:small_model}a
@@ -382,21 +382,21 @@ com os mesmos pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alph
 utilizados para as soluções L2 (Figura \ref{fig:small_l2_result}).
 Comparada à solução L2 mostrada na Figura \ref{fig:small_l2_result}, a melhor solução L1 apresenta uma intensidade de magnetização total menos superestimada (Figura 
 \ref{fig:small_l1_result}a) e profundidade da base ($5176.4$ m) menos subestimada cerca de $ 1 $ km de diferença em relação à verdadeira ($6130$ m). Essa solução produz valores de resíduos (Figura \ref{fig:small_l1_result}b) 
-próximos à anomalia de campo total produzida pela fonte interferente (Figura 
+próximos à anomalia de campo total produzida pela fonte não-alvo (Figura 
 \ref{fig:small_model}b). 
-Isso significa que, nesse caso, a performance do método foi mais eficaz em filtrar a anomalia de campo total interferente (Figura \ref{fig:small_model}b).
-Como consequência, a solução L1 (Figura \ref{fig:small_l1_result}d) foi muito menos afetada pela fonte interferente e recuperou satisfatoriamente a forma da fonte alvo. 
-Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo que a fonte interferente seja muito localizada e menor do que a fonte alvo.
+Isso significa que, nesse caso, a performance do método foi mais eficaz em filtrar a anomalia de campo total não-alvo (Figura \ref{fig:small_model}b).
+Como consequência, a solução L1 (Figura \ref{fig:small_l1_result}d) foi muito menos afetada pela fonte não-alvo e recuperou satisfatoriamente a forma da fonte alvo. 
+Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo que a fonte não-alvo seja muito localizada e menor do que a fonte alvo.
 \pagebreak
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{small_model_data.png}
-	\caption{Modelo da fonte alvo com uma fonte interferente pequena.
-		(a) Anomalia de campo total produzida pelas fontes alvo e interferente
-		(prismas azuis e amarelos nos painéis c e d). Os pontos pretos representam os pontos de observação. Os polígonos azul e amarelo são as projeções horizontais das fontes alvo e interferente, respectivamente.
-		(b) A anomalia de campo total produzida pela fonte interferente. 
-		(c) Visualização em perspectiva da fonte alvo (prismas azuis) e da fonte interferente (prisma amarelo). 
-		(d) Visualização em perspectiva aproximada das fontes alvo (prismas azuis) e interferente (prisma amarelo).
+	\caption{Modelo da fonte alvo com uma fonte não-alvo pequena.
+		(a) Anomalia de campo total produzida pelas fontes alvo e não-alvo
+		(prismas azuis e amarelos nos painéis c e d). Os pontos pretos representam os pontos de observação. Os polígonos azul e amarelo são as projeções horizontais das fontes alvo e não-alvo, respectivamente.
+		(b) A anomalia de campo total produzida pela fonte não-alvo. 
+		(c) Visualização em perspectiva da fonte alvo (prismas azuis) e da fonte não-alvo (prisma amarelo). 
+		(d) Visualização em perspectiva aproximada das fontes alvo (prismas azuis) e não-alvo (prisma amarelo).
 	}
 	\label{fig:small_model}
 \end{figure}
@@ -404,7 +404,7 @@ Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{small_rtp.png}
-	\caption{Anomalia RTP estimada produzida pela fonte alvo com uma fonte interferente pequena. 
+	\caption{Anomalia RTP estimada produzida pela fonte alvo com uma fonte não-alvo pequena. 
 		A anomalia RTP mostra valores predominantemente positivos logo acima da fonte alvo. Os pontos pretos representam os pontos de observação. As linhas azuis e vermelhas correspondem, respectivamente, às projeções horizontais da porção mais rasa da fonte alvo e da aproximação inicial utilizada nas inversões subsequentes (prismas vermelhos nas Figuras \ref{fig:small_l2_result}c e 
 		\ref{fig:small_l1_result}c).
 	}
@@ -414,7 +414,7 @@ Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{small-l2-solution.png}
-	\caption{Soluções L2 obtidas para o modelo da fonte alvo com uma fonte interferente pequena. 
+	\caption{Soluções L2 obtidas para o modelo da fonte alvo com uma fonte não-alvo pequena. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 		Os valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L2 são representados pelo triângulo vermelho e pelo losango branco, respectivamente.
 		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
@@ -430,7 +430,7 @@ Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{small-l1-solution.png}
-	\caption{Soluções L1 obtidas para o modelo da fonte alvo com uma fonte interferente pequena. 
+	\caption{Soluções L1 obtidas para o modelo da fonte alvo com uma fonte não-alvo pequena. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 		Os valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L1 são representados pelo triângulo vermelho e pelo losango branco, respectivamente.
 		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
@@ -443,13 +443,13 @@ Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo
 	\label{fig:small_l1_result}
 \end{figure}
 \pagebreak
-\section{Modelo complexo com uma fonte interferente grande}
+\section{Modelo complexo com uma fonte não-alvo grande}
 \label{sec:target_source_with_large_interference}
 
-O mapa da Figura \ref{fig:thick_model}a representa a soma entre as anomalias de campo total produzidas pela fonte interferente pequena (Figura \ref{fig:thick_model}b), cuja forma é exibida nas Figuras \ref{fig:thick_model}c e \ref{fig:thick_model}d, e aquela produzida pela fonte alvo simulada (Figura \ref{fig:target_model}a).
-A fonte interferente possui profundidade do topo em $0$ m, profundidade da base em $500$ m, 
+O mapa da Figura \ref{fig:thick_model}a representa a soma entre as anomalias de campo total produzidas pela fonte não-alvo pequena (Figura \ref{fig:thick_model}b), cuja forma é exibida nas Figuras \ref{fig:thick_model}c e \ref{fig:thick_model}d, e aquela produzida pela fonte alvo simulada (Figura \ref{fig:target_model}a).
+A fonte não-alvo possui profundidade do topo em $0$ m, profundidade da base em $500$ m, 
 centro em $(x, y) = (500, 1500)$, ao lado do topo da fonte alvo, e o mesmo vetor magnetização total da fonte alvo.
-Neste caso, a fonte interferente estende consideravelmente a área positiva da anomalia RTP (Figura \ref{fig:thick_model_rtp}) em comparação com a da fonte alvo isolada (Figura \ref{fig:target_model_rtp}). Entretanto, ainda é possível identificar os limites laterais da fonte alvo e gerar a mesma aproximação inicial usada nos testes anteriores.
+Neste caso, a fonte não-alvo estende consideravelmente a área positiva da anomalia RTP (Figura \ref{fig:thick_model_rtp}) em comparação com a da fonte alvo isolada (Figura \ref{fig:target_model_rtp}). Entretanto, ainda é possível identificar os limites laterais da fonte alvo e gerar a mesma aproximação inicial usada nos testes anteriores.
 
 
 A Figura \ref{fig:thick_l2_result} mostra as soluções L2 obtidas pela inversão da anomalia de campo total na Figura \ref{fig:thick_model}a
@@ -459,27 +459,27 @@ $\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-7}$, e
 $\tilde{\alpha}_{5} = 10^{-7}$.
 Como podemos ver, a melhor solução L2 não recupera os valores da profundidade do topo $z_{0}$ e nem da intensidade de magnetização total $m_{0}$, assim como não recuperou a forma da fonte alvo.
 A estimativa da profundidade da base ($2010.1$ m) é muito distante da verdadeira ($6130$ m).
-Comparado ao valor verdadeiro, a profundidade do topo estimada $z_{0}$ está deslocada em direção à da fonte interferente.
-Nesse caso, a fonte interferente induz severamente ao erro da estimativa da geometria do corpo (Figura \ref{fig:thick_l2_result}d).
+Comparado ao valor verdadeiro, a profundidade do topo estimada $z_{0}$ está deslocada em direção à da fonte não-alvo.
+Nesse caso, a fonte não-alvo induz severamente ao erro da estimativa da geometria do corpo (Figura \ref{fig:thick_l2_result}d).
 
 A Figura \ref{fig:thick_l1_result} mostra as soluções L1 obtidas pela inversão da anomalia de campo total mostrada na Figura \ref{fig:thick_model}a
 com os seguintes pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}):
 $\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
 $\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-7}$, e 
 $\tilde{\alpha}_{5} = 10^{-7}$.
-A melhor solução L1 (Figura \ref{fig:thick_l1_result}) filtra parcialmente a anomalia de campo total interferente (Figura \ref{fig:thick_model}b) e recupera as principais feições da fonte alvo sintética, assim como a profundidade do topo $z_{0}$ e a intensidade de magnetização total $m_{0}$ verdadeiras.
-Essa solução estima a profundidade da base ($5840.9$ m) melhor do que a do teste anterior, no entanto, a solução é inferior à mostrada no teste anterior em filtrar a anomalia de campo total interferente e também em recuperar a geometria da fonte alvo.
-Apesar disso, ela é significativamente superior à melhor solução L2 (Figura \ref{fig:thick_l2_result}) obtida pela inversão do mesmo dado, uma vez que é muito menos afetada pela presença de uma grande fonte interferente.
+A melhor solução L1 (Figura \ref{fig:thick_l1_result}) filtra parcialmente a anomalia de campo total não-alvo (Figura \ref{fig:thick_model}b) e recupera as principais feições da fonte alvo sintética, assim como a profundidade do topo $z_{0}$ e a intensidade de magnetização total $m_{0}$ verdadeiras.
+Essa solução estima a profundidade da base ($5840.9$ m) melhor do que a do teste anterior, no entanto, a solução é inferior à mostrada no teste anterior em filtrar a anomalia de campo total não-alvo e também em recuperar a geometria da fonte alvo.
+Apesar disso, ela é significativamente superior à melhor solução L2 (Figura \ref{fig:thick_l2_result}) obtida pela inversão do mesmo dado, uma vez que é muito menos afetada pela presença de uma grande fonte não-alvo.
 \pagebreak
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{thick_model_data.png}
-	\caption{Modelo da fonte alvo com uma fonte interferente grande.
-		(a) Anomalia de campo total produzida pelas fontes alvo e interferente
-		(prismas azuis e amarelos nos painéis c e d). Os pontos pretos representam os pontos de observação. Os polígonos azul e amarelo são as projeções horizontais das fontes alvo e interferente, respectivamente.
-		(b) A anomalia de campo total produzida pela fonte interferente. 
-		(c) Visualização em perspectiva da fonte alvo (prismas azuis) e da fonte interferente (prisma amarelo). 
-		(d) Visualização em perspectiva aproximada das fontes alvo (prismas azuis) e interferente (prisma amarelo).
+	\caption{Modelo da fonte alvo com uma fonte não-alvo grande.
+		(a) Anomalia de campo total produzida pelas fontes alvo e não-alvo
+		(prismas azuis e amarelos nos painéis c e d). Os pontos pretos representam os pontos de observação. Os polígonos azul e amarelo são as projeções horizontais das fontes alvo e não-alvo, respectivamente.
+		(b) A anomalia de campo total produzida pela fonte não-alvo. 
+		(c) Visualização em perspectiva da fonte alvo (prismas azuis) e da fonte não-alvo (prisma amarelo). 
+		(d) Visualização em perspectiva aproximada das fontes alvo (prismas azuis) e não-alvo (prisma amarelo).
 	}
 	\label{fig:thick_model}
 \end{figure}
@@ -488,8 +488,8 @@ Apesar disso, ela é significativamente superior à melhor solução L2 (Figura 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{thick_rtp.png}
-	\caption{Anomalia RTP estimada produzida pela fonte alvo com uma fonte interferente grande. 
-		A anomalia RTP mostra valores predominantemente positivos logo acima das fontes alvo e interferente. Os pontos pretos representam os pontos de observação. As linhas azuis e vermelhas correspondem, respectivamente, às projeções horizontais da porção mais rasa da fonte alvo e da aproximação inicial utilizada nas inversões subsequentes (prismas vermelhos nas Figuras \ref{fig:thick_l2_result}c e 
+	\caption{Anomalia RTP estimada produzida pela fonte alvo com uma fonte não-alvo grande. 
+		A anomalia RTP mostra valores predominantemente positivos logo acima das fontes alvo e não-alvo. Os pontos pretos representam os pontos de observação. As linhas azuis e vermelhas correspondem, respectivamente, às projeções horizontais da porção mais rasa da fonte alvo e da aproximação inicial utilizada nas inversões subsequentes (prismas vermelhos nas Figuras \ref{fig:thick_l2_result}c e 
 		\ref{fig:thick_l1_result}c).
 	}
 	\label{fig:thick_model_rtp}
@@ -498,7 +498,7 @@ Apesar disso, ela é significativamente superior à melhor solução L2 (Figura 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{thick-l2-solution.png}
-	\caption{Soluções L2 obtidas para o modelo da fonte alvo com uma fonte interferente grande. 
+	\caption{Soluções L2 obtidas para o modelo da fonte alvo com uma fonte não-alvo grande. 
 	(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 	Os valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L2 são representados pelo triângulo vermelho e pelo losango branco, respectivamente.
 	(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
@@ -514,7 +514,7 @@ Apesar disso, ela é significativamente superior à melhor solução L2 (Figura 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{thick-l1-solution.png}
-	\caption{Soluções L1 obtidas para o modelo da fonte alvo com uma fonte interferente grande. 
+	\caption{Soluções L1 obtidas para o modelo da fonte alvo com uma fonte não-alvo grande. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 		Ambos valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L1 são representados pelo triângulo vermelho.
 		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
