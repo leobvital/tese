@@ -1,1 +1,28 @@
 \chapter{Conclusões}
+
+
+Do ponto de vista geofísico, os sinais produzidos por fontes não-alvo podem ser considerados um ruído geológico e devem ser filtrados dos sinais produzidos pelas fontes alvo que são de grande interesse em uma interpretação geológica.
+Aqui, uma fonte alvo é aquela que dá origem ao sinal geofísico mais forte, independentemente de ser um alvo geológico de alto valor econômico.
+Este trabalho apresentou uma inversão regularizada não linear com um ajuste robusto para inverter dados magnéticos a fim de estimar a forma 3D de uma fonte alvo na presença ou não de fontes não-alvo.
+Essa inversão não requer filtrar o sinal produzido pelas fontes não-alvo para isolar o sinal das fontes alvo.
+Isso é realizado por meio da minimização das funções dos vínculos definidas no espaço dos parâmetros e a função de desajuste de dados magnéticos definida no espaço dos dados como a norma-1 do vetor dos resíduos (a diferença entre os dados observados e preditos).
+As soluções estimadas são estabilizadas por funções de vínculos definidas pelas regularização de Tikhonov de ordem zero e de primeira ordem.
+A inversão magnética robusta assume a direção de magnetização total da fonte alvo e recupera: i) a intensidade de magnetização total, ii) as profundidades do topo e da base, e iii) as bordas das fatias de profundidade horizontal do corpo 3D.
+A solução recuperada é chamada de solução L1 e nós a comparamos com a solução L2 que minimiza as mesmas funções dos vínculos e a função de desajuste dos dados magnéticos definida pela norma-$2$ do vetor dos resíduos.
+
+Testes em dados sintéticos mostram que a fonte estimada (solução L1) recupera a forma 3D de uma fonte alvo, mesmo se haja ou não fontes não-alvo que produzem parte dos dados.
+Na presença de dados magnéticos interferentes e em comparação com a solução L2,
+a solução L1 mostra um melhor desempenho não apenas na recuperação da geometria da fonte alvo, mas também na estimativa dos valores de profundidade do topo e de intensidade de magnetização total mais próximos dos verdadeiros.
+Na ausência de dados magnéticos interferentes, as soluções L1 e L2 apresentam comportamentos semelhantes.
+Além disso, quando há ou não a influência de um campo regional intenso sobre os dados, ambas as soluções L1 e L2 foram bem sucedidas em estimar a geometria da fonte alvo que foi simulada como um corpo inclinado.
+
+Aplicações a dados aeromagnéticos de levantamentos sobre complexos alcalinos brasileiros permitiram inferir algumas características geológicas.
+A partir dos resultados, é possível afirmar que o complexo alcalino-carbonatítico Anitápolis, em SC, é composto de fontes não alvo e não-alvo, que produzem anomalias magnéticas de fraca interferência.
+As soluções L1 e L2 produzem estimativas semelhantes no complexo Anitápolis, as quais sugerem a presença de fontes não-alvo pequenas e rasas.
+Em relação à fonte alvo do complexo Anitápolis, ambas as soluções L1 e L2 mostram uma intrusão mergulhando para noroeste que concorda com um lineamento tectônico conhecido na área.
+No caso do complexo alcalino de Diorama, em GO, é possível afirmar ele é composto de fontes alvo e não-alvo que produzem anomalias magnéticas de interferência intermediária.
+No entanto, as fontes não-alvo do complexo de Diorama não devem ser pequenas porque as soluções L1 e L2 não produzem estimativas semelhantes.
+A fonte-alvo do complexo Diorama mostra uma forma com variação de profundidade que parece ser controlada por uma falha conhecida com tendência a nordeste.
+
+Numa perspectiva futura, um novo desafio seria generalizar a inversão apresentada para estimar múltiplas fontes simultaneamente.
+Além disso, essa generalização pode ser acompanhada pela inversão conjunta de diversos dados, como dados magnéticos, dados de gravidade e dados de gradiometria gravimétrica.
