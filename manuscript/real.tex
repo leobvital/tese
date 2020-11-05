@@ -42,6 +42,59 @@ Essa orientação é consistente com a proposta por \citet{horbach_marimon1980} 
 Finalmente, o topo da solução L1 é mais profundo do que o da solução L2, 
 o que sugere a possível presença de uma pequena fonte interferente rasa.
 
+\pagebreak
+\begin{figure}[!htb]
+	\includegraphics[width=\textwidth]{anitapolis_data.png}
+	\caption{Aplicação aos dados do complexo de Anitápolis. 
+		(a) Anomalia de campo total observada.
+		(b) Polinômio de primeira ordem que representa o campo regional.
+		(c) e (d) Altura geométrica dos pontos de observação e topografia,
+		ambas referenciadas ao elipsoide WGS84. Por simplicidade, foi removida uma constante de $800$ m de seus valores. As coordenadas UTM estão referenciadas ao meridiano central $51^{\circ}$. Os pontos pretos representam os pontos observados. Apenas os dados delimitados pelo retângulo rosa foram usados para a inversão. 
+	}
+	\label{fig:anitapolis_data}
+\end{figure}
+\pagebreak
+\begin{figure}[!htb]
+	\includegraphics[width=\textwidth]{anitapolis_rtp.png}
+	\caption{Aplicação aos dados do complexo de Anitápolis. 
+		(a) e (b) Anomalias residual e RTP sobre a área de estudo definida pelo retângulo rosa na Figura \ref{fig:anitapolis_data}.
+		A linha vermelha representa a projeção horizontal das aproximações iniciais usadas nas inversões subsequentes (prismas vermelhos nas Figuras 
+		\ref{fig:anitapolis_l2_result}c e \ref{fig:anitapolis_l1_result}c).
+	}
+	\label{fig:anitapolis_rtp_residual}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[!htb]
+	\includegraphics[width=\textwidth]{anitapolis-l2-solution.png}
+	\caption{Soluções L2 obtidas para o complexo de Anitápolis. 
+		(a) Mapa discreto da função objetivo produzida pelos modelos obtidos a partir da varredura de valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
+		O losango branco representa os valores de $m_{0}$ e $z_{0})$ que definem a melhor solução L2.
+		(b) Resíduos entre a anomalia de campo total residual (Fig. \ref{fig:anitapolis_rtp_residual}a) e os dados preditos (não exibidos) produzidos pela melhor solução L2 (prismas vermelhos no painel d). 
+		O histograma dos resíduos inserido em (b) mostra a curva
+		Gaussiana ajustada (linha tracejada). 
+		(c) e (d) Visualizações em perspectiva da aproximação inicial e da melhor solução, respectivamente.
+	}
+	\label{fig:anitapolis_l2_result}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[!htb]
+	\includegraphics[width=\textwidth]{anitapolis-l1-solution.png}
+	\caption{Soluções L1 obtidas para o complexo de Anitápolis. 
+		(a) Mapa discreto da função objetivo produzida pelos modelos obtidos a partir da varredura de valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
+		O losango branco representa os valores de $m_{0}$ e $z_{0})$ que definem a melhor solução L1.
+		(b) Resíduos entre a anomalia de campo total residual (Fig. \ref{fig:anitapolis_rtp_residual}a) e os dados preditos (não exibidos) produzidos pela melhor solução L1 (prismas vermelhos no painel d). 
+		O histograma dos resíduos inserido em (b) mostra a curva
+		Laplaciana ajustada (linha tracejada). 
+		(c) e (d) Visualizações em perspectiva da aproximação inicial e da melhor solução, respectivamente.
+	}
+	\label{fig:anitapolis_l1_result}
+\end{figure}
+\pagebreak
+
 
 \section{Complexo de Diorama}
 \label{subsec:diorama_complex}
@@ -93,62 +146,9 @@ Por outro lado, a Figura \ref{fig:diorama_l1_result} mostra uma solução L1 com
 Esses resultados sugerem a presença de fontes interferentes rasas localizadas próximas ao topo do complexo de Diorama.
 
 
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{anitapolis_data.png}
-	\caption{Aplicação aos dados do complexo de Anitápolis. 
-		(a) Anomalia de campo total observada.
-		(b) Polinômio de primeira ordem que representa o campo regional.
-		(c) e (d) Altura geométrica dos pontos de observação e topografia,
-		ambas referenciadas ao elipsoide WGS84. Por simplicidade, foi removida uma constante de $800$ m de seus valores. As coordenadas UTM estão referenciadas ao meridiano central $51^{\circ}$. Os pontos pretos representam os pontos observados. Apenas os dados delimitados pelo retângulo rosa foram usados para a inversão. 
-	}
-	\label{fig:anitapolis_data}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{anitapolis_rtp.png}
-	\caption{Aplicação aos dados do complexo de Anitápolis. 
-		(a) e (b) Anomalias residual e RTP sobre a área de estudo definida pelo retângulo rosa na Figura \ref{fig:anitapolis_data}.
-		A linha vermelha representa a projeção horizontal das aproximações iniciais usadas nas inversões subsequentes (prismas vermelhos nas Figuras 
-		\ref{fig:anitapolis_l2_result}c e \ref{fig:anitapolis_l1_result}c).
-	}
-	\label{fig:anitapolis_rtp_residual}
-\end{figure}
-
-
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{anitapolis-l2-solution.png}
-	\caption{Soluções L2 obtidas para o complexo de Anitápolis. 
-		(a) Mapa discreto da função objetivo produzida pelos modelos obtidos a partir da varredura de valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
-		O losango branco representa os valores de $m_{0}$ e $z_{0})$ que definem a melhor solução L2.
-		(b) Resíduos entre a anomalia de campo total residual (Fig. \ref{fig:anitapolis_rtp_residual}a) e os dados preditos (não exibidos) produzidos pela melhor solução L2 (prismas vermelhos no painel d). 
-		O histograma dos resíduos inserido em (b) mostra a curva
-		Gaussiana ajustada (linha tracejada). 
-		(c) e (d) Visualizações em perspectiva da aproximação inicial e da melhor solução, respectivamente.
-	}
-	\label{fig:anitapolis_l2_result}
-\end{figure}
-
-
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{anitapolis-l1-solution.png}
-	\caption{Soluções L1 obtidas para o complexo de Anitápolis. 
-		(a) Mapa discreto da função objetivo produzida pelos modelos obtidos a partir da varredura de valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
-		O losango branco representa os valores de $m_{0}$ e $z_{0})$ que definem a melhor solução L1.
-		(b) Resíduos entre a anomalia de campo total residual (Fig. \ref{fig:anitapolis_rtp_residual}a) e os dados preditos (não exibidos) produzidos pela melhor solução L1 (prismas vermelhos no painel d). 
-		O histograma dos resíduos inserido em (b) mostra a curva
-		Laplaciana ajustada (linha tracejada). 
-		(c) e (d) Visualizações em perspectiva da aproximação inicial e da melhor solução, respectivamente.
-	}
-	\label{fig:anitapolis_l1_result}
-\end{figure}
-
-
 %% Application to Diorama data
 
-\begin{figure}
+\begin{figure}[!htb]
 	\includegraphics[width=\textwidth]{diorama_data.png}
 	\caption{Aplicação aos dados do complexo de Diorama. 
 		(a) Anomalia de campo total observada.
@@ -160,7 +160,7 @@ Esses resultados sugerem a presença de fontes interferentes rasas localizadas p
 \end{figure}
 \pagebreak
 
-\begin{figure}
+\begin{figure}[!htb]
 	\includegraphics[width=\textwidth]{diorama_rtp.png}
 	\caption{Aplicação aos dados do complexo de Diorama. 
 		(a) e (b) Anomalias residual e RTP sobre a área de estudo definida pelo retângulo rosa na Figura \ref{fig:diorama_data}.
@@ -170,7 +170,7 @@ Esses resultados sugerem a presença de fontes interferentes rasas localizadas p
 \end{figure}
 
 \pagebreak
-\begin{figure}
+\begin{figure}[!htb]
 	\includegraphics[width=\textwidth]{diorama-l2-solution.png}
 	\caption{Soluções L2 obtidas para o complexo de Diorama. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos obtidos a partir da varredura de valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
@@ -184,7 +184,7 @@ Esses resultados sugerem a presença de fontes interferentes rasas localizadas p
 \end{figure}
 
 \pagebreak
-\begin{figure}
+\begin{figure}[!htb]
 	\includegraphics[width=\textwidth]{diorama-l1-solution.png}
 	\caption{Soluções L1 obtidas para o complexo de Diorama. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos obtidos a partir da varredura de valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
