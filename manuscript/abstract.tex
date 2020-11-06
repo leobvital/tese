@@ -1,9 +1,10 @@
 \begin{foreignabstract}
 
-A geologic scenario generally includes multiple geologic bodies producing interfering geophysical signals. 
+\noindent A geologic scenario generally includes multiple geologic bodies producing interfering geophysical signals.
+Uma fonte alvo é aquela que dá origem ao sinal geofísico mais forte, independentemente de ser um alvo geológico de alto valor econômico.
 The signals yielded by non-targeted sources can be considered a geologic noise and should be suppressed from signals yielded by the targeted sources that give rise to the strongest effect. 
 We have presented a robust method for inverting magnetic data to estimate the 3-D shape of a targeted source in the presence of non-targeted sources without filtering out the interfering signals.
-By assuming the knowledge of the total-magnetization direction of the targeted source, our method retrieves the total-magnetization intensity, the depths to the top and to the bottom, and the edges of horizontal depth slices of the 3-D body.
+By assuming the knowledge of the total-magnetization direction of the targeted source, our method retrieves the total-magnetization intensity, the position, and the shape of a 3-D source.
 We approximate the targeted source by an 
 ensemble of vertically juxtaposed right prisms, all of them with the same 
 total-magnetization vector and depth extent. The horizontal cross-section 
@@ -12,14 +13,14 @@ equally spaced from $0^{\circ}$ to $360^{\circ}$. The position of these
 vertices, the horizontal location of each prism, and the depth extent of all prisms 
 are the parameters to be estimated by solving a constrained nonlinear inverse problem 
 of minimizing a goal function. 
-This is achieved by means of a non-linear regularized inversion with a robust data fitting which consists of minimizing constrained model functions and the data-misfit function defined as the 1-norm of the data residuals (L1 solution).
+This is achieved by means of a non-linear regularized inversion in which the data-misfit function is defined by the 1-norm of the data residuals (L1 solution).
 Tests on synthetic magnetic data show the better performance of the L1 solution 
-when compared with the L2 solution (the 2-norm of the data residuals) in retrieving the  3-D shape of a targeted source in the presence of non-targeted sources.
+when compared with the L2 solution (obtained by using the 2-norm squared of the data residuals) in retrieving the  3-D shape of a targeted source in the presence of non-targeted sources.
 In the lack of interfering data, the L1 and L2 solutions are similar.
-Furthermore, the application on data produced by an inclined source with or without the influence of strong regional field showed that both L1 and L2 solutions succeeded in estimating the shape of the target source.
-Além disso, o método foi testado em dados produzidos por uma fonte inclinada com e sem a presença de um campo regional intenso e ambas as soluções L1 e L2 foram bem sucedidas em estimar a geometria da fonte alvo.
-Tests on real magnetic data over Brazilian alkaline complexes suggest that both the Anit{\'a}polis and Diorama complexes are composed of non-targeted and targeted sources whose estimated targeted sources seem to be controlled by faults.
-Differently from the Diorama complex, the similarity of L1 and L2 solutions in the Anit{\'a}polis complex indicates small non-targeted sources. 
+Furthermore, the application on data produced by an inclined source with or without the influence of strong regional field showed that both L1 and L2 solutions succeeded in estimating the shape of the targeted source.
+Applications to real magnetic data on Brazilian alkaline complexes suggest that both the Anitápolis complex, southern Brazil, and the Diorama complex, central Brazil, are formed by non-targeted and targeted sources.
+The geometry of the solutions suggests that the complexes are controlled by trending-faults compatible with information available in the literature.
+Unlike the L1 and L2 solutions obtained for the Diorama complex, which suggest the presence of relatively large non-targeted sources, those obtained for the Anitápolis complex indicate the presence of small non-targeted sources.
 
 \end{foreignabstract}
 

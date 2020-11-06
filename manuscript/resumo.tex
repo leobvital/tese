@@ -1,18 +1,19 @@
 \begin{abstract}
 
-Um cenário geológico geralmente inclui múltiplos corpos que produzem sinais geofísicos interferentes.
+\noindent Um cenário geológico geralmente inclui múltiplos corpos que produzem sinais geofísicos interferentes.
 Os sinais produzidos por fontes não-alvo podem ser considerados ruído geológico e devem ser suprimidos dos sinais gerados pelas fontes alvo que originam o efeito mais forte.
-Este trabalho apresenta um método robusto para a inversão de dados magnéticos para estimar a forma e a posição de uma fonte alvo 3D na presença ou não de fontes não-alvo sem a filtragem de seus sinais.
-Ao assumir o conhecimento da direção de magnetização total da fonte alvo, este método recupera a intensidade de magnetização total, as profundidades do topo e da base e as bordas das fatias horizontais do corpo 3D.
+Este trabalho apresenta um método robusto de inversão de dados magnéticos para estimar a forma e a posição de uma fonte alvo 3D na presença ou não de fontes não-alvo sem a filtragem de seus sinais.
+Ao assumir o conhecimento da direção de magnetização total da fonte alvo, este método recupera a intensidade de magnetização total, a posição e a forma do corpo 3D.
 O método aproxima a fonte alvo por um conjunto de prismas retos verticalmente justapostos, todos os prismas possuem o mesmo vetor magnetização total e mesma espessura.
 A seção horizontal de cada prisma é definida por um polígono que possui um número fixo de vértices igualmente espaçados de $0^{\circ}$ a $360^{\circ}$.
 A posição dos vértices, a localização horizontal de cada prisma e a espessura de todos os prismas são os parâmetros a serem estimados durante a minimização da função objetivo.
-Esses parâmetros são obtidos por meio de uma inversão não linear regularizada com um ajuste robusto dos dados que consiste em minimizar as funções dos vínculos e a função desajuste definida como a norma-1 dos resíduos (solução L1).
-Testes com dados magnéticos sintéticos mostram uma melhor performance da solução L1 quando comparada à solução L2 (norma-2 dos resíduos) em recuperar a forma da fonte alvo 3D na presença de fontes não-alvo.
+Esses parâmetros são obtidos por meio de uma inversão não linear regularizada em que a função desajuste é definida pela norma-1 dos resíduos (solução L1).
+Testes com dados magnéticos sintéticos mostram uma melhor performance da solução L1 quando comparada à solução L2 (obtida usando o quadrado da norma-2 dos resíduos) em recuperar a forma da fonte alvo 3D na presença de fontes não-alvo.
 Na ausência de sinais interferentes, as soluções L1 e L2 mostram um comportamento similar para situações geológicas simples e complexas.
 Além disso, o método foi aplicado a um conjunto de dados produzidos por uma fonte inclinada com e sem a influência de um campo regional intenso e ambas as soluções L1 e L2 foram bem sucedidas em estimar a geometria da fonte alvo.
-Aplicações a dados magnéticos reais sobre complexos alcalinos do Brasil sugerem que tanto o complexo de Anitápolis, SC, quanto o complexo de Diorama, GO, são compostos de fontes não alvo e alvo, cujos modelos estimados parecem ser controlados por falhas.
-Diferentemente do complexo de Diorama, a similaridade entre as soluções L1 e L2 no complexo de Anitápolis indicam a presença de pequenas fontes não-alvo.
+Aplicações a dados magnéticos reais sobre complexos alcalinos do Brasil sugerem que tanto o complexo de Anitápolis, SC, quanto o complexo de Diorama, GO, são formados por fontes não alvo e alvo.
+A geometria das soluções sugere que os complexos são controlados por falhas compatíveis com informações disponíveis na literatura.
+Diferentemente das soluções L1 e L2 obtidas para o complexo de Diorama, que sugerem a presença de fontes não-alvo relativamente grandes, aquelas obtidas para o complexo de Anitápolis indicam a presença de fontes não-alvo pequenas.
 
 \end{abstract}
 
