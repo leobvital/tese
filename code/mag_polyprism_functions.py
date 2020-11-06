@@ -2071,7 +2071,7 @@ def plot_inclined_model_data(x, y, obs, alt, initial, model,
     mpl.polygon(initial, '-r', xy2ne=True)
     mpl.m2km()
     clb.ax.tick_params(labelsize=6)
-    plt.text(-7000, 3800, '(a)', fontsize= 10)
+    plt.text(np.min(y)-3000, np.max(x)+1000, '(a)', fontsize= 10)
 
     #==================================================================
     # plot elevation
@@ -2085,7 +2085,7 @@ def plot_inclined_model_data(x, y, obs, alt, initial, model,
     mpl.m2km()
     clb.ax.tick_params(labelsize=6)
     plt.plot(y, x, 'k.', markersize=.1)
-    plt.text(-7000, 3800, '(b)', fontsize= 10)
+    plt.text(np.min(y)-3000, np.max(x)+1000, '(b)', fontsize= 10)
 
     #=====================================================================
     # true model
