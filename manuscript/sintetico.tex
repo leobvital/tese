@@ -2,25 +2,25 @@
 
 \section{Modelo simples}
 
-Para iniciar os testes do método, foi simulado um corpo geológico simples imerso em meio não magnético (prismas azuis nas Figuras 
+Foi simulado um corpo geológico simples imerso em meio não magnético (prismas azuis nas Figuras 
 \ref{fig:simple_model}, \ref{fig:simple_l2_result} e \ref{fig:simple_l1_result})
 que representa a fonte alvo 3D com profundidade do topo em $0$ m, profundidade da base em $1600$ m, centro em $ (x_0, y_0) = (0, 0) $ e um vetor de magnetização total constante com inclinação $-50^{\circ}$, declinação $9^{\circ}$, e intensidade $9$ A/m.
 Esse modelo é composto de $ 8 $ prismas com $ 20 $ vértices cada e raios que diminuem com a profundidade: ($ 1920 $ m, $ 1760 $ m, $ 1600 $ m, $ 144 $ m, $ 1280 $ m, $ 1120 $ m, $ 960 $ m, $ 800 $ m).
-Recuperar a geometria desse corpo simulado é uma tarefa relativamente simples para este método porque ele possui um alinhamento vertical e suas fatias horizontais mostram uma forma circular que diminui de tamanho ao longo da profundidade, assim, é possível notar que o corpo satisfaz perfeitamente quase todos os vínculos impostos neste método.
-A anomalia de campo total (Figura \ref{fig:simple_model}a) produzida pela fonte alvo foi calculada em $1939$ pontos localizados sobre uma malha irregular com linhas que simulam um levantamento aéreo (Figura \ref{fig:simple_model}b). Esses dados sintéticos foram contaminados com um ruído Gaussiano pseudo-aleatório de média zero e desvio padrão igual a $5$ nT.
+Recuperar a geometria desse corpo é uma tarefa relativamente simples para este método porque ele possui um alinhamento vertical e suas fatias horizontais mostram uma forma circular que diminui de tamanho ao longo da profundidade, assim, é possível notar que o corpo satisfaz perfeitamente quase todos os vínculos impostos neste método.
+A anomalia de campo total (Figura \ref{fig:simple_model}a) produzida pela fonte alvo foi calculada em $1939$ pontos localizados sobre uma malha irregular com linhas que simulam um levantamento aéreo (Figura \ref{fig:simple_model}b) no plano $ z=-150 $ m. Esses dados sintéticos foram contaminados com um ruído Gaussiano pseudo-aleatório de média zero e desvio padrão igual a $5$ nT.
 O método foi aplicado para inverter esse dado contaminado com ruído e obter soluções L2 e L1.
 Para cada tipo de solução, foram geradas $36$ soluções L2 e $36$ soluções L1, 
 todas elas foram obtidas com a mesma malha de varredura $6 \times 6$ de profundidades do topo $z_{0}$ e intensidade de magnetização total $m_{0}$.
 A melhor solução L2 e L1 são definidas como aquelas que produzem o menor valor da função objetivo para cada caso.
 
-A Figura \ref{fig:simple_model_rtp} mostra a anomalia RTP obtida a partir da anomalia de campo total contaminada com ruído (Figura \ref{fig:simple_model}a) e 
+A Figura \ref{fig:simple_model_rtp} mostra a anomalia RTP obtida via camada equivalente a partir da anomalia de campo total contaminada com ruído (Figura \ref{fig:simple_model}a) e 
 a projeção horizontal das aproximações iniciais $\hat{\mathbf{p}}_{(0)}$ 
 usadas nas sucessivas inversões (Figuras \ref{fig:simple_l2_result} e 
 \ref{fig:simple_l1_result}).
 As aproximações iniciais são compostas de $ L= 5$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=350 $ m e centro em $ (x_0, y_0) = (0, 0) $.
 A Figura \ref{fig:simple_l2_result}a mostra que a melhor solução L2 foi obtida através dos valores verdadeiros da profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:simple_l2_result}b), possui uma profundidade da base em $1531.1$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:simple_l2_result}d).
 A Figura \ref{fig:simple_l1_result} mostra um resultado similar, porém com um ajuste dos dados e geometria inferiores aos da solução L2. A profundidade da base foi estimada em $1756.9$ m.
-Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a solução L2 foi superior à solução L1.
+Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a solução L2 foi ligeiramente superior à solução L1.
 Todas as soluções L2 e L1 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
 $\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
 $\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-8}$, e 
@@ -88,7 +88,7 @@ $\tilde{\alpha}_{5} = 10^{-4}$.
 
 \section{Modelo inclinado}
 
-Para verificar se o método é capaz de recuperar um corpo que possui um mergulho íngreme, foi simulado um corpo geológico inclinado imerso em meio não magnético (prismas azuis nas Figuras 
+Para verificar se o método é capaz de recuperar um corpo que possui um mergulho pouco acentuado, foi simulado um corpo geológico inclinado imerso em meio não magnético (prismas azuis nas Figuras 
 \ref{fig:inclined_model}, \ref{fig:inclined_l2_result} e \ref{fig:inclined_l1_result})
 que representa a fonte alvo 3D com profundidade do topo em $0$ m, profundidade da base em $3040$ m, centro em $ (x_0, y_0) = (-300, 600) $ e um vetor de magnetização total constante com inclinação $-50^{\circ}$, declinação $9^{\circ}$, e intensidade $9$ A/m.
 Esse modelo é composto de $ 8 $ prismas com $ 20 $ vértices.
@@ -186,7 +186,7 @@ Para cada tipo de solução, foram geradas $36$ soluções L2 e $36$ soluções 
 todas elas foram obtidas com a mesma malha de varredura $6 \times 6$ de profundidades do topo $z_{0}$ e intensidade de magnetização total $m_{0}$.
 A melhor solução L2 e L1 são definidas como aquelas que produzem o menor valor da função objetivo para cada caso.
 
-A Figura \ref{fig:great_model_rtp}c mostra a anomalia RTP obtida a partir da anomalia de campo total residual (Figura \ref{fig:great_model}a) e 
+A Figura \ref{fig:great_model_rtp}c mostra a anomalia RTP obtida a partir da anomalia de campo total residual (Figura \ref{fig:great_model_rtp}a) e 
 a projeção horizontal das aproximações iniciais $\hat{\mathbf{p}}_{(0)}$ 
 usadas nas sucessivas inversões (Figuras \ref{fig:great_l2_result} e 
 \ref{fig:great_l1_result}).
@@ -220,7 +220,7 @@ $\tilde{\alpha}_{5} = 10^{-5}$.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{great_rtp.png}
-	\caption{Aplicação aos dados do complexo de Anitápolis. 
+	\caption{Aplicação aos dados do modelo inclinado com regional. 
 		(a) Anomalia de campo total residual contida no retângulo rosa na Figura \ref{fig:great_data}c. (b) Resíduos obtidos pela diferença entre as anomalias de campo total gerada no teste anterior (Figrura \ref{fig:inclined_model}a) e a residual (painel a). (c) Anomalia RTP sobre a área de estudo. Ambos painéis são limitados pelo retângulos rosa na Figura \ref{fig:great_data}. As linhas azuis e vermelhas correspondem, respectivamente, às projeções horizontais da porção mais rasa da fonte alvo e da aproximação inicial utilizada nas inversões subsequentes (prismas vermelhos nas Figuras \ref{fig:great_l2_result}c e 
 		\ref{fig:great_l1_result}c).
 	}

@@ -2,10 +2,10 @@
 
 \section{Problema direto}
 
-Seja $\mathbf{d}^{o}\equiv \tilde{\boldsymbol{\Delta}\mathbf{T}}$ o vetor de dados observados, cujo $i$-ésimo elemento $d^{o}_{i}$, $i = 1, \dots, N$, é a anomalia de campo total observada no ponto $(x_{i}, y_{i}, z_{i})$.
-Considere que as anomalias de campo total produzidas por pequenas fontes magnéticas não-alvo distorcem localmente a anomalia causada por uma fonte alvo 3D.
-Por simplicidade, podemos assumir que o campo geomagnético principal é constante na área de estudo, com declinação $ D_ {0} $ e inclinação $ I_ {0} $.
-Este trabalho segue a mesma abordagem apresentada por \cite{oliveirajr_etal2011}, \cite{oliveirajr_barbosa2013}, e \cite{vital_etal2019} para definir o modelo interpretativo que aproxima a geometria da fonte alvo.
+Seja $\mathbf{d}^{o}$ o vetor de dados observados, cujo $i$-ésimo elemento $d^{o}_{i}$, $i = 1, \dots, N$, é a anomalia de campo total observada (Equação \ref{eq:tfanomaly-general}) no ponto $(x_{i}, y_{i}, z_{i})$.
+Considere que as anomalias de campo total produzidas por pequenas fontes magnéticas não-alvo podem distorcer localmente a anomalia causada por uma fonte alvo 3D.
+Adicionalmente considere que o campo geomagnético principal é constante na área de estudo, com declinação $ D_ {0} $ e inclinação $ I_ {0} $.
+Este trabalho segue a mesma abordagem apresentada por \cite{oliveirajr_etal2011} e \cite{oliveirajr_barbosa2013} para definir o modelo interpretativo que aproxima a geometria da fonte alvo.
 Esse modelo é formado por um conjunto de $L$ prismas retos verticalmente justapostos tendo a mesma espessura $dz$ e o mesmo vetor de magnetização total com intensidade $m_{0}$, declinação $D$ e inclinação $I$ (Figura \ref{fig:schematic}).
 
 A profundidade do topo do prisma mais raso é definida por $z_{0}$.
@@ -48,15 +48,16 @@ Fatiando a Terra \citep{uieda-etal2013}.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.45]{pk.png}
-	\caption{Representação esquemática do $k$-ésimo prisma $P^k$, $k=1,\dots, L$, que compõe o modelo interpretativo (Figura 1b). Este prisma tem espessura dz, profundidade do topo $z_1^k$ e seção horizontal descrita por um polígono com $V$ vértices igualmente espaçados entre $0^{\circ}$ e $360^{\circ}$. A posição dos vértices é descrita em termos das coordenadas polares $r_j^k$ e $\theta_j$, $j=1,\dots, V$, em relação a uma origem $O^k$ com coordenadas Cartesianas $(x_0^k, y_0^k)$}.
+	\caption{Representação esquemática do $k$-ésimo prisma $P^k$, $k=1,\dots, L$, que compõe o modelo interpretativo (Figura 1b). Este prisma tem espessura dz, profundidade do topo $z_1^k$ e seção horizontal descrita por um polígono com $V$ vértices igualmente espaçados entre $0^{\circ}$ e $360^{\circ}$.
+}
 	\label{fig:pk}
 \end{figure}
 \pagebreak
 
 \section{Problema inverso}
 
-Este trabalho propõe um método robusto de inversão magnética para estimar a posição e a forma de uma fonte magnética alvo 3D que podem ou não estar na presença de fontes não-alvo.
-A formulação do problema consiste em um problema de otimização não-linear vinculado para estimar um vetor de parâmetros $\mathbf{p}$ (Equação \ref{eq:p-vector}) minimizando a função objetivo
+Este trabalho propõe um método robusto de inversão magnética para estimar a posição e a forma de uma fonte magnética alvo 3D, que pode ou não estar na presença de fontes não-alvo.
+O método foi formulado como um problema de otimização não-linear vinculado para estimar um vetor de parâmetros $\mathbf{p}$ (Equação \ref{eq:p-vector}) minimizando a função objetivo
 \begin{equation}
 \Gamma (\mathbf{p}) = \phi (\mathbf{p}) + \sum\limits^{5}_{\ell =1} \alpha_{\ell} \, \varphi_{\ell}(\mathbf{p}) \: ,
 \label{eq:gamma}
@@ -68,8 +69,8 @@ p_{l}^{min} < p_{l} < p_{l}^{max}, \quad l = 1, \dots, M \: ,
 \end{equation}
 em que $p_{l}^{min}$ e $p_{l}^{max}$ definem, respectivamente, os limites inferior e superior para o $l$-ésimo elemento $p_{l}$ do vetor de parâmetros $\mathbf{p}$,
 $\varphi_{\ell}(\mathbf{p})$ são as funções que representam os vínculos que impõem informação a priori sobre a forma da estimativa do corpo 3D, e $\phi (\mathbf{p})$ 
-é a função desajuste dos dados ou \textit{data-misfit} em inglês.
-Podemos definir $\phi (\mathbf{p})$ através de duas abordagens diferentes com o propósito de comparar os resultados. Na primeira abordagem, $\phi (\mathbf{p})$ é definida de acordo com o trabalho de \citet{vital_etal2019} como
+é a função desajuste dos dados -- ou \textit{data-misfit} em inglês.
+Podemos definir $\phi (\mathbf{p})$ através de duas abordagens diferentes com o propósito de comparar os resultados. Na primeira abordagem, $\phi (\mathbf{p})$ como
 \begin{equation}\label{eq:L2_misfit}
 \phi (\mathbf{p}) = \frac{1}{N} 
 \| \mathbf{d}^{o} - \mathbf{d}(\mathbf{p}) \|_{2}^{2} \quad ,
@@ -82,17 +83,17 @@ Alternativamente, podemos definir a função \textit{data-misfit} como
 \end{equation}
 que representa a norma-1 \citep[por exemplo,][p. 331]{aster_etal2019}
 dos resíduos entre os vetores de dados observados $\mathbf{d}^{o}$ e preditos $\mathbf{d}(\mathbf{p})$.
-É de amplo conhecimento que o vetor de parâmetros que minimiza a norma-2 quadrática (Equação \ref{eq:L2_misfit}) pode ser muito afetado negativamente pela presença de pontos espúrios ou \textit{outliers} e também pelo efeito causado por fontes não-alvo \cite[por exemplo,][]{claerbout_muir1973, 
+É de amplo conhecimento que o vetor de parâmetros que minimiza a norma-2 quadrática (Equação \ref{eq:L2_misfit}) pode ser muito afetado negativamente pela presença de \textit{outliers} e também pelo efeito causado por fontes não-alvo \cite[por exemplo,][]{claerbout_muir1973, 
 	silva_hohmann1983, scales_gersztenkorn1988, silva_cutrim1989, farquharson_oldenburg1998, 
 	uieda_barbosa2012, oliveirajr_etal2015, aster_etal2019}.
 Através da estimativa do vetor de parâmetros obtida pela minimização da norma-1 (Equação \ref{eq:L1_misfit}), espera-se que a posição e a forma estimadas do corpo 3D durante a inversão ajustem a anomalia de campo total produzida pela fonte alvo e ignorem a causada pelas fontes não-alvo.
 
 Na Equação \ref{eq:gamma}, $\alpha_{\ell}$, $\ell = 1, \dots, 5$, são escalares positivos que definem o peso relativo das funções dos vínculos $\varphi_{\ell}(\mathbf{p})$.
-Essas funções são definidas seguindo a mesma abordagem utilizada por \citet{oliveirajr_etal2011}, \citet{oliveirajr_barbosa2013}, and \citet{vital_etal2019}.
+Essas funções são definidas seguindo a mesma abordagem utilizada por \citet{oliveirajr_etal2011} e \citet{oliveirajr_barbosa2013}.
 
 \section{Vínculos}\label{sec:constraints}
 
-As funções dos vínculos $\varphi_{\ell}(\mathbf{p})$ (Equação \ref{eq:gamma}), $\ell = 1, \dots, 5$, utilizadas aqui para obter soluções estáveis e introduzir informação a priori sobre o corpo estimado, foram organizadas em dois grupos.
+As funções dos vínculos $\varphi_{\ell}(\mathbf{p})$ (Equação \ref{eq:gamma}), $\ell = 1, \dots, 5$, utilizadas aqui para obter soluções estáveis e introduzir informação a priori sobre o corpo estimado, foram organizadas em dois grupos para um melhor entendimento.
 
 \subsection{Vínculos de suavidade}
 
@@ -121,10 +122,10 @@ em que
 \mathbf{I}_{L} \otimes 
 \begin{bmatrix}
 \left( \mathbf{I}_{V} - \mathbf{D}_{V}^\mathsf{T} \right) & \mathbf{0}_{V \times 2} \\
-\end{bmatrix}_{(L-1)V \times M} \quad ,
+\end{bmatrix}_{LV \times M} \quad ,
 \label{eq:S1-matrix}
 \end{equation}
-$\mathbf{I}_{L}$ é a matriz identidade de ordem $L$, "$\otimes$" indica o produto de Kronecker \cite{}\cite[][ p. 243]{horn_johnson1991}, $\mathbf{0}_{V \times 2}$ é uma matriz de ordem $V \times 2$ com elementos nulos, 
+$\mathbf{I}_{L}$ é a matriz identidade de ordem $L$, ``$\otimes$" indica o produto de Kronecker \cite{}\cite[][ p. 243]{horn_johnson1991}, $\mathbf{0}_{V \times 2}$ é uma matriz de ordem $V \times 2$ com elementos nulos, 
 $\mathbf{I}_{V}$ é a matriz identidade de ordem $V$ e $\mathbf{D}_{V}^\mathsf{T}$ é a matriz de permutação superior de ordem $V$ \cite[][ p. 20]{golub-vanloan2013}. O vetor gradiente e a matriz Hessiana da função $\varphi_{1}(\mathbf{p})$ (Equação \ref{eq:phi1}) são dados por:
 \begin{equation}\label{eq:phi1_gh}
 \begin{split}
@@ -304,7 +305,7 @@ O vetor gradiente e a matriz Hessiana da função $\varphi_{5}(\mathbf{p})$ (Equ
 
 \section{Algoritmo de inversão}
 
-Dada um profundidade do topo do prisma mais raso $z_{0}$, a intensidade de magnetização total $m_{0}$ de todos os prismas, uma aproximação inicial $\hat{\mathbf{p}}_{(0)}$ para o vetor de parâmetros $\mathbf{p}$ (Equação \ref{eq:p-vector}), e os limites 
+Dada uma profundidade do topo do prisma mais raso $z_{0}$, a intensidade de magnetização total $m_{0}$ de todos os prismas, uma aproximação inicial $\hat{\mathbf{p}}_{(0)}$ para o vetor de parâmetros $\mathbf{p}$ (Equação \ref{eq:p-vector}), e os limites 
 $p_{l}^{min}$ e $p_{l}^{max}$ (Equação \ref{eq:inequality-constraints}), o método de Levenberg-Marquardt \cite[por exemplo, ][ p. 624]{seber_wild2003} é utilizado para estimar o vetor de parâmetros $\hat{\mathbf{p}}^{\ast}$ que minimiza a função objetivo $\Gamma (\mathbf{p})$ (Equação \ref{eq:gamma}), sujeita aos vínculos de desigualdade definidos pela Equação \ref{eq:inequality-constraints}.
 Para incorporar esses vínculos de desigualdade, foi empregada a mesma abordagem apresentada por \cite{barbosa_etal1999}, \cite{oliveirajr_etal2011} e \cite{oliveirajr_barbosa2013}.
 Abaixo, segue o algoritmo de inversão aqui proposto:
@@ -315,7 +316,10 @@ Abaixo, segue o algoritmo de inversão aqui proposto:
 	\ref{eq:inequality-constraints}), $k = 0$, $\hat{\mathbf{p}}_{(k)}$, e
 	$\mathbf{W}_{(k)} = \mathbf{I}$, em que $\mathbf{I}$ é a matriz identidade de ordem $M$.
 	\item[\textbf{(1)}] Computa a matriz $N \times M$ $\mathbf{G}(\hat{\mathbf{p}}_{(k)})$, cujo elemento $ij$ é a derivada do dado $d_{i}(\hat{\mathbf{p}}_{(k)})$ 
-	(Equação \ref{eq:predicted-data-i}) com respeito ao $j$-ésimo elemento $p_{j}$ do vetor de parâmetros $\mathbf{p}$ (Equação \ref{eq:p-vector}).
+	(Equação \ref{eq:predicted-data-i}) com respeito ao $j$-ésimo elemento $p_{j}$ do vetor de parâme\-tros $\mathbf{p}$ (Equação \ref{eq:p-vector}):
+	$$
+	g_{ij} =  \dfrac{\partial d_{i}(\hat{\mathbf{p}}_{(k)})}{\partial{p_j}} \: .
+	$$
 	\item[\textbf{(2)}] Computa o vetor gradiente 
 	$$
 	\boldsymbol{\nabla} \phi(\hat{\mathbf{p}}_{(k)}) = 
@@ -335,7 +339,7 @@ Abaixo, segue o algoritmo de inversão aqui proposto:
 	Na próxima seção, será discutido como usar a matriz Hessiana 
 	$\mathbf{H}_{\phi}(\hat{\mathbf{p}}_{(0)})$ (computada na iteração $k = 0$) 
 	para definir os pesos $\alpha_{\ell}$ (Equação \ref{eq:gamma}) das funções de vínculos $\varphi_{\ell}(\mathbf{p})$ 
-	(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4}, \ref{eq:phi5}).
+	(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).
 	\item[\textbf{(3)}] Computa o vetor gradiente 
 	$$
 	\boldsymbol{\nabla}\Gamma(\hat{\mathbf{p}}_{(k)}) = 
@@ -350,7 +354,7 @@ Abaixo, segue o algoritmo de inversão aqui proposto:
 	$$ 
 	da função objetivo $\Gamma (\mathbf{p})$ (Equação \ref{eq:gamma}),
 	em que $\boldsymbol{\nabla}\varphi_{\ell}(\hat{\mathbf{p}}_{(k)})$ e
-	$\mathbf{H}_{\ell}$ são, respectivamente, o vetor gradiente e a matriz Hessiana (Equações \ref{eq:phi1_gh}, \ref{eq:phi2_gh}, \ref{eq:phi3_gh}, \ref{eq:phi4_gh}, \ref{eq:phi5_gh}) das funções dos vínculos $\varphi_{\ell}(\mathbf{p})$ (Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4}, \ref{eq:phi5}).	
+	$\mathbf{H}_{\ell}$ são, respectivamente, o vetor gradiente e a matriz Hessiana (Equações \ref{eq:phi1_gh}, \ref{eq:phi2_gh}, \ref{eq:phi3_gh}, \ref{eq:phi4_gh} e \ref{eq:phi5_gh}) das funções dos vínculos $\varphi_{\ell}(\mathbf{p})$ (Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).	
 	\item[\textbf{(4)}] Computa o $l$-ésimo elemento $\hat{p}^{\dagger}_{l}$ de um vetor $\hat{\mathbf{p}}^{\dagger}_{(k)}$ como:
 	$$
 	\hat{p}^{\dagger}_{l} = -\ln\left(\frac{p_{l}^{max} - \hat{p}_{l}}{\hat{p}_{l} - p_{l}^{min}}\right) \: ,
@@ -430,9 +434,9 @@ Abaixo, segue o algoritmo de inversão aqui proposto:
 
 Neste algoritmo, os elementos da matriz $\mathbf{G}(\hat{\mathbf{p}}_{(k)})$ 
 (etapa 1) são computados pelo uso das diferenças finitas centradas.
-É importante notar que na etapa 3 as matrizes Hessianas $\mathbf{H}_{\ell}$ (Equações \ref{eq:phi1_gh}, \ref{eq:phi2_gh}, \ref{eq:phi3_gh}, \ref{eq:phi4_gh}, \ref{eq:phi5_gh})
+É importante notar que na etapa 3 as matrizes Hessianas $\mathbf{H}_{\ell}$ (Equações \ref{eq:phi1_gh}, \ref{eq:phi2_gh}, \ref{eq:phi3_gh}, \ref{eq:phi4_gh} e \ref{eq:phi5_gh})
 das funções dos vínculos $\varphi_{\ell}(\mathbf{p})$ 
-(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4}, \ref{eq:phi5}) 
+(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}) 
 não dependem do vetor de parâmetros. Por essa razão, eles são computados apenas uma vez antes da primeira iteração e armazenados para serem usados até a convergência ser alcançada (etapa 11).
 
 Este algoritmo é executado para obter um corpo estimado para cada ponto 
@@ -445,9 +449,9 @@ Os valores ótimos da profundidade do topo $z_{0}$ e intensidade de magnetizaç�
 $m_{0}$ são escolhidos como aqueles associados aos corpos estimados que produzem os menores valores da função objetivo $\Gamma (\mathbf{p})$ (Equação \ref{eq:gamma}).
 
 Note que, ao manter a matriz $\mathbf{W}_{(k)}$ (etapa 2 e 10) igual à identidade ao longo das iterações, o corpo estimado minimiza a norma-2 quadrática dos resíduos entro os dados observados e preditos (Equação \ref{eq:L2_misfit}). 
-Nesse caso, os corpos estimados são convenientemente denominados \textit{solução L2}. 
+Nesse caso, o corpo estimado é a solução L2. 
 A atualização iterativa dos elementos da matriz $\mathbf{W}_{(k)}$ com os valores absolutos dos resíduos de acordo com a etapa 10 é feita através do método IRLS \citep[][p. 46]{scales_gersztenkorn1988, aster_etal2019} para obter um corpo estimado que minimiza a norma-1 dos resíduos entre os dados observados e preditos 
-(Equação \ref{eq:L1_misfit}). Nesse caso, o corpo estimado é convenientemente chamado de \textit{solução L1}.
+(Equação \ref{eq:L1_misfit}). Nesse caso, o corpo estimado é a solução L1.
 
 \section{Considerações práticas}
 
@@ -455,13 +459,15 @@ Nesta seção serão apresentados alguns aspectos práticos de como definir o co
 $\hat{\mathbf{p}}_{(0)}$ para o vetor de parâmetros $\mathbf{p}$ (Equação \ref{eq:p-vector}),
 os pesos $\alpha_{\ell}$ (Equação \ref{eq:gamma}) das funções de vínculos 
 $\varphi_{\ell}(\mathbf{p})$ 
-(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4}, \ref{eq:phi5}) e os limites $p_{l}^{min}$ e $p_{l}^{max}$ dos vínculos de desigualdade (Equação 
+(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}) e os limites $p_{l}^{min}$ e $p_{l}^{max}$ dos vínculos de desigualdade (Equação 
 \ref{eq:inequality-constraints}).
 
-Inicialmente, se calcula a redução ao polo da anomalia de campo total observada. Essa é uma etapa dupla: ele permite a verificação dos valores usados para a direção de magnetização total (declinação $D$ e inclinação $I$) e é utilizado para estimar as dimensões horizontais da fonte alvo.
+Inicialmente, calcula-se a redução ao polo da anomalia de campo total observada. Essa é uma etapa dupla: ele permite a verificação dos valores usados para a direção de magnetização total (declinação $D$ e inclinação $I$) e é utilizado para estimar as dimensões horizontais da fonte alvo.
 Se a fonte alvo possui uma direção de magnetização uniforme com valores de declinação e inclinação próximos daqueles escolhidos para $D$ e $I$, a anomalia RTP é predominantemente positiva sobre a fonte alvo e decai a zero perto de seus limites laterais.
 Através da anomalia RTP estimada pela camada equivalente, é possível definir os limites $p_{l}^{min}$ e $p_{l}^{max}$ (Figura \ref{fig:barreira}) dos vínculos de desigualdade (Equação \ref{eq:inequality-constraints}) e uma aproximação inicial cilíndrica $\hat{\mathbf{p}}_{(0)}$, isto é, todos os prismas que formam $\hat{\mathbf{p}}_{(0)}$ possuem os vértices definidos por uma mesma distância radial constante $r_{0}$ e a mesma origem $(x_{0}, y_{0})$.
 Nesta etapa, os pesos são $\alpha_{\ell}$ (Equação \ref{eq:gamma}) estabelecidos iguais a zero e se define uma malha de valores para a profundidade do topo $z_{0}$, intensidade de magnetização total $m_{0}$ e espessura $dz$ que produz, sem grande rigor, um ajuste entre dados observados $\mathbf{d}^{o}$ e dados preditos $\mathbf{d}(\hat{\mathbf{p}}_{(0)})$.
+
+\pagebreak
 
 %FIGURA
 \begin{figure}[!htb]
@@ -480,22 +486,17 @@ Para contornar esse problema, os pesos $\alpha_{\ell}$ são definidos da seguint
 \end{equation}
 em que $\tilde{\alpha}_{\ell}$ é um escalar positivo e $ E_{\phi}/E_{\ell} $ 
 é o fator de normalização.
-Nessa equação, $E_{\ell}$ representa o traço da matriz Hessiana $\mathbf{H}_{\ell}$ (Equações \ref{eq:phi1_gh}, \ref{eq:phi2_gh}, \ref{eq:phi3_gh}, \ref{eq:phi4_gh}, \ref{eq:phi5_gh}) da $\ell$-ésima função de vínculo $\varphi_{\ell}(\mathbf{p})$
-(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4}, \ref{eq:phi5}).
+Nessa equação, $E_{\ell}$ representa o traço da matriz Hessiana $\mathbf{H}_{\ell}$ (Equações \ref{eq:phi1_gh}, \ref{eq:phi2_gh}, \ref{eq:phi3_gh}, \ref{eq:phi4_gh} e \ref{eq:phi5_gh}) da $\ell$-ésima função de vínculo $\varphi_{\ell}(\mathbf{p})$
+(Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).
 A constante $E_{\phi}$ é o traço da matriz Hessiana
 $\mathbf{H}_{\phi}(\hat{\mathbf{p}}_{(0)})$ (etapa 2 do algoritmo) da função \textit{data-misfit} $\phi(\mathbf{p})$ (Equação \ref{eq:L1_misfit}) computada na iteração
 $k = 0$, com a aproximação inicial $\hat{\mathbf{p}}_{(0)}$ para o vetor de parâmetros $ \mathbf{p} $ (Equação \ref{eq:p-vector}).
 Essa estratégia empírica permite definir indiretamente os pesos $\alpha_{\ell}$ 
 (Equação \ref{eq:gamma}) pela utilização dos pesos normalizados $\tilde{\alpha}_{\ell}$ 
 (Equação \ref{eq:alphas}), os quais dependem menos das características particulares do problema.
-Baseado em experiência prática, os valores iniciais propostos aqui para os pesos normalizados $\tilde{\alpha}_{\ell}$ se a função \textit{data-misfit} é definida pela Equação \ref{eq:L2_misfit} são:
+Baseado em experiência prática, os valores iniciais propostos aqui para os pesos normalizados $\tilde{\alpha}_{\ell}$ para ambas as funções \textit{data-misfit}, definidas pelas Equações \ref{eq:L2_misfit} e \ref{eq:L1_misfit}, são:
 $\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-4}$, 
 $\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-7}$, e 
-$\tilde{\alpha}_{5} = 10^{-5}$. 
-Para o caso no qual a função \textit{data-misfit} é definida pela 
-Equação \ref{eq:L1_misfit}, a recomendação é:
-$\tilde{\alpha}_{1} = 10^{-3}$, $\tilde{\alpha}_{2} = 10^{-4}$, 
-$\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-6}$, é 
-$\tilde{\alpha}_{5} = 10^{-5}$. 
+$\tilde{\alpha}_{5} = 10^{-5}$.
 Esses valores são comumente refinados de acordo com a informação a priori sobre a complexidade da fonte alvo. Por exemplo, ao aumentar ou diminuir valor de $\tilde{\alpha}_{1}$, força-se que o corpo estimado tenha fatias horizontais mais ou menos suaves; ao aumentar ou diminuir o valor de $\tilde{\alpha}_{3}$, força-se que o corpo estimado seja mais ou menos vertical. Os pesos normalizados
 $\tilde{\alpha}_{1}$, $\tilde{\alpha}_{2}$, e $\tilde{\alpha}_{3}$ são comumente usados para introduzir informação a priori sobre o formato da fonte alvo. O peso normalizado $\tilde{\alpha}_{4}$ é geralmente usado como um parâmetro de regularização puramente matemático para obter soluções estáveis. Finalmente, o peso normalizado $\tilde{\alpha}_{5}$ é usualmente escolhido com o propósito de obter um corpo estimado com a profundidade da base mais rasa o possível.
