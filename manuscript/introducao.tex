@@ -1,8 +1,8 @@
 \chapter{Introdução}
 
-A interpretação de anomalias de campo total sobre a superfície da Terra é um desafio na geofísica de exploração devido à falta de unicidade da inversão magnética 3D. É bem estabelecido na literatura que diversas distribuições de magnetização em subsuperfície podem produzir o mesmo dado magnético com a mesma precisão. A fim de superar essa ambiguidade, é necessário introduzir informação a priori ao problema para reduzir o número de possíveis soluções que são coerentes com a geologia local. Existem basicamente três grupos de métodos de inversão magnética 3D. A informação a priori disponível determina a abordagem mais adequada para cada caso.
+A interpretação de anomalias de campo total sobre a superfície da Terra é um desafio na geofísica de exploração devido à falta de unicidade da solução em uma inversão magnética 3D. É bem estabelecido na literatura que diversas distribuições de magnetização em subsuperfície podem produzir o mesmo dado magnético com a mesma precisão. A fim de superar essa ambiguidade, é necessário introduzir informação a priori ao problema para reduzir o número de possíveis soluções que são coerentes com a geologia local. Existem basicamente três grupos de métodos de inversão magnética 3D. A informação a priori disponível determina a abordagem mais adequada para cada caso.
 
-O primeiro grupo de métodos aproxima a fonte por um corpo causador geometricamente simples que possui geometria definida por um número pequeno de parâmetros \cite[por exemplo, ][]{ballantyne-1980,bhattacharyya-1980,silva_hohmann1983}. Esses métodos estimam tanto a geometria quanto a propriedade física da fonte através da solução de um problema inverso não linear. Devido à parametrização muito restritiva, tais métodos são frequentemente menos afetados por problemas com a ambiguidade.
+O primeiro grupo de métodos aproxima a fonte por um corpo causador geometricamente simples que possui geometria definida por um número pequeno de parâmetros \cite[por exemplo, ][]{ballantyne-1980,bhattacharyya-1980,silva_hohmann1983,medeiros_silva1995}. Esses métodos estimam tanto a geometria quanto a propriedade física da fonte através da solução de um problema inverso não linear. Devido à parametrização muito restritiva, tais métodos são frequentemente menos ambíguos.
 
 O segundo grupo é formado pela vasta maioria dos métodos. Eles aproximam a subsuperfície por uma malha de prismas retangulares justapostos com uma direção de magnetização constante.
 Alguns métodos presumem uma magnetização puramente induzida \cite[por exemplo, ][]{cribb-1976,li_3-d_1996,pilkington_3-d_1997} e as susceptibilidades magnéticas isotrópicas dos prismas são as quantidades estimadas pela solução de um problema inverso linear.
@@ -12,9 +12,9 @@ Outros estudos introduziram estratégias para restringir a falta de unicidade e 
 
 O terceiro grupo de métodos de inversão magnética 3D pressupõe algum conhecimento sobre a distribuição da propriedade física e estima a geometria das fontes.
 Eles geralmente são formulados como problemas inversos não lineares. \cite{wang_inversion_1990} aproximam a fonte por um poliedro e estimam a posição de seus vértices no domínio de Fourier. 
-\cite{wenbin-2017} desenvolveram um método de \textit{level-set} para estimar a geometria de um conjunto de corpos com susceptibilidade magnética uniforme. 
+\cite{wenbin-2017} desenvolveram um método \textit{level-set} para estimar a geometria de um conjunto de corpos com susceptibilidade magnética uniforme. 
 \cite{hidalgo-2019} invertem a anomalia de campo total para estimar a geometria do relevo do embasamento de uma bacia sedimentar com uma intensidade de magnetização conhecida mas direção desconhecida. 
-\cite{hidalgo-2020} invertem a amplitude do campo magnético anômalo para estimar o relevo do embasamento e a intensidade de magnetização.
+\cite{hidalgo-2020} invertem a amplitude do campo magnético anômalo para estimar o relevo do embasamento e a intensidade de magnetização aparente.
 Para tanto, eles também presumem que a direção de magnetização seja conhecida. Os métodos que compõem este terceiro grupo possuem um número relativamente pequeno de parâmetros a serem estimados por inversão e possuem muito menos ambiguidade em comparação ao segundo grupo.
 
 É de amplo conhecimento que problemas inversos que usam medidas de desajuste dos dados com base na tradicional norma-2 quadrática dos resíduos (ou soma dos quadrados dos resíduos), ou seja, inversões por mínimos quadrados, podem ser drasticamente afetados pela presença de dados espúrios ou \textit{outliers} e também pelo efeito causado por fontes não-alvo (ruído geológico) nos dados observados.
@@ -29,9 +29,9 @@ Eles mostraram que seu método é mais robusto do que aqueles baseados nas norma
 \citet{beltrao_etal1991} desenvolveram uma abordagem robusta de mínimos quadrados reponderados iterativamente -- do inglês \textit{Iteratively Reweighted Least Squares} \citep{scales_gersztenkorn1988} -- para estimar os coeficientes de um polinômio que representa o campo de gravidade regional. 
 Eles assumem que o campo residual não muda seu sinal em toda a área de estudo. 
 \citet{barbosa_silva2006} introduziram uma inversão magnética 2D robusta para lidar com fontes não-alvo.
-Esse método estima a espessura das fontes magnéticas alvo no entorno de um conjunto de elementos geométricos definidos pelo usuário como segmentos de reta e/ou pontos colocados em profundidade. 
+Esse método estima indiretamente a espessura das fontes magnéticas alvo no entorno de um conjunto de elementos geométricos definidos pelo usuário como segmentos de reta e/ou pontos colocados em profundidade. 
 Vale ressaltar que a robustez desse método não se deve ao uso de uma medida robusta de desajuste dos dados, mas ao seu esquema de concentração da distribuição de propriedade física estimada ao redor dos elementos geométricos. 
-\citet{silva_dias_etal2007} propõem uma inversão de gravimétrica 2D baseada em uma abordagem IRLS para estimar a geometria de uma interface complexa entre dois meios contendo
+\citet{silva_dias_etal2007} propõem uma inversão gravimétrica 2D baseada em uma abordagem IRLS para estimar a geometria de uma interface complexa entre dois meios contendo
 heterogeneidades de densidade. 
 \citet{uieda_barbosa2012} apresentam um método robusto de inversão do gradiente de gravidade para estimar a distribuição de densidade 3D em uma malha de prismas retangulares.
 O método impõe que a solução cresça em torno de prismas especificados pelo usuário com valores de contraste de densidade predefinidos. Eles usam a função desajuste definida pela norma-1 para ignorar o efeito de fontes não-alvo.
@@ -46,7 +46,7 @@ O método estima a posição horizontal e a forma das seções horizontais de to
 Também presume-se que a fonte alvo tenha uma direção de magnetização total conhecida.
 Corpos usando a norma-2 quadrática dos resíduos geralmente falham estimar corretamente a geometria de uma fonte alvo na presença de fontes não-alvo.
 Por conveniência, chamamos esses corpos estimados de soluções L2.
-Para contornar essa limitação, diferentes corpos são estimados minimizando uma função objetivo composta de cinco funções de regularização e a função de desajuste dos dados definia pela norma-1 dos resíduos entre os dados observados e preditos.
+Para contornar essa limitação, diferentes corpos são estimados minimizando uma função objetivo composta de cinco funções de regularização e a função de desajuste dos dados definida pela norma-1 dos resíduos entre os dados observados e preditos.
 Os diferentes corpos estimados, convenientemente chamados de soluções L1, são obtidos a partir de um conjunto de valores especificados pelo usuário de profundidade do topo e intensidade de magnetização total.
 A melhor solução L1 é definida como aquela que produz o menor valor da função objetivo e representa a melhor aproximação para a fonte alvo.
 Este método também produz soluções L2 para comparação.

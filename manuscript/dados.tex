@@ -17,9 +17,9 @@ em que ``$\| \: \|$" indica a norma Euclidiana, $\mathbf{F}$ é o campo principa
 \begin{equation}\label{eq:camptotal}
 \mathbf{T}(x, y, z) = \mathbf{F}(x, y, z) + \mathbf{B}(x, y, z) ,
 \end{equation}
-em que $\mathbf{B}$ é a indução magnética produzida produzido pelas fontes magnéticas.
+em que $\mathbf{B}$ é a indução magnética produzida pelas fontes magnéticas.
 
-Para estudos locais e regionais, o campo principal pode ser considerado um vetor constante desde que a aquisição dos dados tenha sido feita em um curto período de tempo. Portanto, o campo principal ao longo da área de estudo pode ser escrito como
+Para estudos locais, o campo principal pode ser considerado um vetor constante desde que a aquisição dos dados tenha sido feita em um curto período de tempo. Portanto, o campo principal ao longo da área de estudo pode ser escrito como
 
 \begin{equation}
 \mathbf{F}_{0} = \| \mathbf{F}_{0} \| \hat{\mathbf{F}} \: ,
@@ -40,11 +40,11 @@ Na maioria dos casos, podemos considerar que $\|\mathbf{F}_0\| \gg \| \mathbf{B}
 Em outras palavras, pode-se dizer que $\mathbf{B}$ é uma pequena perturbação do campo principal $\mathbf{F}_0$ na área de estudo. Essas premissas permitem aproximar a norma Euclidiana do campo total $\mathbf{T}(x, y, z)$ em uma expansão de série de Taylor de primeira ordem obtendo:
 
 \begin{equation}\label{eq:taylorexp}
-\|\mathbf{T}(x, y, z)\| \approx \|\mathbf{F}_0\| + \hat{\mathbf{F}}_0^{\top}\mathbf{B}(x, y, z) ,
+\|\mathbf{T}(x, y, z)\| \approx \|\mathbf{F}_0\| + \hat{\mathbf{F}}^{\top}\mathbf{B}(x, y, z) ,
 \end{equation}
 logo
 \begin{equation}
-\tilde{\Delta T}(x, y, z) = \hat{\mathbf{F}}^{\top}_0 \mathbf{B}(x, y, z) \: ,
+\tilde{\Delta T}(x, y, z) = \hat{\mathbf{F}}^{\top} \mathbf{B}(x, y, z) \: ,
 \label{eq:tfanomaly}
 \end{equation}
 em que $ \tilde{\Delta T}(x, y, z) $ é a anomalia de campo total aproximada e o sobre-escrito ``$ \top $" indica transposição.
@@ -93,7 +93,8 @@ Portanto, substituindo a Equação \ref{eq:induction-general} na Equação \ref{
 
 \section{Anomalia de campo total reduzida ao polo}
 
-Podemos notar pela Equação \ref{eq:tfanomaly-general} que, como a direção da magnetização total e do campo principal são arbitrárias, a anomalia de campo total pode assumir valores positivos e negativos. Por essa razão, os valores máximos ou mínimos da anomalia de campo total não estarão localizados sobre a fonte, diferentemente de dados gravimétricos, impedindo uma interpretação direta dos dados magnéticos. 
+De acordo com a Equação \ref{eq:tfanomaly-general}, a direção de magnetização total e a direção do campo geomagnético principal são arbitrárias, assim a anomalia de campo total pode assumir tanto valores positivos quanto negativos.
+Por essa razão, os valores máximos ou mínimos da anomalia de campo total não estarão localizados sobre a fonte, diferentemente de dados gravimétricos, impedindo uma interpretação direta dos dados magnéticos. 
 Para contornar esse problema, \citet{baranov1957} propôs uma transformação chamada de redução ao polo que é feita sobre os dados de anomalia de campo total.
 Esse método utiliza a anomalia de campo total $\tilde{\Delta T}(x, y, z)$ (\ref{eq:tfanomaly-general}) para estimar uma anomalia mais simples dada por
 \begin{equation}
@@ -106,6 +107,6 @@ seriam iguais a $\mathbf{u} = \left[\:0 \quad 0 \quad 1 \: \right]^{\top}$.
 Podemos notar que  $\Delta T^{P}(x, y, z)$ (Equação \ref{eq:rtp_anomaly_true}) depende do conhecimento exato do volume e localização da fonte magnética, o qual é impossível de saber na prática. Assim, se faz necessário o uso de uma técnica de processamento de dados como a camada equivalente para obter uma estimativa de $ \Delta T^{P}(x, y, z) $.
 Essa estimativa é conhecida como anomalia de campo total reduzida ao polo ou anomalia RTP -- do inglês \textit{reduced to the pole}.
 
-A camada equivalente é uma técnica de processamento e interpretação dados magnéticos e gravimétricos. A técnica teve início há mais de 50 anos atrás com \cite{dampney_equivalent_1969} e \cite{emilia_equivalent_1973} e vem sendo utilizada como uma ferramenta versátil no processamento e interpretação de dados em métodos potenciais. Os trabalhos publicados mostram uma vasta gama de aplicações para a técnica tais como interpolação, redução ao polo, separação regional-residual, continuações para cima e para baixo \cite[por exemplo, ][]{mendonca1992,mendonca-silva1995,mendonca2004,macLennan-li2013,silva1986,li-li2014,hansen-miyazaki1984}. Um dos obstáculos da técnica é seu alto custo computacional e, por isso, alguns estudos são direcionados a reduzir o tempo de processamento da camada equivalente \cite[por exemplo ,][]{leao-silva1989,mendonca-silva1994,siqueira-etal2017,oliveirajr-etal2013, takahashi-2020,mendonca-2020,reis-2020}.
+A camada equivalente é uma técnica de processamento e interpretação dados magnéticos e gravimétricos. A técnica teve início há mais de 50 anos com \cite{dampney_equivalent_1969} e \cite{emilia_equivalent_1973} e vem sendo utilizada como uma ferramenta versátil no processamento e interpretação de dados em métodos potenciais. Os trabalhos publicados mostram uma vasta gama de aplicações para a técnica tais como interpolação, redução ao polo, separação regional-residual, continuações para cima e para baixo \cite[por exemplo, ][]{mendonca1992,mendonca-silva1995,mendonca2004,macLennan-li2013,silva1986,li-li2014,hansen-miyazaki1984}. Um dos obstáculos da técnica é seu alto custo computacional e, por isso, alguns estudos são direcionados a reduzir o tempo de processamento da camada equivalente \cite[por exemplo ,][]{leao-silva1989,mendonca-silva1994,siqueira-etal2017,oliveirajr-etal2013, takahashi-2020,mendonca-2020,reis_etal2020}.
 Essa técnica se aproveita da ambiguidade presente nos métodos potenciais para reproduzir um conjunto de dados observados a partir de uma distribuição 2D fictícia de propriedade física.
 Isso permite diversas aplicações e uma delas é obter a  anomalia de campo total reduzida ao polo.

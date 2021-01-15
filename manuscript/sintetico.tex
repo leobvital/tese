@@ -1,11 +1,14 @@
 \chapter{Aplicação a dados sintéticos}
 
+Todos os dados sintéticos apresentados neste capítulo foram simulados na presença de um campo geomagnético principal com inclinação $ I_0 = -21.5 $ e declinação $ D_0 = -18.7 $.
+
+
 \section{Modelo simples}
 
 Foi simulado um corpo geológico simples imerso em meio não magnético (prismas azuis nas Figuras 
 \ref{fig:simple_model}, \ref{fig:simple_l2_result} e \ref{fig:simple_l1_result})
 que representa a fonte alvo 3D com profundidade do topo em $0$ m, profundidade da base em $1600$ m, centro em $ (x_0, y_0) = (0, 0) $ e um vetor de magnetização total constante com inclinação $-50^{\circ}$, declinação $9^{\circ}$, e intensidade $9$ A/m.
-Esse modelo é composto de $ 8 $ prismas com $ 20 $ vértices cada e raios que diminuem com a profundidade: ($ 1920 $ m, $ 1760 $ m, $ 1600 $ m, $ 144 $ m, $ 1280 $ m, $ 1120 $ m, $ 960 $ m, $ 800 $ m).
+Esse modelo é composto de $ 8 $ prismas com $ 20 $ vértices cada e raios que diminuem com a profundidade: ($ 1920 $ m, $ 1760 $ m, $ 1600 $ m, $ 1440 $ m, $ 1280 $ m, $ 1120 $ m, $ 960 $ m, $ 800 $ m).
 Recuperar a geometria desse corpo é uma tarefa relativamente simples para este método porque ele possui um alinhamento vertical e suas fatias horizontais mostram uma forma circular que diminui de tamanho ao longo da profundidade, assim, é possível notar que o corpo satisfaz perfeitamente quase todos os vínculos impostos neste método.
 A anomalia de campo total (Figura \ref{fig:simple_model}a) produzida pela fonte alvo foi calculada em $1939$ pontos localizados sobre uma malha irregular com linhas que simulam um levantamento aéreo (Figura \ref{fig:simple_model}b) no plano $ z=-150 $ m. Esses dados sintéticos foram contaminados com um ruído Gaussiano pseudo-aleatório de média zero e desvio padrão igual a $5$ nT.
 O método foi aplicado para inverter esse dado contaminado com ruído e obter soluções L2 e L1.
@@ -18,8 +21,9 @@ a projeção horizontal das aproximações iniciais $\hat{\mathbf{p}}_{(0)}$
 usadas nas sucessivas inversões (Figuras \ref{fig:simple_l2_result} e 
 \ref{fig:simple_l1_result}).
 As aproximações iniciais são compostas de $ L= 5$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=350 $ m e centro em $ (x_0, y_0) = (0, 0) $.
-A Figura \ref{fig:simple_l2_result}a mostra que a melhor solução L2 foi obtida através dos valores verdadeiros da profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:simple_l2_result}b), possui uma profundidade da base em $1531.1$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:simple_l2_result}d).
-A Figura \ref{fig:simple_l1_result} mostra um resultado similar, porém com um ajuste dos dados e geometria inferiores aos da solução L2. A profundidade da base foi estimada em $1756.9$ m.
+A Figura \ref{fig:simple_l2_result}a mostra que a melhor solução L2 foi obtida através dos valores verdadeiros da profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$.
+Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:simple_l2_result}b), possui uma profundidade da base em $1531.1$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:simple_l2_result}d).
+A Figura \ref{fig:simple_l1_result} mostra um resultado similar para a solução L1, porém com um ajuste dos dados e geometria inferiores aos da solução L2. A profundidade da base foi estimada em $1756.9$ m.
 Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a solução L2 foi ligeiramente superior à solução L1.
 Todas as soluções L2 e L1 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
 $\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
@@ -88,12 +92,12 @@ $\tilde{\alpha}_{5} = 10^{-4}$.
 
 \section{Modelo inclinado}
 
-Para verificar se o método é capaz de recuperar um corpo que possui um mergulho pouco acentuado, foi simulado um corpo geológico inclinado imerso em meio não magnético (prismas azuis nas Figuras 
+Para verificar se o método é capaz de recuperar um corpo que possui um mergulho de baixo ângulo $\approx 26,5^\circ $, foi simulado um corpo geológico inclinado imerso em meio não magnético (prismas azuis nas Figuras 
 \ref{fig:inclined_model}, \ref{fig:inclined_l2_result} e \ref{fig:inclined_l1_result})
 que representa a fonte alvo 3D com profundidade do topo em $0$ m, profundidade da base em $3040$ m, centro em $ (x_0, y_0) = (-300, 600) $ e um vetor de magnetização total constante com inclinação $-50^{\circ}$, declinação $9^{\circ}$, e intensidade $9$ A/m.
 Esse modelo é composto de $ 8 $ prismas com $ 20 $ vértices.
-Recuperar a geometria desse corpo simulado é uma tarefa relativamente complicada para este método porque ele possui um mergulho acentuado em uma direção aproximadamente N-S e suas fatias horizontais mostram uma forma irregular que varia de tamanho ao longo da profundidade, assim, é possível notar que o corpo não satisfaz os vínculos impostos neste método.
-A anomalia de campo total (Figura \ref{fig:inclined_model}a) produzida pela fonte alvo foi calculada em $1674$ pontos localizados sobre uma malha irregular com linhas que simulam um levantamento aéreo (Figura \ref{fig:inclined_model}b). Esses dados sintéticos foram contaminados com um ruído Gaussiano pseudo-aleatório de média zero e desvio padrão igual a $5$ nT.
+Recuperar a geometria desse corpo simulado é uma tarefa relativamente complicada para este método porque ele possui um mergulho baixo em uma direção aproximadamente N-S e suas fatias horizontais mostram uma forma irregular que varia de tamanho ao longo da profundidade, assim, é possível notar que o corpo não satisfaz os vínculos impostos neste método.
+A anomalia de campo total (Figura \ref{fig:inclined_model}a) produzida pela fonte alvo foi calculada em $1674$ pontos localizados sobre uma malha irregular sobre uma superfície ondulada com linhas que simulam um levantamento aéreo (Figura \ref{fig:inclined_model}b). Esses dados sintéticos foram contaminados com um ruído Gaussiano pseudo-aleatório de média zero e desvio padrão igual a $5$ nT.
 O método foi aplicado para inverter esse dado contaminado com ruído e obter soluções L2 e L1.
 Para cada tipo de solução, foram geradas $36$ soluções L2 e $36$ soluções L1, 
 todas elas foram obtidas com a mesma malha de varredura $6 \times 6$ de profundidades do topo $z_{0}$ e intensidade de magnetização total $m_{0}$.
@@ -105,7 +109,7 @@ usadas nas sucessivas inversões (Figuras \ref{fig:inclined_l2_result} e
 \ref{fig:inclined_l1_result}).
 As aproximações iniciais são compostas de $ L= 5$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=350 $ m e centro em $ (x_0, y_0) = (-200, 0) $.
 A Figura \ref{fig:inclined_l2_result}a mostra que a melhor solução L2 obtida superestima a profundidade do topo $z_{0}$ e acerta o valor da intensidade de magnetização total $m_{0}$ verdadeira. Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:inclined_l2_result}b), possui uma profundidade da base em $3453.0$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:inclined_l2_result}d).
-A Figura \ref{fig:inclined_l1_result} mostra um resultado similar, porém a profundidade da base estimada em $3107.2$ m foi muito próxima da verdadeira.
+A Figura \ref{fig:inclined_l1_result} mostra um resultado similar para a solução L1, porém a profundidade da base estimada em $3107.2$ m foi muito próxima da verdadeira.
 Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a solução L1 foi ligeiramente superior à solução L2.
 Todas as soluções L2 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
 $\tilde{\alpha}_{1} = 10^{-3}$, $\tilde{\alpha}_{2} = 10^{-3}$, 
@@ -146,7 +150,7 @@ $\tilde{\alpha}_{5} = 10^{-5}$.
 	\includegraphics[width=\textwidth]{inclined-l2-solution.png}
 	\caption{Soluções L2 obtidas para o modelo inclinado. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos obtidos a partir da varredura de valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
-		O triângulo vermelho representa os valores verdadeiros para $m_{0}$ e $z_{0}$, assim como os valores que definem a melhor solução L2.
+		O triângulo vermelho representa os valores verdadeiros para $m_{0}$ e $z_{0}$, enquanto o losango branco definem os valores para a melhor solução L2.
 		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:inclined_model}a) 
 		e os dados preditos (não mostrados) produzidos pela melhor solução L2 (prismas vermelhos no painel d). 
 		O histograma dos resíduos inserido em (b) mostra a curva Gaussiana ajustada (linha tracejada).
@@ -162,7 +166,7 @@ $\tilde{\alpha}_{5} = 10^{-5}$.
 	\includegraphics[width=\textwidth]{inclined-l1-solution.png}
 	\caption{Soluções L1 obtidas para o modelo inclinado. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
-		O triângulo vermelho representa os valores verdadeiros para $m_{0}$ e $z_{0}$, assim como os valores que definem a melhor solução L1.
+		O triângulo vermelho representa os valores verdadeiros para $m_{0}$ e $z_{0}$, enquanto o losango branco definem os valores para a melhor solução L1.
 		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:inclined_model}a) 
 		e os dados preditos (não mostrados) produzidos pela melhor solução L1 (prismas vermelhos no painel d). 
 		O histograma dos resíduos inserido em (b) mostra a curva Laplaciana ajustada (linha tracejada).
@@ -176,9 +180,9 @@ $\tilde{\alpha}_{5} = 10^{-5}$.
 
 \section{Modelo inclinado com regional}
 
-Este teste tem o objetivo de testar o método em uma situação muito comum em um estudo com dados reais: a presença de um campo regional.
+Este teste tem o objetivo de avaliar o desempenho do método em uma situação muito comum em um estudo com dados reais: a presença de um campo regional.
 Para simular essa situação, a anomalia de campo total produzida pelo modelo inclinado (Figura \ref{fig:inclined_model}a) foi calculada em uma área maior e somada a um campo regional gerado através de um polinômio de primeira ordem (Fgiuras \ref{fig:great_data}a e \ref{fig:great_data}b).
-A partir desses dados, foi estimado um polinômio de primeira ordem por meio do método de mínimos quadrados (Figura \ref{fig:great_data}c) a fim de remover a influência do campo regional da anomalia de campo total (Figura \ref{fig:great_data}a).
+A partir desses dados, foi estimado um polinômio de primeira ordem por meio do método de mínimos quadrados (Figura \ref{fig:great_data}c) a fim de remover a influência do campo regional da anomalia de campo total (Figura \ref{fig:great_data}d).
 Embora a direção do campo regional estimado (Figura \ref{fig:great_data}d) tenha uma direção diferente da verdadeira (Figura \ref{fig:great_data}b), ele recupera muito bem sua amplitude.
 A Figura \ref{fig:great_model_rtp}a mostra a anomalia de campo total residual obtida pela remoção do campo regional estimado (Figura \ref{fig:great_data}d) e a Figura \ref{fig:great_model_rtp}b mostra que os resíduos entre a anomalia de campo total residual e a verdadeira (Figuras \ref{fig:great_model_rtp}a e \ref{fig:inclined_model}a) se comportam como ruído, o que indica um bom ajuste dos dados.
 O método foi aplicado para inverter a anomalia de campo total residual (Figura \ref{fig:great_model_rtp}a) e obter soluções L2 e L1.
@@ -272,8 +276,9 @@ Com o propósito de aplicar o método a problemas mais realistas, foi simulado u
 \ref{fig:thick_model}, \ref{fig:thick_l2_result}, e \ref{fig:thick_l1_result})
 que representa a fonte alvo 3D com profundidade do topo em $130$ m, profundidade da base em $6130$ m, centro em $ (x_0, y_0) = (-250, 250) $ e um vetor de magnetização total constante com inclinação $-50^{\circ}$, 
 declinação $9^{\circ}$, e intensidade $12$ A/m. 
-Esse modelo é composto de $ 10 $ prismas com seção horizontal irregular com $ 30 $ vértices cada.
+Esse modelo é composto de $ 10 $ prismas verticalmente justapostos com um deslocamento horizontal entre eles, que simula uma intrusão em forma de dique, e mergulho de alto ângulo para NO.
 Recuperar a geometria desse corpo simulado é uma tarefa complicada porque ele possui um mergulho NO-SE e suas fatias horizontais mostram uma forma que varia ao longo da profundidade, assim, é possível notar que o corpo não satisfaz perfeitamente os vínculos impostos nesse método.
+A violação dos vínculos pode ser visualizada pela falta de suavidade entre os raios adjacentes que definem a seção horizontal de cada prisma e entre os raios adjacentes entre prismas verticalmente adjacentes.
 A anomalia de campo total (Figura \ref{fig:target_model}a) produzida pela fonte alvo foi calculada em $1939$ pontos localizados sobre uma superfície ondulada que simula um levantamento aéreo (Figura \ref{fig:target_model}b). Esses dados sintéticos foram contaminados com um ruído Gaussiano pseudo-aleatório de média zero e desvio padrão igual a $5$ nT.
 O método foi aplicado para inverter esse dado contaminado com ruído e obter soluções L2 e L1 para três cenários: sem fontes não-alvo, 
 com uma fonte não-alvo relativamente pequena e com uma fonte não-alvo relativamente grande.
@@ -417,7 +422,7 @@ Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo
 	\caption{Soluções L2 obtidas para o modelo da fonte alvo com uma fonte não-alvo pequena. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 		Os valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L2 são representados pelo triângulo vermelho e pelo losango branco, respectivamente.
-		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
+		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:small_model}a) 
 		e os dados preditos (não mostrados) produzidos pela melhor solução L2 (prismas vermelhos no painel d). 
 		O histograma dos resíduos inserido em (b) mostra a curva Gaussiana ajustada (linha tracejada).
 		Os polígonos cinzas representam as projeções horizontais de todos os prismas que compõe a melhor solução. 
@@ -433,7 +438,7 @@ Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo
 	\caption{Soluções L1 obtidas para o modelo da fonte alvo com uma fonte não-alvo pequena. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 		Os valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L1 são representados pelo triângulo vermelho e pelo losango branco, respectivamente.
-		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
+		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:fig:small_model}a) 
 		e os dados preditos (não mostrados) produzidos pela melhor solução L1 (prismas vermelhos no painel d). 
 		O histograma dos resíduos inserido em (b) mostra a curva Gaussiana ajustada (linha tracejada).
 		Os polígonos cinzas representam as projeções horizontais de todos os prismas que compõe a melhor solução. 
@@ -501,7 +506,7 @@ Apesar disso, ela é significativamente superior à melhor solução L2 (Figura 
 	\caption{Soluções L2 obtidas para o modelo da fonte alvo com uma fonte não-alvo grande. 
 	(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 	Os valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L2 são representados pelo triângulo vermelho e pelo losango branco, respectivamente.
-	(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
+	(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:thick_model}a) 
 	e os dados preditos (não mostrados) produzidos pela melhor solução L2 (prismas vermelhos no painel d). 
 	O histograma dos resíduos inserido em (b) mostra a curva Gaussiana ajustada (linha tracejada).
 	Os polígonos cinzas representam as projeções horizontais de todos os prismas que compõe a melhor solução. 
@@ -517,7 +522,7 @@ Apesar disso, ela é significativamente superior à melhor solução L2 (Figura 
 	\caption{Soluções L1 obtidas para o modelo da fonte alvo com uma fonte não-alvo grande. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 		Ambos valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L1 são representados pelo triângulo vermelho.
-		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:target_model}a) 
+		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:thick_model}a) 
 		e os dados preditos (não mostrados) produzidos pela melhor solução L1 (prismas vermelhos no painel d). 
 		O histograma dos resíduos inserido em (b) mostra a curva Gaussiana ajustada (linha tracejada).
 		Os polígonos cinzas representam as projeções horizontais de todos os prismas que compõe a melhor solução. 
