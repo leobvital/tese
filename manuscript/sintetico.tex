@@ -1,6 +1,6 @@
 \chapter{Aplicação a dados sintéticos}
 
-Todos os dados sintéticos apresentados neste capítulo foram simulados na presença de um campo geomagnético principal com inclinação $ I_0 = -21.5 $ e declinação $ D_0 = -18.7 $.
+Todos os dados sintéticos apresentados neste capítulo foram simulados na presença de um campo geomagnético principal com inclinação $ I_0 = -21,5 $ e declinação $ D_0 = -18,7 $.
 
 
 \section{Modelo simples}
@@ -22,14 +22,29 @@ usadas nas sucessivas inversões (Figuras \ref{fig:simple_l2_result} e
 \ref{fig:simple_l1_result}).
 As aproximações iniciais são compostas de $ L= 5$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=350 $ m e centro em $ (x_0, y_0) = (0, 0) $.
 A Figura \ref{fig:simple_l2_result}a mostra que a melhor solução L2 foi obtida através dos valores verdadeiros da profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$.
-Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:simple_l2_result}b), possui uma profundidade da base em $1531.1$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:simple_l2_result}d).
-A Figura \ref{fig:simple_l1_result} mostra um resultado similar para a solução L1, porém com um ajuste dos dados e geometria inferiores aos da solução L2. A profundidade da base foi estimada em $1756.9$ m.
-Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a solução L2 foi ligeiramente superior à solução L1.
+Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:simple_l2_result}b), possui uma profundidade da base em $1581.5$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:simple_l2_result}d).
+A Figura \ref{fig:simple_l1_result} mostra um resultado similar para a solução L1, porém com um ajuste dos dados e geometria inferiores aos da solução L2. A profundidade da base foi estimada em $1412,9$ m.
+Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo.
+Entretanto, nesse caso, a Tabela \ref{tab:simple} mostra que solução L2 foi ligeiramente superior à solução L1 utilizando o critério apresentado na Seção \ref{sec:criterio}.
 Todas as soluções L2 e L1 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
-$\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
-$\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-8}$, e 
+$\tilde{\alpha}_{1} = 10^{-3}$, $\tilde{\alpha}_{2} = 10^{-4}$, 
+$\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-6}$, e 
 $\tilde{\alpha}_{5} = 10^{-4}$. 
-É importante notar que, mesmo a solução L2 sendo superior à L1, não há diferenças significativas entre as soluções L2 e L1 obtidas pelo método.
+É importante notar que, mesmo a solução L2 sendo superior à solução L1, não há diferenças significativas entre as soluções L2 e L1 obtidas pelo método.
+
+\begin{table}[h]\label{tab:simple}
+	\caption{Valores dos vínculos na iteração final para as melhores soluções L2 e L1 da aplicação ao corpo complexo na presença de uma fonte não-alvo pequena (Eqs. \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).}
+	\centering
+	\vspace{0.5cm}
+	\begin{tabular}{c|ccccc}
+		Vínculo & $ \varphi _1 $ & $ \varphi _2 $ &  $ \varphi _3 $ &  $ \varphi _4 $ &  $ \varphi _5 $ \\
+		\hline
+		Solução L2 & $ 2,09 $ & $ 17,78 $ & $ 7,42\times 10^{-3} $ & $7,30 $ & $ 18,78 $ \\ 
+		Solução L1 & $ 3,99 $ & $ 11,96 $ & $ 0,21 $ & $7,58$ & $ 14,75 $
+	\end{tabular}
+\end{table}
+
+\pagebreak
 
 \begin{figure}[!htb]
 	\centering
@@ -108,9 +123,9 @@ a projeção horizontal das aproximações iniciais $\hat{\mathbf{p}}_{(0)}$
 usadas nas sucessivas inversões (Figuras \ref{fig:inclined_l2_result} e 
 \ref{fig:inclined_l1_result}).
 As aproximações iniciais são compostas de $ L= 5$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=350 $ m e centro em $ (x_0, y_0) = (-200, 0) $.
-A Figura \ref{fig:inclined_l2_result}a mostra que a melhor solução L2 obtida superestima a profundidade do topo $z_{0}$ e acerta o valor da intensidade de magnetização total $m_{0}$ verdadeira. Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:inclined_l2_result}b), possui uma profundidade da base em $3453.0$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:inclined_l2_result}d).
-A Figura \ref{fig:inclined_l1_result} mostra um resultado similar para a solução L1, porém a profundidade da base estimada em $3107.2$ m foi muito próxima da verdadeira.
-Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a solução L1 foi ligeiramente superior à solução L2.
+A Figura \ref{fig:inclined_l2_result}a mostra que a melhor solução L2 obtida superestima a profundidade do topo $z_{0}$ e acerta o valor da intensidade de magnetização total $m_{0}$ verdadeira. Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:inclined_l2_result}b), possui uma profundidade da base em $3453,0$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:inclined_l2_result}d).
+A Figura \ref{fig:inclined_l1_result} mostra um resultado similar para a solução L1, porém a profundidade da base estimada em $3107,2$ m foi muito próxima da verdadeira.
+Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a Tabela \ref{tab:inc} mostra que a solução L1 foi superior à solução L2.
 Todas as soluções L2 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
 $\tilde{\alpha}_{1} = 10^{-3}$, $\tilde{\alpha}_{2} = 10^{-3}$, 
 $\tilde{\alpha}_{3} = 10^{-6}$, $\tilde{\alpha}_{4} = 10^{-6}$, e 
@@ -119,8 +134,21 @@ Já as soluções L1 foram obtidas utilizando o conjunto:
 $\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-4}$, 
 $\tilde{\alpha}_{3} = 10^{-6}$, $\tilde{\alpha}_{4} = 10^{-6}$, e 
 $\tilde{\alpha}_{5} = 10^{-5}$.
-É importante notar que, mesmo a solução L1 sendo superior à L2, não há diferenças significativas entre as soluções L2 e L1 obtidas pelo método.
+É importante notar que, mesmo a solução L1 sendo superior à solução L2, não há diferenças significativas entre as soluções L2 e L1 obtidas pelo método.
 
+\begin{table}[h]\label{tab:inc}
+	\caption{Valores dos vínculos na iteração final para as melhores soluções L2 e L1 da aplicação ao corpo complexo na presença de uma fonte não-alvo pequena (Eqs. \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).}
+	\centering
+	\vspace{0.5cm}
+	\begin{tabular}{c|ccccc}
+		Vínculo & $ \varphi _1 $ & $ \varphi _2 $ &  $ \varphi _3 $ &  $ \varphi _4 $ &  $ \varphi _5 $ \\
+		\hline
+		Solução L2 & $ 3,21 $ & $ 7,97 $ & $ 0,10 $ & $0,17 $ & $ 0,62 $ \\ 
+		Solução L1 & $ 0,31 $ & $ 0,56 $ & $ 0,10 $ & $0,18$ & $ 0,47 $
+	\end{tabular}
+\end{table}
+
+\pagebreak
 
 \begin{figure}[!htb]
 	\centering
@@ -195,18 +223,30 @@ a projeção horizontal das aproximações iniciais $\hat{\mathbf{p}}_{(0)}$
 usadas nas sucessivas inversões (Figuras \ref{fig:great_l2_result} e 
 \ref{fig:great_l1_result}).
 As aproximações iniciais são compostas de $ L= 5$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=350 $ m e centro em $ (x_0, y_0) = (-200, 0) $.
-A Figura \ref{fig:great_l2_result}a mostra que a melhor solução L2 obtida superestima tanto a profundidade do topo $z_{0}$ quanto o valor da intensidade de magnetização total $m_{0}$ verdadeira. Essa solução L2 produz um bom ajuste dos dados (Figura \ref{fig:great_l2_result}b), possui uma profundidade da base em $3063.2$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:great_l2_result}d).
-A Figura \ref{fig:great_l1_result} mostra um resultado similar em relação a geometria, porém superestima menos os valores de profundidade do topo $z_{0}$ quanto o valor da intensidade de magnetização total $m_{0}$. A profundidade da base estimada foi de $2912.3$ m que é um pouco inferior à estimada pela solução L2.
-Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a solução L1 foi ligeiramente superior à solução L2 na estimativa de $ z_0 $ e $ m_0 $.
+A Figura \ref{fig:great_l2_result}a mostra que a melhor solução L2 obtida superestima tanto a profundidade do topo $z_{0}$ quanto o valor da intensidade de magnetização total $m_{0}$ verdadeira. Essa solução L2 produz um bom ajuste dos dados (Figura \ref{fig:great_l2_result}b), possui uma profundidade da base em $3063,2$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:great_l2_result}d).
+A Figura \ref{fig:great_l1_result} mostra um resultado similar em relação a geometria, porém superestima menos os valores de profundidade do topo $z_{0}$ e subestima pouco o valor da intensidade de magnetização total $m_{0}$. A profundidade da base estimada foi de $2655,6$ m que é um pouco inferior à estimada pela solução L2.
+Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a Tabela \ref{tab:inc-reg} mostra que a solução L1 foi superior à solução L2 na estimativa de $ z_0 $ e $ m_0 $.
 Todas as soluções L2 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
 $\tilde{\alpha}_{1} = 10^{-3}$, $\tilde{\alpha}_{2} = 10^{-3}$, 
 $\tilde{\alpha}_{3} = 10^{-6}$, $\tilde{\alpha}_{4} = 10^{-6}$, e 
 $\tilde{\alpha}_{5} = 10^{-5}$. 
 Já as soluções L1 foram obtidas utilizando o conjunto: 
-$\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-4}$, 
-$\tilde{\alpha}_{3} = 10^{-6}$, $\tilde{\alpha}_{4} = 10^{-6}$, e 
-$\tilde{\alpha}_{5} = 10^{-5}$.
-É importante notar que, mesmo a solução L1 sendo superior à L2, não há diferenças significativas entre as soluções L2 e L1 obtidas pelo método.
+$\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
+$\tilde{\alpha}_{3} = 10^{-6}$, $\tilde{\alpha}_{4} = 10^{-7}$, e 
+$\tilde{\alpha}_{5} = 10^{-4}$.
+É importante notar que, mesmo a solução L1 sendo superior à solução L2, não há diferenças significativas entre as soluções L2 e L1 obtidas pelo método.
+
+\begin{table}[h]\label{tab:inc-reg}
+	\caption{Valores dos vínculos na iteração final para as melhores soluções L2 e L1 da aplicação ao corpo complexo na presença de uma fonte não-alvo pequena (Eqs. \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).}
+	\centering
+	\vspace{0.5cm}
+	\begin{tabular}{c|ccccc}
+		Vínculo & $ \varphi _1 $ & $ \varphi _2 $ &  $ \varphi _3 $ &  $ \varphi _4 $ &  $ \varphi _5 $ \\
+		\hline
+		Solução L2 & $ 6,05 $ & $ 16,32 $ & $ 0,15 $ & $0,28 $ & $ 0,75 $ \\ 
+		Solução L1 & $ 0,79 $ & $ 0,22 $ & $ 0,10 $ & $0,02$ & $ 3,38$
+	\end{tabular}
+\end{table}
 
 \begin{figure}[!htb]
 	\includegraphics[width=\textwidth]{inclined-data-large.png}
@@ -291,14 +331,28 @@ a projeção horizontal das aproximações iniciais $\hat{\mathbf{p}}_{(0)}$
 usadas nas sucessivas inversões (Figuras \ref{fig:target_l2_result} e 
 \ref{fig:target_l1_result}).
 As aproximações iniciais são compostas de $ L= 10$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=650 $ m e centro em $ (x_0, y_0) = (-300, 300) $.
-A Figura \ref{fig:target_l2_result}a mostra que a melhor solução L2 foi obtida através dos valores verdadeiros da profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:target_l2_result}b), possui uma profundidade da base em $6641.8$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:target_l2_result}d).
-A Figura \ref{fig:target_l1_result} mostra um resultado similar produzido pela melhor solução L1, que tem profundidade da base em $6156.5$ m.
+A Figura \ref{fig:target_l2_result}a mostra que a melhor solução L2 foi obtida através dos valores verdadeiros da profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. Essa solução L2 produz um ótimo ajuste dos dados (Figura \ref{fig:target_l2_result}b), possui uma profundidade da base em $6663,8$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:target_l2_result}d).
+A Figura \ref{fig:target_l1_result} mostra um resultado similar produzido pela melhor solução L1, que tem profundidade da base em $6703,0$ m.
 O aspecto mais interessante das soluções L2 e L1 obtidas neste teste é que elas recuperam não só as feições principais da fonte mas também seu mergulho e a variação de sua forma ao longo da profundidade.
 Todas as soluções L2 e L1 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
 $\tilde{\alpha}_{1} = 10^{-5}$, $\tilde{\alpha}_{2} = 10^{-4}$, 
 $\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-8}$, e 
-$\tilde{\alpha}_{5} = 10^{-5}$. 
+$\tilde{\alpha}_{5} = 10^{-6}$. 
+Segundo a Tabela \ref{tab:complex}, a solução L1 é ligeiramente superior à solução L2, porém os valores dos vínculos para cada solução são muito próximos.
 É importante notar que, devido à ausência de fontes não-alvo neste teste, não há diferenças práticas entre as soluções L2 e L1 obtidas pelo método aqui proposto.
+
+
+\begin{table}[h]\label{tab:complex}
+	\caption{Valores dos vínculos na iteração final para as melhores soluções L2 e L1 da aplicação ao corpo complexo na presença de uma fonte não-alvo pequena (Eqs. \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).}
+	\centering
+	\vspace{0.5cm}
+	\begin{tabular}{c|ccccc}
+		Vínculo & $ \varphi _1 $ & $ \varphi _2 $ &  $ \varphi _3 $ &  $ \varphi _4 $ &  $ \varphi _5 $ \\
+		\hline
+		Solução L2 & $ 0,39 $ & $ 4,05 $ & $ 0,86 $ & $1,80 \times 10^{-2} $ & $ 0,60 $ \\ 
+		Solução L1 & $ 0,26 $ & $ 2,18 $ & $ 0,85 $ & $1,81 \times 10^{-2} $ & $ 0,61 $
+	\end{tabular}
+\end{table}
 
 
 \begin{figure}[!htb]
@@ -358,7 +412,7 @@ $\tilde{\alpha}_{5} = 10^{-5}$.
 \pagebreak
 
 
-\section{Modelo complexo com uma fonte não-alvo pequena}
+\section{Modelo complexo na presença de uma fonte não-alvo pequena}
 \label{sec:target_source_with_small_interference}
 
 
@@ -386,12 +440,25 @@ A Figura \ref{fig:small_l1_result} mostra as soluções L1 obtidas pela inversã
 com os mesmos pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas})
 utilizados para as soluções L2 (Figura \ref{fig:small_l2_result}).
 Comparada à solução L2 mostrada na Figura \ref{fig:small_l2_result}, a melhor solução L1 apresenta uma intensidade de magnetização total menos superestimada (Figura 
-\ref{fig:small_l1_result}a) e profundidade da base ($5176.4$ m) menos subestimada cerca de $ 1 $ km de diferença em relação à verdadeira ($6130$ m). Essa solução produz valores de resíduos (Figura \ref{fig:small_l1_result}b) 
+\ref{fig:small_l1_result}a) e profundidade da base ($4993.7$ m) menos subestimada cerca de $ 1 $ km de diferença em relação à verdadeira ($6130$ m). Essa solução produz valores de resíduos (Figura \ref{fig:small_l1_result}b) 
 próximos à anomalia de campo total produzida pela fonte não-alvo (Figura 
 \ref{fig:small_model}b). 
 Isso significa que, nesse caso, a performance do método foi mais eficaz em filtrar a anomalia de campo total não-alvo (Figura \ref{fig:small_model}b).
 Como consequência, a solução L1 (Figura \ref{fig:small_l1_result}d) foi muito menos afetada pela fonte não-alvo e recuperou satisfatoriamente a forma da fonte alvo. 
-Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo que a fonte não-alvo seja muito localizada e menor do que a fonte alvo.
+A Tabela \ref{tab:small} mostra que para este teste a solução L1 é superior à solução L2 mesmo que a fonte não-alvo seja muito localizada e menor do que a fonte alvo.
+
+\begin{table}[h]\label{tab:small}
+	\caption{Valores dos vínculos na iteração final para as melhores soluções L2 e L1 da aplicação ao corpo complexo na presença de uma fonte não-alvo pequena (Eqs. \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).}
+	\centering
+	\vspace{0.5cm}
+	\begin{tabular}{c|ccccc}
+		Vínculo & $ \varphi _1 $ & $ \varphi _2 $ &  $ \varphi _3 $ &  $ \varphi _4 $ &  $ \varphi _5 $ \\
+		\hline
+		Solução L2 & $ 0,45 $ & $ 20,75 $ & $ 1,94 $ & $ 0,29 $ & $ 1,94 $ \\ 
+		Solução L1 & $ 0,25 $ & $ 3,56 $ & $ 0,83 $ & $ 0,22 $ & $ 4,49 $
+	\end{tabular}
+\end{table}
+
 \pagebreak
 \begin{figure}[!htb]
 	\centering
@@ -448,7 +515,7 @@ Este teste numérico mostra que a solução L1 é superior à solução L2 mesmo
 	\label{fig:small_l1_result}
 \end{figure}
 \pagebreak
-\section{Modelo complexo com uma fonte não-alvo grande}
+\section{Modelo complexo na presença de uma fonte não-alvo grande}
 \label{sec:target_source_with_large_interference}
 
 O mapa da Figura \ref{fig:thick_model}a representa a soma entre as anomalias de campo total produzidas pela fonte não-alvo pequena (Figura \ref{fig:thick_model}b), cuja forma é exibida nas Figuras \ref{fig:thick_model}c e \ref{fig:thick_model}d, e aquela produzida pela fonte alvo simulada (Figura \ref{fig:target_model}a).
@@ -459,22 +526,32 @@ Neste caso, a fonte não-alvo estende consideravelmente a área positiva da anom
 
 A Figura \ref{fig:thick_l2_result} mostra as soluções L2 obtidas pela inversão da anomalia de campo total na Figura \ref{fig:thick_model}a
 com os seguintes pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}):
-$\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
-$\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-7}$, e 
-$\tilde{\alpha}_{5} = 10^{-7}$.
+$\tilde{\alpha}_{1} = 10^{-3}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
+$\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-6}$, e 
+$\tilde{\alpha}_{5} = 10^{-6}$.
 Como podemos ver, a melhor solução L2 não recupera os valores da profundidade do topo $z_{0}$ e nem da intensidade de magnetização total $m_{0}$, assim como não recuperou a forma da fonte alvo.
-A estimativa da profundidade da base ($2010.1$ m) é muito distante da verdadeira ($6130$ m).
+A estimativa da profundidade da base ($1931,0$ m) é muito distante da verdadeira ($6130$ m).
 Comparado ao valor verdadeiro, a profundidade do topo estimada $z_{0}$ está deslocada em direção à da fonte não-alvo.
 Nesse caso, a fonte não-alvo induz severamente ao erro da estimativa da geometria do corpo (Figura \ref{fig:thick_l2_result}d).
 
 A Figura \ref{fig:thick_l1_result} mostra as soluções L1 obtidas pela inversão da anomalia de campo total mostrada na Figura \ref{fig:thick_model}a
-com os seguintes pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}):
-$\tilde{\alpha}_{1} = 10^{-4}$, $\tilde{\alpha}_{2} = 10^{-5}$, 
-$\tilde{\alpha}_{3} = 10^{-4}$, $\tilde{\alpha}_{4} = 10^{-7}$, e 
-$\tilde{\alpha}_{5} = 10^{-7}$.
+com os seguintes pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas})utilizados para as soluções L2 (Figura \ref{fig:thick_l2_result}).
 A melhor solução L1 (Figura \ref{fig:thick_l1_result}) filtra parcialmente a anomalia de campo total não-alvo (Figura \ref{fig:thick_model}b) e recupera as principais feições da fonte alvo sintética, assim como a profundidade do topo $z_{0}$ e a intensidade de magnetização total $m_{0}$ verdadeiras.
-Essa solução estima a profundidade da base ($5840.9$ m) melhor do que a do teste anterior, no entanto, a solução é inferior à mostrada no teste anterior em filtrar a anomalia de campo total não-alvo e também em recuperar a geometria da fonte alvo.
-Apesar disso, ela é significativamente superior à melhor solução L2 (Figura \ref{fig:thick_l2_result}) obtida pela inversão do mesmo dado, uma vez que é muito menos afetada pela presença de uma grande fonte não-alvo.
+Essa solução estima a profundidade da base ($5820.4$ m) melhor do que a do teste anterior, no entanto, a solução é inferior à mostrada no teste anterior em filtrar a anomalia de campo total não-alvo e também em recuperar a geometria da fonte alvo.
+Apesar disso, a Tabela \ref{tab:thick} mostra que ela é significativamente superior à melhor solução L2 (Figura \ref{fig:thick_l2_result}) obtida pela inversão do mesmo dado, uma vez que é muito menos afetada pela presença de uma grande fonte não-alvo.
+
+\begin{table}[h]\label{tab:thick}
+	\caption{Valores dos vínculos na iteração final para as melhores soluções L2 e L1 da aplicação ao corpo complexo na presença de uma fonte não-alvo grande (Eqs. \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}).}
+	\centering
+	\vspace{0.5cm}
+	\begin{tabular}{c|ccccc}
+		Vínculo & $ \varphi _1 $ & $ \varphi _2 $ &  $ \varphi _3 $ &  $ \varphi _4 $ &  $ \varphi _5 $ \\
+		\hline
+		Solução L2 & $ 145,68 $ & $ 2,13 $ & $ 7,15 $ & $ 2,36 $ & $3,88 \times 10^{-2} $ \\ 
+		Solução L1 & $ 16,17 $ & $ 0,42 $ & $ 2,36 $ & $ 1,58 $ & $ 0,38 $
+	\end{tabular}
+\end{table}
+
 \pagebreak
 \begin{figure}[!htb]
 	\centering

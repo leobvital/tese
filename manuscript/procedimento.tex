@@ -84,3 +84,13 @@ O parâmetro $\tilde{\alpha}_7$ controla a extensão vertical total do corpo est
 Quanto maior é o seu valor, mais rasa é a profundidade da base estimada e vice versa.
 Uma regra geral é começar com os valores iniciais $\tilde{\alpha}_1 = 10^{-4}$, $\tilde{\alpha}_2 = 10^{-4}$, $\tilde{\alpha}_3 = 10^{-4}$, $\tilde{\alpha}_4 = 10^{-7}$ e $\tilde{\alpha}_5 = 10^{-5}$, e mudá-los para refinar os resultados.
 Finalmente, é importante enfatizar que  $\tilde{\alpha}_1 - \tilde{\alpha}_5$ (Eq. \ref{eq:alphas}) não são alterados ao longo das iterações do algortimo de inversão.
+
+\section{Critério de escolha da melhor solução}
+\label{sec:criterio}
+
+Para selecionar a melhor solução entre L2 e L1, é utilizado um critério numérico.
+O critério estabelecido para a escolha da melhor solução entre L2 e L1 é uma comparação entre os valores dos vínculos $ \varphi_1 $-$ \varphi_5 $.
+Cada uma das soluções L2 e L1 possuem valores de vínculos associados calculados pelas Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}.
+Valores pequenos para os vínculos indicam uma melhor incorporação da informação a priori durante o problema inverso.
+Portanto, a partir desses valores, a solução que possuir a maior quantidade de vínculos menores em comparação à outra é eleita a melhor.
+Ou seja, se a solução possuir três ou mais vínculos menores será escolhida como a melhor.
