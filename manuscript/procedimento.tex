@@ -1,4 +1,4 @@
-\chapter{Procedimentos pré-inversão}
+\chapter{Procedimentos computacionais}
 
 Os procedimentos computacionais pré-inversão deste método têm como propósito definir: (1) a aproximação inicial $ \hat{\mathbf{p}}_{(0)} $, (2) os limites superiores $ p_l^{max} $ e inferiores $ p_l^{min} $, $ l=1, \dots, M $, do vínculo de desigualdade (Eq. \ref{eq:inequality-constraints}) e (3) os pesos normalizados $ \alpha_{\ell} $, $ \ell=1,\dots,5 $ (Eq. \ref{eq:gamma}). 
 
@@ -85,12 +85,13 @@ Quanto maior é o seu valor, mais rasa é a profundidade da base estimada e vice
 Uma regra geral é começar com os valores iniciais $\tilde{\alpha}_1 = 10^{-4}$, $\tilde{\alpha}_2 = 10^{-4}$, $\tilde{\alpha}_3 = 10^{-4}$, $\tilde{\alpha}_4 = 10^{-7}$ e $\tilde{\alpha}_5 = 10^{-5}$, e mudá-los para refinar os resultados.
 Finalmente, é importante enfatizar que  $\tilde{\alpha}_1 - \tilde{\alpha}_5$ (Eq. \ref{eq:alphas}) não são alterados ao longo das iterações do algortimo de inversão.
 
-\section{Critério de escolha da melhor solução}
+\section{Critério para escolha da melhor solução}
 \label{sec:criterio}
 
-Para selecionar a melhor solução entre L2 e L1, é utilizado um critério numérico.
-O critério estabelecido para a escolha da melhor solução entre L2 e L1 é uma comparação entre os valores dos vínculos $ \varphi_1 $-$ \varphi_5 $.
-Cada uma das soluções L2 e L1 possuem valores de vínculos associados calculados pelas Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}.
-Valores pequenos para os vínculos indicam uma melhor incorporação da informação a priori durante o problema inverso.
-Portanto, a partir desses valores, a solução que possuir a maior quantidade de vínculos menores em comparação à outra é eleita a melhor.
-Ou seja, se a solução possuir três ou mais vínculos menores será escolhida como a melhor.
+Para selecionar a melhor entre as soluções L2 e L1, um critério numérico é utilizado.
+A escolha da melhor solução é baseada em uma comparação entre os valores das funções dos vínculos $ \varphi_\ell $ multiplicados pelos pesos normalizados $ \alpha_\ell $, $ \ell=1,\dots,5 $, computados para ambas as soluções.
+Tanto a solução L2 quanto a solução L1 possuem valores para as funções dos vínculos calculados pelas Equações \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}.
+Os pesos normalizados $ \alpha_\ell $, $ \ell=1,\dots,5 $, são definidos pela a Equação \ref{eq:alphas}. 
+Quando a função do um vínculo multiplicada pelo seu peso normalizado associado $ \alpha_\ell \varphi_\ell  $, $ \ell=1,\dots,5 $, assume um valor pequeno significa que a informação a priori introduzida foi bem incorporada à inversão, ou seja, a solução final admite uma forma que minimiza estas quantidades.
+Por exemplo, uma solução cilíndrica vai apresentar valores de $ \varphi_1 $, $ \varphi_2 $ e $ \varphi_3 $ iguais a zero independentemente do valor de seus respectivos pesos normalizados $ \alpha_1 $, $ \alpha_2 $ e $ \alpha_3 $, uma vez que todos os raios $ r^k_j $, $ j=1, \dots, V $, $ k=1,\dots,L $, e todas as coordenadas Cartesianas horizontais $ (x^k_0, y^k_0) $ das origens $ O^k $ de todos os $ L $ prismas que compõem o modelo interpretativo serão iguais (Eqs. \ref{eq:phi1}, \ref{eq:phi2} e \ref{eq:phi3}).
+Portanto, a partir desses valores, a melhor solução é aquela que possuir a maior quantidade de menores valores das funções dos vínculos multiplicados pelos pesos normalizados em comparação à outra.
