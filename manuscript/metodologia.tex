@@ -32,6 +32,7 @@ Na Equação \ref{eq:predicted-data-i}, $\mathbf{p}$ é um vetor de parâmetros 
 \end{bmatrix}^{\top} \: .
 \label{eq:p-vector}
 \end{equation}
+
 A anomalia de campo total $d_{i} (\mathbf{p})$ 
 (Equação \ref{eq:predicted-data-i}) é computada por meio das fórmulas de \cite{plouff1976} implementadas no pacote de Python 
 Fatiando a Terra \citep{uieda-etal2013}.
@@ -102,6 +103,9 @@ Através da estimativa do vetor de parâmetros obtida pela minimização da norm
 
 Na Equação \ref{eq:gamma}, $\alpha_{\ell}$, $\ell = 1, \dots, 5$, são escalares positivos que definem o peso relativo das funções dos vínculos $\varphi_{\ell}(\mathbf{p})$.
 Essas funções são definidas seguindo a mesma abordagem utilizada por \citet{oliveirajr_etal2011} e \citet{oliveirajr_barbosa2013}.
+
+Entretanto, há diferenças significativas entre este método e os anteriormente citados.
+Note que, diferentemente de \cite{oliveirajr_etal2011} e \cite{oliveirajr_barbosa2013}, a espessura de todos os prismas $ dz $ é um parâmetro a ser estimado na inversão. 
 
 \section{Vínculos}\label{sec:constraints}
 
@@ -291,7 +295,7 @@ O vetor gradiente e a matriz Hessiana da função $\varphi_{4}(\mathbf{p})$ (Equ
 	\label{fig:phi4}
 \end{figure}
 
-Finalmente, o último vínculo é a \textit{norma Euclidiana mínima da espessura}, que impõe que a espessura comum $ dz $ de todos os prismas seja próxima de zero. Esse vínculo força que a profundidade da base do modelo seja o mais rasa possível (Figura \ref{fig:phi5})
+Finalmente, o último vínculo é a \textit{norma Euclidiana mínima da espessura}, que impõe que a espessura comum $ dz $ de todos os prismas seja próxima de zero. Esse vínculo força que a profundidade da base do modelo seja o mais rasa possível (Figura \ref{fig:phi5}). É mportante ressaltar que este vínculo foi introduzido nesta metodologia e não está presente nos trabalhos de \cite{oliveirajr_etal2011} e \cite{oliveirajr_barbosa2013}.
 
 Esse vínculo pode ser escrito matematicamente como
 \begin{equation}\label{eq:phi5}
