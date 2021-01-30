@@ -439,7 +439,7 @@ Abaixo, segue o algoritmo de inversão aqui proposto:
 	\Bigg| \le \tau \: ,
 	$$ 
 	em que $\tau$ é um número positivo pequeno, que varia de $\approx 10^{-3}$ a 
-	$10^{-4}$, que controla a convergência, o vetor de parâmetros $\hat{\mathbf{p}}_{(k+1)}$ é a solução. 
+	$10^{-4}$ e controla a convergência, o vetor de parâmetros $\hat{\mathbf{p}}_{(k+1)}$ é a solução. 
 	Senão, atualiza o vetor de parâmetros 
 	$$
 	\hat{\mathbf{p}}_{(k)} \leftarrow \hat{\mathbf{p}}_{(k+1)} \: ,
@@ -473,8 +473,8 @@ $p_{l}^{max}$ (Eq. \ref{eq:inequality-constraints}) para os parâmetros estimado
 Os valores ótimos da profundidade do topo $z_{0}$ e intensidade de magnetização total
 $m_{0}$ são escolhidos como aqueles associados aos corpos estimados que produzem os menores valores da função objetivo $\Gamma (\mathbf{p})$ (Equação \ref{eq:gamma}).
 
-Note que, ao manter a matriz $\mathbf{W}_{(k)}$ (etapa 2 e 10) igual à identidade ao longo das iterações, o corpo estimado minimiza a norma-2 quadrática dos resíduos entro os dados observados e preditos (Equação \ref{eq:L2_misfit}). 
+Note que, ao manter a matriz $\mathbf{W}_{(k)}$ (etapa 2 e 10) igual à identidade ao longo das iterações, o corpo estimado minimiza a norma-2 quadrática dos resíduos entre os dados observados e preditos (Equação \ref{eq:L2_misfit}). 
 Nesse caso, o corpo estimado é a solução L2. 
-A atualização iterativa dos elementos da matriz $\mathbf{W}_{(k)}$ com os valores absolutos dos resíduos de acordo com a etapa 10 é feita através do método IRLS \citep[][p. 46]{scales_gersztenkorn1988, aster_etal2019} para obter um corpo estimado que minimiza a norma-1 dos resíduos entre os dados observados e preditos 
+A atualização iterativa dos elementos da matriz $\mathbf{W}_{(k)}$ com os valores absolutos dos resíduos (etapa 1) constitui o método IRLS \citep[][p. 46]{scales_gersztenkorn1988, aster_etal2019} para obter um corpo estimado que minimiza a norma-1 dos resíduos entre os dados observados e preditos 
 (Equação \ref{eq:L1_misfit}). Nesse caso, o corpo estimado é a solução L1.
 
