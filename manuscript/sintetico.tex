@@ -225,7 +225,7 @@ usadas nas sucessivas inversões (Figuras \ref{fig:great_l2_result} e
 As aproximações iniciais são compostas de $ L= 5$ prismas com $ V = 20 $ vértices, mesma direção de magnetização do corpo verdadeiro, espessura $ dz=350 $ m e centro em $ (x_0, y_0) = (-200, 0) $.
 A Figura \ref{fig:great_l2_result}a mostra que a melhor solução L2 obtida superestima tanto a profundidade do topo $z_{0}$ quanto o valor da intensidade de magnetização total $m_{0}$ verdadeira. Essa solução L2 produz um bom ajuste dos dados (Figura \ref{fig:great_l2_result}b), possui uma profundidade da base em $3063,2$ m e também recupera a geometria do corpo verdadeiro (Figura \ref{fig:great_l2_result}d).
 A Figura \ref{fig:great_l1_result} mostra um resultado similar em relação a geometria, porém superestima menos os valores de profundidade do topo $z_{0}$ e subestima pouco o valor da intensidade de magnetização total $m_{0}$. A profundidade da base estimada foi de $2655,6$ m que é um pouco inferior à estimada pela solução L2.
-Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a Tabela \ref{tab:inc-reg} mostra que a solução L1 foi superior à solução L2 na estimativa de $ z_0 $ e $ m_0 $.
+Podemos observar que nesse teste ambas as abordagens L2 e L1 foram bem sucedidas em estimar a forma do corpo e recuperam as feições principais da fonte alvo. Entretanto, nesse caso, a Tabela \ref{tab:inc-reg} mostra que a solução L1 foi superior à solução L2 porque minimizou melhor os produtos $ \alpha_\ell \varphi_\ell  $, $ \ell = 1, \dots, 5 $.
 Todas as soluções L2 produzidas neste teste foram obtidas usando o seguinte conjunto de pesos normalizados $\tilde{\alpha}_{\ell}$ (Equação \ref{eq:alphas}): 
 $\tilde{\alpha}_{1} = 10^{-3}$, $\tilde{\alpha}_{2} = 10^{-3}$, 
 $\tilde{\alpha}_{3} = 10^{-6}$, $\tilde{\alpha}_{4} = 10^{-6}$, e 
@@ -505,7 +505,7 @@ A Tabela \ref{tab:small} mostra que para este teste a solução L1 é superior �
 	\caption{Soluções L1 obtidas para o modelo da fonte alvo com uma fonte não-alvo pequena. 
 		(a) Mapa discreto da função objetivo produzida pelos modelos da malha de varredura para valores de profundidade do topo $z_{0}$ e intensidade de magnetização total $m_{0}$. 
 		Os valores verdadeiros de $m_{0}$ e $z_{0})$ e aqueles que definem a melhor solução L1 são representados pelo triângulo vermelho e pelo losango branco, respectivamente.
-		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:fig:small_model}a) 
+		(b) Resíduos entre os dados contaminados com ruído (Figura \ref{fig:small_model}a) 
 		e os dados preditos (não mostrados) produzidos pela melhor solução L1 (prismas vermelhos no painel d). 
 		O histograma dos resíduos inserido em (b) mostra a curva Gaussiana ajustada (linha tracejada).
 		Os polígonos cinzas representam as projeções horizontais de todos os prismas que compõe a melhor solução. 

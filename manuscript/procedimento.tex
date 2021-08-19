@@ -1,13 +1,14 @@
 \chapter{Procedimentos computacionais}
 
-Os procedimentos computacionais pré e pós-inversão têm como propósito definir: (1) a aproximação inicial $ \hat{\mathbf{p}}_{(0)} $, (2) os limites superiores $ p_l^{max} $ e inferiores $ p_l^{min} $, $ l=1, \dots, M $, do vínculo de desigualdade (Eq. \ref{eq:inequality-constraints}) e (3) os pesos normalizados $ \alpha_{\ell} $, $ \ell=1,\dots,5 $ (Eq. \ref{eq:gamma}), (4) escolher a solução que melhor incorpora a informação a priori. 
+Os procedimentos computacionais têm como propósito definir: (1) a aproximação inicial $ \hat{\mathbf{p}}_{(0)} $, (2) os limites superiores $ p_l^{max} $ e inferiores $ p_l^{min} $, $ l=1, \dots, M $, do vínculo de desigualdade (Eq. \ref{eq:inequality-constraints}) e (3) os pesos normalizados $ \alpha_{\ell} $, $ \ell=1,\dots,5 $ (Eq. \ref{eq:gamma}), (4) escolher a solução que melhor incorpora a informação a priori. 
 
 \section{Aproximação inicial e vínculo de desigualdades}
 
 Estimar um vetor de parâmetros $\mathbf{p}$ (Eq. \ref{eq:p-vector}) que minimiza a função objetivo (Eq. \ref{eq:gamma}) para um dado par de intensidade de magnetização total $ m_0 $ e profundidade do topo do prisma mais raso $ z_0 $ a partir de um conjunto de dados de anomalia de campo total, sujeito ao vínculo de desigualdade (Eq. \ref{eq:inequality-constraints}), é um problema não linear que requer uma aproximação inicial da forma da fonte alvo 3D. 
 Os trabalhos de \cite{oliveirajr_etal2011} e \cite{oliveirajr_barbosa2013} consideram a profundidade do topo do prisma mais raso $ z_0 $, como uma constante que necessita ser introduzida como informação a priori na inversão.
-Aqui, a profundidade $ z_0 $ é estimada junto à intensidade de magnetização $ m_0 $.
-Já a aproximação inicialé um cilindro com raio e coordenadas Cartesianas horizontais do centro definidas usando a redução ao polo da anomalia de campo total observada (anomalia RTP).
+Aqui, a profundidade $ z_0 $ é estimada simultaneamente à intensidade de magnetização $ m_0 $.
+Já a aproximação inicial
+é um cilindro com raio e coordenadas Cartesianas horizontais do centro definidas usando a redução ao polo da anomalia de campo total observada (anomalia RTP).
 Então, a primeira etapa dos procedimentos pré-inversão consiste em calcular a anomalia de campo total reduzida ao polo (Eq. \ref{eq:rtp_anomaly_true}), que serve a três propósitos: verificar se os valores usados para a direção de magnetização total (declinação $D$ e inclinação $I$) são válidos; definir os limites $p_{l}^{min}$ e $p_{l}^{max}$, $ l=1, \dots, M $, do vínculo de desigualdade (Eq. \ref{eq:inequality-constraints}); por último, definir o raio e as coordenadas Cartesianas do centro do corpo cilíndrico que forma a aproximação inicial.
 
 É de amplo conhecimento que a anomalia RTP é predominantemente positiva e decai a zero próximo aos seus limites horizontais \cite[por exemplo,][p. 331]{blakely1996}.
@@ -32,7 +33,7 @@ Para definir o raio e as coordenadas horizontais do centro da aproximação inic
 O ideal aqui é que o raio da aproximação inicial $ \hat{\mathbf{p}}_0 $ coincida com a região de máximo gradiente da anomalia RTP, ou seja, onde se encontra a variação máxima desse dado, que pode indicar os limites laterais da fonte alvo \citep{baranov1957}.
 Essa definição não exige um rigor matemático muito acurado.
 Depois de definir o raio e as coordenadas Cartesianas horizontais do centro da aproximação cilíndrica inicial $ \hat{\mathbf{p}}_0 $, devem ser escolhidos sua espessura de modo que a aproximação inicial seja mais profunda que a extensão vertical esperada fonte alvo.
-A próxima etapa consiste em um modelagem direta da anomalia de campo total (Eq. \ref{eq:predicted-data-i}) com o intuito de ajustar o volume e definir os intervalos para a sua intensidade de magnetização total $m_{0}$ e a profundidade do topo $z_{0}$, as quais ajustam preliminarmente o dado observado $ \mathbf{d}^o $.
+A próxima etapa consiste em uma modelagem direta da anomalia de campo total (Eq. \ref{eq:predicted-data-i}) com o intuito de ajustar o volume e definir os intervalos para a sua intensidade de magnetização total $m_{0}$ e a profundidade do topo $z_{0}$, as quais ajustam preliminarmente o dado observado $ \mathbf{d}^o $.
 A Figura \ref{fig:prefit} exemplifica esse ajuste preliminar dos dados observados.
 Note que essa modelagem direta é realizada antes de iniciar o processo de inversão e 
 que o corpo cilíndrico resultante pode produzir um ajuste impreciso dos dados.
@@ -45,7 +46,7 @@ que o corpo cilíndrico resultante pode produzir um ajuste impreciso dos dados.
 	\label{fig:prefit}
 \end{figure}
 
-\section{Escolha dos pesos $\alpha_{1}-\alpha_{5}$}
+\section{Escolha dos pesos $\boldmath{\alpha}_{1}$-$\boldmath{\alpha}_{5}$}
 
 Atribuir valores aos pesos $ \alpha_{\ell} $ (Eq. \ref{eq:gamma}) é uma etapa muito importante deste método.
 Entretanto, não existe uma regra analítica para definí-los e seus valores podem ser muito dependentes das características particulares da área onde o método está sendo aplicado \cite[]{silva-2001,bastos-2020}.
@@ -55,7 +56,9 @@ Note que as unidades da função data-misfit para a norma-2 e norma-1 dos resíd
 E as funções dos vínculos (Eqs. \ref{eq:phi1}, \ref{eq:phi2}, \ref{eq:phi3}, \ref{eq:phi4} e \ref{eq:phi5}) possuem unidade de m$^2$.
 Por essa razão, a unidade dos pesos $ \alpha_{\ell} $ (Eq. \ref{eq:gamma}) é nT$^{2}/$m$^{2}$ para quando a função data-misfit é a norma-2 dos resíduos (Eq. \ref{eq:L2_misfit}) e nT$/$m$^{2}$ para o caso da utilização da norma-1 dos resíduos (Eq. \ref{eq:L1_misfit}).
 
-A dimensão física dos pesos $ \alpha_{\ell}$ torna a definição de seus valores muito depende da escala da área de estudo,das dimensões da fonte alvo e da configuração dos dados observados.Com o íntúito de remover ou amenizar esta dependência, realiza-se a seguinte normalização sobre $ \alpha_{\ell} $:
+A dimensão física dos pesos $ \alpha_{\ell}$ torna a definição de seus valores muito depende da escala da área de estudo,
+das dimensões da fonte alvo e da configuração dos dados observados.
+Com o íntúito de remover ou amenizar esta dependência, realiza-se a seguinte normalização sobre $ \alpha_{\ell} $:
 \begin{equation}\label{eq:alphas}
 \alpha_{\ell} = \tilde{\alpha}_\ell \frac{E_\phi}{E_\ell}, \quad \ell = 1,\dots, 5,
 \end{equation}
@@ -75,10 +78,10 @@ Os valores atribuídos ao pesos adimensionais $\tilde{\alpha}_{1} - \tilde{\alph
 Baseado em \cite{bastos-2020}, este trabalho sugere alguns procedimentos para a escolha desses parâmetros.
 
 Os parâmetros $\tilde{\alpha}_1$ e $\tilde{\alpha}_2$ impõem informação a priori na forma da seção horizontal dos prismas.
-O primeiro força todos os prismas a terem uma seção horizontal circular, enquanto o segundo força todos os prismas a terem uma seção horizontal parecida.
+O primeiro força todos os prismas a terem seções horizontais circulares, enquanto o segundo força todos os prismas a terem uma seções horizontais similares.
 Geralmente, seus valores variam de $10^{-5}$ a $10^{-3}$ e diferem entre si de uma ordem de grandeza, no máximo.
 O parâmetro $\tilde{\alpha}_3$ também varia de $10^{-5}$ a $10^{-3}$ e controla a posição relativa dos prismas adjacentes que formam o modelo interpretativo.
-Um valore alto privilegia um corpo estimado vertical, enquanto um valor pequeno tende a gerar um corpo estimado inclinado.
+Um valor alto privilegia um corpo estimado vertical, enquanto um valor pequeno tende a gerar um corpo estimado inclinado.
 
 O parâmetro $\tilde{\alpha}_4$ possui um significado puramente matemático e é usado somente para estabilizar as soluções do problema inverso.
 Seu valor é escolhido como o menor possível.
