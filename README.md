@@ -22,7 +22,7 @@ Um cenário geológico geralmente inclui múltiplos corpos que produzem sinais g
 
 ## Publicações
 
-Esta tese resultou em um artigo entitulado "Magnetic radial inversion for 3-D source geometry estimation" publicado na revista Geophysical Journal International.
+Esta tese resultou em um artigo intitulado "Magnetic radial inversion for 3-D source geometry estimation" publicado na revista Geophysical Journal International.
 
 DOI: [10.1093/gji/ggab195](http://doi.org/10.1093/gji/ggab195)
 
