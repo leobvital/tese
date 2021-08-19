@@ -1,26 +1,26 @@
 \chapter{Conclusões}
 
+Este trabalho apresentou uma inversão magnética regularizada não linear com um ajuste robusto a fim de estimar a forma 3D de uma fonte definida pelo intérprete como alvo na presença ou não de fontes não-alvo.
+Aqui, uma fonte alvo é definida como aquela que dá origem ao sinal geofísico mais forte ou com maior extensão horizontal, independentemente de ser um alvo geológico de alto valor econômico.
+Essa inversão não requer a filtragem prévia do sinal produzido pelas fontes não-alvo para isolar o sinal da fonte alvo.
+Isso é realizado por meio da minimização das funções dos vínculos definidas no espaço dos parâmetros e a função de desajuste de dados magnéticos definida no espaço dos dados como a norma-1 dos resíduos.
+As soluções estimadas são estabilizadas por funções vínculo definidas pelas regularizações de Tikhonov de ordem zero e de primeira ordem.
+A inversão magnética robusta assume que a direção de magnetização total da fonte alvo é conhecida, uniforme e estima: i) a intensidade de magnetização total, ii) as profundidades do topo e da base, iii) a posição e iv) a forma do corpo 3D em profundidade.
+A solução regularizada obtida minimizando-se a norma-1 dos resíduos é chamada solução L1.
+Para fins de comparação, o método também estima a solução L2 que minimiza as mesmas funções dos vínculos e a função de desajuste dos dados magnéticos definida pela norma-$2$ dos resíduos.
 
-Do ponto de vista geofísico, os sinais produzidos por fontes não-alvo podem ser considerados um ruído geológico e devem ser filtrados dos sinais produzidos pelas fontes alvo que são de grande interesse em uma interpretação geológica.
-Aqui, uma fonte alvo é aquela que dá origem ao sinal geofísico mais forte, independentemente de ser um alvo geológico de alto valor econômico.
-Este trabalho apresentou uma inversão regularizada não linear com um ajuste robusto para inverter dados magnéticos a fim de estimar a forma 3D de uma fonte alvo na presença ou não de fontes não-alvo.
-Essa inversão não requer filtrar o sinal produzido pelas fontes não-alvo para isolar o sinal das fontes alvo.
-Isso é realizado por meio da minimização das funções dos vínculos definidas no espaço dos parâmetros e a função de desajuste de dados magnéticos definida no espaço dos dados como a norma-1 do vetor dos resíduos (a diferença entre os dados observados e preditos).
-As soluções estimadas são estabilizadas por funções de regularização definidas pelas regularizações de Tikhonov de ordem zero e de primeira ordem.
-A inversão magnética robusta assume a direção de magnetização total da fonte alvo é conhecida e recupera: i) a intensidade de magnetização total, ii) as profundidades do topo e da base, e iii) as bordas das fatias de profundidade horizontal do corpo 3D.
-A solução recuperada é chamada de solução L1 e nós a comparamos com a solução L2 que minimiza as mesmas funções dos vínculos e a função de desajuste dos dados magnéticos definida pela norma-$2$ do vetor dos resíduos.
-
-Testes em dados sintéticos mostram que a fonte estimada (solução L1) recupera a forma 3D de uma fonte alvo, mesmo na presença de fontes não-alvo que produzem anomalias interferentes.
-Neste caso a solução L1 mostra um melhor desempenho que a L2 não apenas na recuperação da geometria da fonte alvo, mas também na estimativa dos valores de profundidade do topo e de intensidade de magnetização total mais próximos dos verdadeiros.
+Testes em dados sintéticos mostram que, na presença de fontes não-alvo que produzem anomalias interferentes, a solução L1 mostra um melhor desempenho que a L2 não apenas na recuperação da geometria da fonte alvo, mas também na estimativa dos valores de profundidade do topo e de intensidade de magnetização.
 Na ausência de dados magnéticos interferentes, as soluções L1 e L2 apresentam comportamentos semelhantes.
-Além disso, quando há ou não a influência de um campo regional sobre os dados, ambas as soluções L1 e L2 foram bem sucedidas em estimar a geometria da fonte alvo que foi simulada como um corpo inclinado.
 
-Aplicações a dados aeromagnéticos de levantamentos sobre complexos alcalinos brasileiros permitiram inferir algumas características geológicas.
-As soluções L1 e L2 produzem estimativas semelhantes no complexo Anitápolis, as quais sugerem a presença de fontes não-alvo pequenas e rasas.
-Em relação à fonte alvo do complexo Anitápolis, ambas as soluções L1 e L2 mostram uma intrusão mergulhando para noroeste que concorda com um lineamento tectônico conhecido na área.
-No caso do complexo alcalino de Diorama, em GO, é possível afirmar que ele é composto de fontes alvo e não-alvo que produzem anomalias magnéticas de interferência intermediária.
-No entanto, as fontes não-alvo do complexo de Diorama não devem ser pequenas porque as soluções L1 e L2 não produzem estimativas semelhantes.
-A fonte-alvo do complexo Diorama mostra uma forma com variação de profundidade que parece ser controlada por uma falha conhecida com tendência a nordeste.
+Aplicações a dados aeromagnéticos sobre os complexos alcalinos de Anitápolis, SC, e Diorama, GO, permitiram inferir detalhes sobre seus controles estruturais.
+A semelhança entre as soluções L1 e L2 obtidas no complexo Anitápolis sugerem a presença de fontes não-alvo pequenas e rasas.
+Ambas as soluções L1 e L2 mostram uma fonte alvo mergulhando para noroeste, com strike definido por um lineamento tectônico conhecido na área.
+No caso do complexo alcalino de Diorama, em GO, a solução L1 mostra uma intrusão principal (fonte alvo) sub-vertical, que parece ser controlada por uma falha conhecida com tendência a nordeste.
+A solução L2 obtida neste caso se mostrou muito diferente da L1,o que sugere a presençade ruído geológicoassociado à presençade fontes não-alvorelativamente grandes.
+Por conta disso, a solução L1 é consideradaa mais plausível.
 
-Numa perspectiva futura, um novo desafio seria generalizar a inversão apresentada para estimar múltiplas fontes simultaneamente.
-Além disso, essa generalização pode ser acompanhada pela inversão conjunta de diversos dados, como dados magnéticos, dados de gravidade e dados de gradiometria da gravidade.
+Sem o conhecimento da direção uniforme de magnetização total da fonte alvo, o método proposto neste trabalho, não é capaz de gerar soluções coerentes com a geologia.
+Outra limitação deste método é a definição da aproximação inicial, uma vez que ela depende do cálculo prévio da anomalia RTP, de um ajuste preliminar dos dados observados, além da escolha do número de prismas e vértices.
+Considero que esses são pontos a serem explorados futuramente para o aprimoramento do método.
+Além disso, um novo desafio seria generalizar o método para estimar múltiplas fontes simultaneamente.
+Essa generalização pode ser acompanhada pela inversão conjunta de diversos dados, tais como dados magnéticos, de gravidade e de gradiometria da gravidade.

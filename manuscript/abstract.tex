@@ -1,26 +1,21 @@
 \begin{foreignabstract}
 
-\noindent A geologic scenario generally includes multiple geologic bodies producing interfering geophysical signals.
-Uma fonte alvo é aquela que dá origem ao sinal geofísico mais forte, independentemente de ser um alvo geológico de alto valor econômico.
-The signals yielded by non-targeted sources can be considered a geologic noise and should be suppressed from signals yielded by the targeted sources that give rise to the strongest effect. 
-We have presented a robust method for inverting magnetic data to estimate the 3-D shape of a targeted source in the presence of non-targeted sources without filtering out the interfering signals.
-By assuming the knowledge of the total-magnetization direction of the targeted source, our method retrieves the total-magnetization intensity, the position, and the shape of a 3-D source.
-We approximate the targeted source by an 
-ensemble of vertically juxtaposed right prisms, all of them with the same 
-total-magnetization vector and depth extent. The horizontal cross-section 
-of each prism is defined by a polygon having the same number of vertices 
-equally spaced from $0^{\circ}$ to $360^{\circ}$. The position of these 
-vertices, the horizontal location of each prism, and the depth extent of all prisms 
-are the parameters to be estimated by solving a constrained nonlinear inverse problem 
-of minimizing a goal function. 
-This is achieved by means of a non-linear regularized inversion in which the data-misfit function is defined by the 1-norm of the data residuals (L1 solution).
-Tests on synthetic magnetic data show the better performance of the L1 solution 
-when compared with the L2 solution (obtained by using the 2-norm squared of the data residuals) in retrieving the  3-D shape of a targeted source in the presence of non-targeted sources.
-In the lack of interfering data, the L1 and L2 solutions are similar.
-Furthermore, the application on data produced by an inclined source with or without the influence of strong regional field showed that both L1 and L2 solutions succeeded in estimating the shape of the targeted source.
-Applications to real magnetic data on Brazilian alkaline complexes suggest that both the Anitápolis complex, southern Brazil, and the Diorama complex, central Brazil, are formed by non-targeted and targeted sources.
-The geometry of the solutions suggests that the complexes are controlled by trending-faults compatible with information available in the literature.
+\noindent A geological scenario usually includes multiple bodies that produce interfering geophysical signals.
+The signals yielded by non-target sources can be considered geological noise and must be suppressed from the ones yielded by the sources classified by the interpreter as a target.
+A target source can be considered, for example, as the source of the strongest geophysical signal, regardless of its economic value.
+We have presented a robust method for inverting magnetic data to estimate the 3-D shape of a targeted source in the presence of non-targeted sources without previously filtering out the interfering signals.
+By assuming knowledge of the total magnetization direction of the targeted source, our method retrieves its total magnetization intensity, position, and shape.
+The method approximates the target source by a set of vertically juxtaposed right prisms, all with the same total magnetization vector and the same thickness.
+The horizontal section of each prism is defined by a polygon that has a fixed number of equally spaced vertices from $ 0 ^ {\ circ} $ to $ 360 ^ {\ circ} $.
+The position of the vertices, the horizontal location of each prism, and the thickness of the prisms are the parameters to be estimated during the inversion.
+This is achieved by means of a regularized non-linear inversion in which the data-misfit function is defined by the 1-norm data residuals.
+The estimated body in this case is conveniently called the L1 solution.
+Tests on synthetic data show a better performance of the L1 solution when compared to the L2 solution (obtained by using a data-misfit function defined by the squared 2-norm of the data residuals) in retrieving the 3D shape of the targeted source in the presence of non-targeted sources.
+In the lack of interfering signals, the L1 and L2 solutions show similar behavior.
+Furthermore, the application on data produced by a synthetic inclined source with and without the influence of a regional field showed that both L1 and L2 solutions succeeded in estimating the shape of the targeted source.
+Applications to real magnetic data on the Brazilian alkaline complexes of Anitápolis, southern Brazil, and the Diorama, central Brazil, suggest that both are controlled by failures consistent with information available in the literature.
 Unlike the L1 and L2 solutions obtained for the Diorama complex, which suggest the presence of relatively large non-targeted sources, those obtained for the Anitápolis complex indicate the presence of small non-targeted sources.
+These results show that the method can be a very efficient alternative in the interpretation of magnetic data contaminated with geological noise.
 
 \end{foreignabstract}
 
