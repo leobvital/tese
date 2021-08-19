@@ -1,7 +1,7 @@
 # Inversão magnética radial robusta para estimar a geometria de fontes 3D
 
-Autor: 	[Leonardo B. Vital](https://www.pinga-lab.org/people/vital.html)<sup>1</sup>
-Orientador: 	[Vanderlei C. Oliveira Jr.](http://www.pinga-lab.org/people/oliveira-jr.html)<sup>1</sup>
+Autor: 	[Leonardo B. Vital](https://www.pinga-lab.org/people/vital.html)<sup>1</sup>,
+Orientador: 	[Vanderlei C. Oliveira Jr.](http://www.pinga-lab.org/people/oliveira-jr.html)<sup>1</sup>,
 Coorientadora:	[Valéria C. F. Barbosa](https://www.pinga-lab.org/people/barbosa.html)<sup>1</sup>
 
 <sup>1</sup>[Observatório Nacional](http://www.gov.br/observatorio/pt-br)
