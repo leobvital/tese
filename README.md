@@ -1,128 +1,22 @@
-# Paper title
+# Inversão magnética radial robusta para estimar a geometria de fontes 3D
 
-by
-Author 1,
-Author 2,
-etc
+Autor: 	[Leonardo B. Vital](https://www.pinga-lab.org/people/vital.html)<sup>1</sup>
+Orientador: 	[Vanderlei C. Oliveira Jr.](http://www.pinga-lab.org/people/oliveira-jr.html)<sup>1</sup>
+Coorientadora:	[Valéria C. F. Barbosa](https://www.pinga-lab.org/people/barbosa.html)<sup>1</sup>
 
-This paper has been submitted for publication in *Some Journal*.
+<sup>1</sup>[Observatório Nacional](http://www.gov.br/observatorio/pt-br)
 
-Brief description of what this paper is about (2-3 sentences). Include a figure
-as well with the main result of your paper.
+Este repositório contém minha tese de doutorado, apresentada como requisito para obtenção do título de doutor em geofísica pelo Observatório Nacional.
 
-![Figure goes here.](https://raw.githubusercontent.com/pinga-lab/PAPER-REPO/master/FIGURE_FILE)
-Brief figure caption.
+## Resumo
 
-
-## Abstract
-
-Paste here the abstract.
+Um cenário geológico geralmente inclui múltiplos corpos que produzem sinais geofísicos interferentes. Os sinais produzidos por fontes não-alvo podem ser considerados ruído geológico e devem ser suprimidos dos sinais gerados pelas fontes classificadas pelo intérprete como alvo. Uma fonte alvo pode ser considerada, por exemplo, como aquela que dá origem ao sinal geofísico mais forte, independentemente do seu valor econômico. Este trabalho apresenta um método robusto de inversão de dados magnéticos para estimar a forma e a posição de uma fonte alvo 3D na presença ou não de fontes não-alvo sem a necessidade de uma filtragem prévia. Ao assumir o conhecimento da direção de magnetização total da fonte alvo, este método recupera sua intensidade de magnetização total, posição e forma. O método aproxima a fonte alvo por um conjunto de prismas retos verticalmente justapostos, todos com o mesmo vetor magnetização total e mesma espessura. A seção horizontal de cada prisma é definida por um polígono que possui um número fixo de vértices igualmente espaçados de 0º a 360º. A posição dos vértices, a localização horizontal de cada prisma e a espessura dos prismas são os parâmetros a serem estimados durante a inversão. Esses parâmetros são obtidos por meio de uma inversão não linear regularizada em que a função desajuste é definida pela norma-1 dos resíduos. O corpo estimado neste caso é convenientemente denominado solução L1. Testes com dados sintéticos mostram uma melhor performance da solução L1 quando comparada à solução L2 (obtida usando uma função desajuste definida pelo quadrado da norma-2 dos resíduos) em recuperar a forma da fonte alvo 3D na presença de fontes não-alvo. Na ausência de sinais interferentes, as soluções L1 e L2 mostram um comportamento similar. Além disso, o método foi aplicado a um conjunto de dados produzidos por uma fonte sintética inclinada com e sem a influência de um campo regional e ambas as soluções L1 e L2 foram bem sucedidas em estimar a geometria da fonte alvo. Aplicações a dados magnéticos reais sobre os complexos alcalinos de Anitápolis, SC, e Diorama, GO, sugerem que ambos são controlados por falhas compatíveis com informações disponíveis na literatura. Diferentemente das soluções L1 e L2 obtidas para o complexo de Diorama, que sugerem a presença de fontes não-alvo relativamente grandes, aquelas obtidas para o complexo de Anitápolis indicam a presença de fontes não-alvo pequenas. Estes resultados mostram que o método pode ser uma alternativa muito eficiente na interpretação de dados magnéticos contaminados com ruído geológico.
 
 
-## Reproducing the results
+## Publicações
 
-You can download a copy of all the files in this repository by cloning the
-[git](https://git-scm.com/) repository:
+Esta tese resultou em um artigo entitulado "Magnetic radial inversion for 3-D source geometry estimation" publicado na revista Geophysical Journal International.
 
-    git clone https://github.com/pinga-lab/PAPER-REPO.git
+DOI: [10.1093/gji/ggab195](http://doi.org/10.1093/gji/ggab195)
 
-or [click here to download a zip archive](https://github.com/pinga-lab/PAPER-REPO/archive/master.zip).
-
-*Describe here the folder structure and what is in each folder. Suggested
-layout would be:*
-
-All source code used to generate the results and figures in the paper are in
-the `code` folder.
-The data used in this study is provided in `data` and the sources for the
-manuscript text and figures are in `manuscript`.
-See the `README.md` files in each directory for a full description.
-
-The calculations and figure generation are all run inside
-[Jupyter notebooks](http://jupyter.org/).
-You can view a static (non-executable) version of the notebooks in the
-[nbviewer]() webservice:
-
-http://nbviewer.jupyter.org/github/pinga-lab/PAPER-REPO
-
-Also provided are read-only PDF versions of the notebooks.
-
-See sections below for instructions on executing the code.
-
-
-### Setting up your environment
-
-Describe what you need to install. Usually it's Anaconda with Python 2.7. Here
-is template for that:
-
-> You'll need a working Python **2.7** environment with all the standard
-> scientific packages installed (numpy, scipy, matplotlib, etc).  The easiest
-> (and recommended) way to get this is to download and install the
-> [Anaconda Python distribution](http://continuum.io/downloads#all).
-> Make sure you get the **Python 2.7** version.
-
-If you need Fatiando, use this:
-
-> You'll also need to install version X.Y of the
-> [Fatiando a Terra](http://www.fatiando.org/) library.
-> See the install instructions on the website.
-
-If you provide a conda environment through an `environment.yml` file, use:
-
-> You can use `conda` package manager (included in Anaconda) to create a
-> virtual environment with all the required packages installed.
-> Run the following command in the repository folder (where `environment.yml`
-> is located):
-
-    conda env create
-
-> To activate the conda environment, run
-
-    source activate moho
-
-> or, if you're on Windows,
-
-    activate moho
-
-> This will enable the environment for your current terminal session.
-
-I would recommend having a bash shell with `make` installed in Windows to make
-life easier for everyone. Put these instructions if you want this:
-
-> **Windows users:** It is highly recommended that you install the bash shell
-> to run code and produce the results here.
-> You can download bash for Windows at http://git-for-windows.github.io/.
-> Install the "Git for Windows SDK" that will come with bash and `make` as
-> well.
-
-
-### Running the code
-
-If using Jupyter notebooks, use this text:
-
-> To execute the code in the Jupyter notebooks, you must first start the
-> notebook server by going into the repository folder and running:
-
-    jupyter notebook
-
-> Make sure you have the `conda` environment enabled first.
-
-> This will start the server and open your default web browser to the Jupyter
-> interface. In the page, go into the `code` folder and select the
-> notebook that you wish to view/run.
-
-> The notebook is divided cells (some have text while other have code).
-> Each cell can be executed using `Shift + Enter`.
-> Executing text cells does nothing and executing code cells runs the code
-> and produces it's output.
-> To execute the whole notebook, run all cells in order.
-
-
-## License
-
-All source code is made available under a BSD 3-clause license.  You can freely
-use and modify the code, without warranty, so long as you provide attribution
-to the authors.  See `LICENSE.md` for the full license text.
-
-The manuscript text is not open source. The authors reserve the rights to the
-article content, which is currently submitted for publication in the
-JOURNAL NAME.
+Além disso, todo o conteúdo do artigo incluindo códigos e dados utilizados encontram-se no repositório público: [![DOI](https://zenodo.org/badge/63806238.svg)](https://zenodo.org/badge/latestdoi/63806238).
